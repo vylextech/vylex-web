@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Portfolio | Vylex Web — Custom Web Development</title>
+
+  <meta name="description"
+    content="Explore our portfolio of custom websites, web apps, e-commerce stores, and digital platforms built for South African businesses." />
+  <meta name="author" content="Vylex" />
+  <link rel="canonical" href="https://web.vylex.co.za/portfolio.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Portfolio | Vylex Web" />
+  <meta property="og:description" content="Custom websites, web apps & platforms built by Vylex Web." />
+  <meta property="og:url" content="https://web.vylex.co.za/portfolio.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="theme-color" content="#051b38" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <i class="fa-solid fa-code"></i> vylex<span class="dot">web</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta">Get a Quote</a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="page-hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <h1>Our <span class="gradient-text">Portfolio</span></h1>
+    <p>
+      Explore some of our recent projects — from corporate websites to full-stack digital platforms.
+    </p>
+  </section>
+
+  <!-- ===== PORTFOLIO GRID ===== -->
+  <section class="section section-light" id="portfolio">
+    <div class="container">
+
+      <!-- Filter tabs -->
+      <div class="portfolio-filters fade-up">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="website">Websites</button>
+        <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+        <button class="filter-btn" data-filter="platform">Platforms</button>
+        <button class="filter-btn" data-filter="nonprofit">Non-Profit</button>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <a href="https://makhaswaholdings.co.za" target="_blank" rel="noopener noreferrer"
+          class="portfolio-card fade-up" style="display: block;" data-category="website">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <i class="fa-solid fa-helmet-safety"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>Makhaswa Holdings</h3>
+            <p>Construction and infrastructure company operating across building, development, and project execution.
+            </p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Construction</span>
+              <span class="portfolio-tag">HTML/CSS</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.ajvehicleregistration.co.za" target="_blank" rel="noopener noreferrer"
+          class="portfolio-card fade-up" style="display: block;" data-category="website">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+            <i class="fa-solid fa-car"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>AJ Vehicle Registration</h3>
+            <p>Administrative services for vehicle registration, licensing renewals, deregistration, and compliance
+              documentation.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Vehicle Administration</span>
+              <span class="portfolio-tag">HTML/CSS</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://amabongosolutions.co.za" target="_blank" rel="noopener noreferrer"
+          class="portfolio-card fade-up" style="display: block;" data-category="website">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #10b981, #059669);">
+            <i class="fa-solid fa-recycle"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>Amabongo Solutions</h3>
+            <p>Glass recycling organisation. Following the new platform launch, they saw a massive rise in calls, emails, and enquiries for recycling loads from sellers and partners.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Environmental Services</span>
+              <span class="portfolio-tag">Lead Generation</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://luxuryshuttersandblinds.co.za" target="_blank" rel="noopener noreferrer"
+          class="portfolio-card fade-up" style="display: block;" data-category="website">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+            <i class="fa-solid fa-house-chimney-window"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>Luxury Shutters & Blinds</h3>
+            <p>Digital storefront and landing page for a custom home window treatment supplier serving clients across Umhlanga and Ballito.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Home Improvement</span>
+              <span class="portfolio-tag">Landing Page</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://xyzsolutions.co.za" target="_blank" rel="noopener noreferrer" class="portfolio-card fade-up"
+          style="display: block;" data-category="website">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">
+            <i class="fa-solid fa-broom"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>XYZ Solutions</h3>
+            <p>Service website and booking platform for a hybrid cleaning company operating across Durban and Johannesburg.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Cleaning Services</span>
+              <span class="portfolio-tag">Booking</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://everydaysupplies.co.za" target="_blank" rel="noopener noreferrer"
+          class="portfolio-card fade-up" style="display: block;" data-category="ecommerce">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #f43f5e, #e11d48);">
+            <i class="fa-solid fa-box-open"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>Everyday Supply Co.</h3>
+            <p>Online storefront for a household goods and daily essentials distribution business.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">E-Commerce</span>
+              <span class="portfolio-tag">Product Catalogue</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://sandanezweexcellence.co.za" target="_blank" rel="noopener noreferrer"
+          class="portfolio-card fade-up" style="display: block;" data-category="nonprofit">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #14b8a6, #0d9488);">
+            <i class="fa-solid fa-hands-holding-child"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>Sandanezwe Excellence</h3>
+            <p>Website for an NPC working in rural youth development and academic empowerment.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Non-Profit</span>
+              <span class="portfolio-tag">Community</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://pathfindersempowerment.co.za" target="_blank" rel="noopener noreferrer"
+          class="portfolio-card fade-up" style="display: block;" data-category="nonprofit">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>Pathfinders Empowerment</h3>
+            <p>Platform for a youth organisation running programmes in entrepreneurship, academic support, and
+              leadership.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Youth Empowerment</span>
+              <span class="portfolio-tag">Non-Profit</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.sinchub.co.za" target="_blank" rel="noopener noreferrer" class="portfolio-card fade-up"
+          style="display: block;" data-category="platform">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>Sinc Hub</h3>
+            <p>Digital platform for the Sandanezwe Incubation Hub, supporting early-stage businesses and entrepreneurs.
+            </p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Incubation</span>
+              <span class="portfolio-tag">Platform</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://vylex.co.za" target="_blank" rel="noopener noreferrer" class="portfolio-card fade-up"
+          style="display: block;" data-category="website">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #051b38, #0a2d5e);">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>Vylex</h3>
+            <p>Technology and software company delivering web platforms, digital products, and IT solutions.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Technology</span>
+              <span class="portfolio-tag">Corporate</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://vylexnexys.co.za" target="_blank" rel="noopener noreferrer" class="portfolio-card fade-up"
+          style="display: block;" data-category="platform">
+          <div class="portfolio-img" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+            <i class="fa-solid fa-flask"></i>
+          </div>
+          <div class="portfolio-body">
+            <h3>Vylex Nexys</h3>
+            <p>CAPS-aligned STEM learning platform for South African learners, with AI tutoring, virtual labs, and
+              academic tools across Grades 10–12.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">EdTech</span>
+              <span class="portfolio-tag">AI</span>
+              <span class="portfolio-tag">Platform</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CASE STUDIES ===== -->
+  <section class="section section-gray" id="case-studies">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Case Studies</span>
+        <h2 class="section-title">The story behind the build</h2>
+        <p class="section-subtitle">
+          How we helped these businesses solve real problems with custom web solutions.
+        </p>
+      </div>
+
+      <div class="case-study-grid">
+
+        <!-- Case Study 1: Makhaswa Holdings -->
+        <div class="case-study-card fade-up">
+          <div class="case-study-visual" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <i class="fa-solid fa-helmet-safety"></i>
+          </div>
+          <div class="case-study-content">
+            <p class="case-industry">Construction & Infrastructure</p>
+            <h3>Makhaswa Holdings</h3>
+
+            <h4>The Challenge</h4>
+            <p>Makhaswa Holdings needed an online presence that reflected the scale and professionalism of their construction and infrastructure operations. They had no website and were losing credibility with potential clients and tender boards.</p>
+
+            <h4>What We Built</h4>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Responsive multi-page corporate website</li>
+              <li><i class="fa-solid fa-check"></i> Project gallery showcasing completed builds</li>
+              <li><i class="fa-solid fa-check"></i> Custom quote request forms</li>
+              <li><i class="fa-solid fa-check"></i> SEO optimisation for local construction searches</li>
+            </ul>
+
+            <h4>The Result</h4>
+            <p>A professional digital presence that strengthened Makhaswa's credibility with clients and tender authorities, leading to an increase in direct enquiries and project proposals.</p>
+          </div>
+        </div>
+
+        <!-- Case Study 2: Amabongo Solutions -->
+        <div class="case-study-card fade-up">
+          <div class="case-study-visual" style="background: linear-gradient(135deg, #10b981, #059669);">
+            <i class="fa-solid fa-recycle"></i>
+          </div>
+          <div class="case-study-content">
+            <p class="case-industry">Environmental Services</p>
+            <h3>Amabongo Solutions</h3>
+
+            <h4>The Challenge</h4>
+            <p>Amabongo Solutions, a glass recycling organisation, had an outdated website that wasn't generating leads. They needed a modern platform to attract recycling load sellers and industry partners.</p>
+
+            <h4>What We Built</h4>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Complete website redesign with modern UI</li>
+              <li><i class="fa-solid fa-check"></i> Clear service breakdown and call-to-action flows</li>
+              <li><i class="fa-solid fa-check"></i> SEO strategy targeting recycling-related searches</li>
+              <li><i class="fa-solid fa-check"></i> Mobile-optimised contact and enquiry forms</li>
+            </ul>
+
+            <h4>The Result</h4>
+            <p>Following the new platform launch, Amabongo saw a massive rise in calls, emails, and recycling load enquiries from both sellers and potential partners — a direct impact on their business pipeline.</p>
+          </div>
+        </div>
+
+        <!-- Case Study 3: AJ Vehicle Registration -->
+        <div class="case-study-card fade-up">
+          <div class="case-study-visual" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+            <i class="fa-solid fa-car"></i>
+          </div>
+          <div class="case-study-content">
+            <p class="case-industry">Vehicle Administration</p>
+            <h3>AJ Vehicle Registration</h3>
+
+            <h4>The Challenge</h4>
+            <p>AJ Vehicle Registration offers a range of administrative services — registrations, licensing renewals, deregistration, and compliance documentation — but had no professional website to explain their services or capture leads.</p>
+
+            <h4>What We Built</h4>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Clean, professional service website</li>
+              <li><i class="fa-solid fa-check"></i> Detailed service breakdowns with clear pricing</li>
+              <li><i class="fa-solid fa-check"></i> Contact forms tied to specific service enquiries</li>
+              <li><i class="fa-solid fa-check"></i> Fast-loading static site hosted on GitHub Pages</li>
+            </ul>
+
+            <h4>The Result</h4>
+            <p>A professional online presence that clearly communicates AJ's service offerings, making it easy for customers to understand what's available and reach out with confidence.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section" id="contact">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <h2 class="fade-up">Ready to build your next website?</h2>
+      <p class="fade-up">
+        Tell us about your project — we'll scope it, quote it, and deliver on time.
+      </p>
+      <div class="cta-actions fade-up">
+        <a href="contact.html" class="btn btn-primary">
+          <i class="fa-solid fa-envelope"></i> Get in Touch
+        </a>
+        <a href="https://wa.me/27648784287" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><i class="fa-solid fa-code"></i> vylex<span class="dot">web</span></h3>
+          <p>
+            Custom web development studio building fast, accessible, and
+            conversion-focused websites and software for businesses across South Africa.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/vylex" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://wa.me/27648784287" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:info@vylex.co.za" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="services.html">Custom Websites</a>
+          <a href="services.html">E-Commerce</a>
+          <a href="services.html">Web Applications</a>
+          <a href="services.html">Business Automation</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="process.html">Our Process</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="service-areas.html">Service Areas</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 <a href="https://vylex.co.za">Vylex</a>. All rights reserved.</p>
+        <p>web.vylex.co.za</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

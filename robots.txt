@@ -1,0 +1,11 @@
+# Vylex Web — robots.txt
+# https://web.vylex.co.za
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://web.vylex.co.za/sitemap.xml
+
+# Disallow admin/dev paths (if any)
+Disallow: /assets/
