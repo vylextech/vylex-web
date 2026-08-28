@@ -26,6 +26,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://web.vylex.co.za/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Our Process",
+        "item": "https://web.vylex.co.za/process.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -41,6 +63,7 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About</a>
+        <a href="blog.html">Guides</a>
         <a href="contact.html" class="nav-cta">Get a Quote</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
@@ -275,6 +298,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Quick Action -->
+  <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20have%20a%20question%20about%20your%20development%20process." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Chat on WhatsApp</span>
+  </a>
 
   <script src="js/main.js"></script>
 </body>

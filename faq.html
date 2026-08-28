@@ -27,35 +27,72 @@
 
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- FAQ Schema -->
+  <!-- FAQ & Breadcrumb Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "How long does a website take to build?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A simple brochure site typically takes 1–2 weeks. A multi-page business site with custom design takes 2–4 weeks. E-commerce stores and web applications take 4–8 weeks depending on complexity."
-        }
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://web.vylex.co.za/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://web.vylex.co.za/faq.html"
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "Do you build websites on WordPress?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. We build everything from scratch using HTML, CSS, JavaScript, React, Next.js, and other modern technologies. This gives us full control over performance, design, and security without plugin dependencies."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does a website cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Starter websites start from around R2,500. Business websites from R5,000. E-commerce stores from R12,000. Custom software and platforms are quoted based on scope."
-        }
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does a website take to build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A simple brochure site takes 1–2 weeks. A custom business site takes 2–4 weeks. E-commerce stores and custom web applications take 4–8 weeks depending on scope and feature complexity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you build websites on WordPress?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. We hand-code websites using clean HTML, CSS, JavaScript, React, and Next.js. This ensures maximum loading speed (100/100 Core Web Vitals), zero plugin vulnerabilities, and complete code ownership."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does custom web development cost in South Africa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Starter websites start from R2,500. Multi-page custom business websites start from R5,000. E-commerce platforms start from R12,000. Custom web applications are quoted based on specific scope."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I own the source code and domain?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100%. You retain full ownership of your code, assets, domain, and data with no vendor lock-in or recurring proprietary platform fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where in South Africa do you offer web development services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We serve businesses across all major South African regions including Johannesburg, Durban, Cape Town, Pretoria, and Pietermaritzburg."
+            }
+          }
+        ]
       }
     ]
   }
@@ -75,6 +112,7 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About</a>
+        <a href="blog.html">Guides</a>
         <a href="contact.html" class="nav-cta">Get a Quote</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
@@ -314,6 +352,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Quick Action -->
+  <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Chat on WhatsApp</span>
+  </a>
 
   <script src="js/main.js"></script>
 </body>

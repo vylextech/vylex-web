@@ -1,0 +1,36 @@
+# Vylex Web
+> Custom Web Development & Business Software Studio — South Africa
+
+Website: https://web.vylex.co.za
+Main Brand: https://vylex.co.za
+Email: info@vylex.co.za
+Phone/WhatsApp: +27 64 878 4287
+Location: South Africa (Serving Johannesburg, Durban, Cape Town, Pretoria, Pietermaritzburg, and nationwide)
+
+## About Vylex Web
+Vylex Web builds high-performance, hand-coded custom websites, web applications, e-commerce stores, and business automation platforms for South African businesses. We do not use WordPress, heavy page builders, or generic templates. Everything is custom-engineered using modern web standards (HTML5, modern CSS, JavaScript, React, Next.js, Node.js, and Cloudflare CDN) for sub-second page loads, 100/100 Core Web Vitals, enterprise security, and native search engine rankings.
+
+## Key Services
+- **Custom Business Websites**: Fast, mobile-responsive, multi-page company websites with semantic SEO, structured schema data, and conversion funnels.
+- **E-Commerce & Digital Catalogs**: High-speed online stores integrated with South African payment gateways (PayFast, Yoco, Ozow) and instant WhatsApp ordering.
+- **Custom Web Applications & Portals**: Client portals, admin dashboards, booking engines, and bespoke business tools.
+- **WordPress-to-Custom-Code Migrations**: Rebuilding slow, bloated WordPress/Elementor/Wix sites into lightning-fast, secure hand-coded platforms.
+- **Technical SEO & AI Search Readiness**: Semantic HTML5, JSON-LD Schema.org markup, Core Web Vitals optimization, and Google Business Profile local search integration.
+
+## South African Service Hubs
+- Johannesburg & Sandton (Gauteng)
+- Durban & Umhlanga (KwaZulu-Natal)
+- Cape Town & Western Cape
+- Pretoria & Centurion (Gauteng)
+- Pietermaritzburg & KZN Midlands
+
+## Pricing Guide (ZAR)
+- **Starter Web Presence**: From R2,500 (Ideal for single-page sites, landing pages, and small businesses needing fast Google discovery).
+- **Business Growth Website**: From R5,000 (Multi-page custom architecture, local SEO schema, contact funnels, 100/100 performance).
+- **E-Commerce / Custom App**: From R12,000 (Product catalog, checkout integrations, user authentication, bespoke database solutions).
+
+## Tech Stack & Architecture
+- Frontend: HTML5, Modern Vanilla CSS / Tailwind, JavaScript ES6+, React, Next.js
+- Backend & APIs: Node.js, Express, REST/GraphQL, PostgreSQL, Supabase, Firebase
+- Payments & Local Integrations: PayFast, Yoco, Ozow, WhatsApp Business API
+- Hosting & Infrastructure: Cloudflare Edge Network, Vercel, AWS

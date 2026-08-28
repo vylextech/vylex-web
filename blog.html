@@ -4,16 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Vylex Web — Web Development Insights</title>
+  <title>Web Development Guides & Insights | Vylex Web South Africa</title>
 
   <meta name="description"
-    content="Web development insights, tutorials, and industry perspectives from Vylex Web. Coming soon." />
+    content="Practical guides on website development costs in South Africa, Core Web Vitals, custom code vs WordPress, and search engine optimization." />
+  <meta name="keywords"
+    content="website cost South Africa, custom web development guide, WordPress vs custom code, Core Web Vitals South Africa, web developer pricing" />
   <meta name="author" content="Vylex" />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://web.vylex.co.za/blog.html" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Blog | Vylex Web" />
-  <meta property="og:description" content="Web development insights and tutorials. Coming soon." />
+  <meta property="og:title" content="Web Development Guides & Insights | Vylex Web" />
+  <meta property="og:description" content="In-depth technical guides on website development pricing, speed optimization, and search rankings in South Africa." />
   <meta property="og:url" content="https://web.vylex.co.za/blog.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -26,6 +29,66 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Breadcrumb & Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://web.vylex.co.za/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guides",
+            "item": "https://web.vylex.co.za/blog.html"
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "How Much Does a Website Cost in South Africa? (2026 Price Guide)",
+        "description": "Comprehensive breakdown of website design and development prices in South Africa, from starter brochure sites to custom web applications.",
+        "author": {
+          "@type": "Organization",
+          "name": "Vylex Web",
+          "url": "https://web.vylex.co.za"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Vylex Web",
+          "url": "https://web.vylex.co.za"
+        },
+        "datePublished": "2026-01-15",
+        "dateModified": "2026-08-28"
+      },
+      {
+        "@type": "Article",
+        "headline": "Custom Hand-Coded Websites vs WordPress: Speed, SEO & Security Benchmark",
+        "description": "A technical and financial comparison of custom clean-code websites versus WordPress and page builders for South African businesses.",
+        "author": {
+          "@type": "Organization",
+          "name": "Vylex Web",
+          "url": "https://web.vylex.co.za"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Vylex Web",
+          "url": "https://web.vylex.co.za"
+        },
+        "datePublished": "2026-02-10",
+        "dateModified": "2026-08-28"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -41,6 +104,7 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About</a>
+        <a href="blog.html" class="active">Guides</a>
         <a href="contact.html" class="nav-cta">Get a Quote</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
@@ -54,23 +118,193 @@
     <div class="hero-grid-bg"></div>
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
-    <h1>Our <span class="gradient-text">Blog</span></h1>
+    <h1>Web Development <span class="gradient-text">Guides</span></h1>
     <p>
-      Web development insights, tutorials, and industry perspectives.
+      Clear, technical insights into website pricing, search rankings, Core Web Vitals, and modern web architecture in South Africa.
     </p>
   </section>
 
-  <!-- ===== COMING SOON ===== -->
+  <!-- ===== ARTICLES CONTAINER ===== -->
   <section class="section section-light">
     <div class="container">
-      <div class="blog-coming-soon fade-up">
-        <i class="fa-solid fa-pen-fancy"></i>
-        <h2>Coming Soon</h2>
+
+      <!-- GUIDE 1 -->
+      <article class="guide-article fade-up" id="website-cost-south-africa">
+        <span class="blog-tag">Pricing Guide 2026</span>
+        <h2>How Much Does a Website Cost in South Africa? (2026 Price Guide)</h2>
+        <p style="font-size: 0.9rem; color: var(--gray-500); margin-bottom: 24px;">Updated for 2026 • By Vylex Web Engineering Team</p>
+
         <p>
-          We're working on articles about custom web development, modern tech stacks, SEO best practices, and why hand-coded beats page builders. Stay tuned.
+          One of the most frequent questions business owners ask is: <strong>"How much does a professional website cost in South Africa?"</strong> Website pricing in South Africa varies wildly — ranging from R1,500 from a freelancer to upwards of R100,000+ from a large digital agency.
         </p>
+
+        <p>
+          The difference comes down to <strong>technology stack, performance engineering, custom functionality, and long-term maintenance costs</strong>. Here is the realistic pricing breakdown for 2026.
+        </p>
+
+        <div class="guide-table-wrap">
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Website Type</th>
+                <th>Typical Scope</th>
+                <th>Realistic SA Price Range</th>
+                <th>Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Starter Brochure Site</strong></td>
+                <td>1–5 pages, mobile-responsive, contact form, SSL, basic SEO</td>
+                <td><strong>R2,500 – R5,000</strong></td>
+                <td>New businesses, local trades, service freelancers</td>
+              </tr>
+              <tr>
+                <td><strong>Custom Business Website</strong></td>
+                <td>5–15 pages, bespoke design, animations, local SEO schema, CMS option</td>
+                <td><strong>R5,000 – R15,000</strong></td>
+                <td>Established SMEs, law firms, medical practices, B2B companies</td>
+              </tr>
+              <tr>
+                <td><strong>E-Commerce Store</strong></td>
+                <td>Product catalog, cart, PayFast/Yoco checkout, inventory tracking</td>
+                <td><strong>R12,000 – R35,000</strong></td>
+                <td>Online retail brands, boutique stores, wholesale ordering</td>
+              </tr>
+              <tr>
+                <td><strong>Custom Web App / Portal</strong></td>
+                <td>User logins, client portals, booking engines, API integrations, custom database</td>
+                <td><strong>R20,000 – R80,000+</strong></td>
+                <td>Logistics, financial services, SaaS startups, internal company tools</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>The Hidden Costs of "Cheap" WordPress & Wix Websites</h3>
+        <p>
+          Many business owners choose cheap template websites without realizing the ongoing hidden costs:
+        </p>
+        <ul>
+          <li><strong>Plugin Licensing Fees:</strong> Elementor Pro, WooCommerce add-ons, and SEO plugins often cost R3,000 – R8,000 per year in renewal licenses.</li>
+          <li><strong>Frequent Security & Update Breakages:</strong> WordPress sites require weekly security patches. When plugins conflict, you face costly developer emergency fees.</li>
+          <li><strong>Lost Revenue Due to Slow Speed:</strong> Heavy page builders create 3–6 second mobile load times. Google research shows that 53% of mobile visits are abandoned if a page takes over 3 seconds to load.</li>
+        </ul>
+
+        <h3>The Custom Hand-Coded Advantage</h3>
+        <p>
+          By investing in clean, custom-coded HTML, CSS, and modern JavaScript, your business avoids monthly platform lock-ins, achieves 100/100 Google Lighthouse speed scores, and retains 100% ownership of your codebase forever.
+        </p>
+
+        <div style="margin-top: 32px; padding: 24px; background: var(--gray-50); border-radius: 12px; border-left: 4px solid var(--orange);">
+          <h4 style="color: var(--navy); margin-bottom: 8px;">Need a precise quote for your project?</h4>
+          <p style="margin-bottom: 16px; font-size: 0.95rem;">We provide transparent, fixed-scope proposals without hidden recurring software licenses.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Request a Free Quote</a>
+            <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20would%20like%20a%20quote%20for%20a%20website%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 20px; font-size: 0.9rem;">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GUIDE 2 -->
+      <article class="guide-article fade-up" id="custom-code-vs-wordpress">
+        <span class="blog-tag">Technical Architecture</span>
+        <h2>Custom Hand-Coded Websites vs. WordPress & Page Builders: Speed, SEO & Security Benchmark</h2>
+        <p style="font-size: 0.9rem; color: var(--gray-500); margin-bottom: 24px;">Updated for 2026 • By Vylex Web Engineering Team</p>
+
+        <p>
+          For over a decade, WordPress powered a massive portion of the web. However, modern search engines (including Google's Mobile-First Indexing and AI Overviews) demand <strong>instant rendering, clean DOM hierarchy, and zero security overhead</strong>.
+        </p>
+
+        <p>
+          Here is how custom hand-coded web architecture compares against WordPress and popular drag-and-drop page builders (Elementor, Divi, Wix).
+        </p>
+
+        <div class="guide-table-wrap">
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Standard WordPress / Page Builder</th>
+                <th>Vylex Custom Hand-Coded Architecture</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Page Load Speed</strong></td>
+                <td>2.5s – 5.8s (Bloated DOM, 30+ plugin CSS/JS files)</td>
+                <td><strong>0.3s – 0.8s (Sub-second global CDN response)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Google Core Web Vitals</strong></td>
+                <td>Scores usually between 40 – 75 on mobile</td>
+                <td><strong>Guaranteed 95 – 100/100 on Mobile & Desktop</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Security Vulnerabilities</strong></td>
+                <td>High risk (Targets for SQL injection, outdated plugin exploits)</td>
+                <td><strong>Zero database attack vectors on static tiers</strong></td>
+              </tr>
+              <tr>
+                <td><strong>AI Search & Schema Discovery</strong></td>
+                <td>Requires heavy generic SEO plugins with bloated JSON</td>
+                <td><strong>Hardcoded semantic Schema.org & clean llms.txt</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Code Ownership</strong></td>
+                <td>Locked into WordPress ecosystem & annual plugin licenses</td>
+                <td><strong>100% pure source code ownership with no lock-in</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Why Speed Directly Impacts Your Google Ranking in South Africa</h3>
+        <p>
+          In South Africa, where mobile networks and bandwidth vary greatly across 4G and 5G, Google algorithmically prioritizes websites that deliver instant First Contentful Paint (FCP) and zero Cumulative Layout Shift (CLS).
+        </p>
+        <p>
+          When your website loads in under 1 second, bounce rates drop by over 60%, and visitors stay long enough to call, message, or complete quote forms.
+        </p>
+
+        <h3>AI Search Engines (AEO / GEO) and Semantic Cleanliness</h3>
+        <p>
+          Search engines like <strong>Google AI Overviews, Perplexity, ChatGPT Search, and Claude</strong> do not view websites like humans do; they parse code hierarchy. When a page is stuffed with 5,000 lines of builder `&lt;div&gt;` wrappers and messy script tags, AI scrapers fail to extract clear answers.
+        </p>
+        <p>
+          With clean semantic HTML5 (`&lt;section&gt;`, `&lt;article&gt;`, `&lt;h1&gt;`-`&lt;h3&gt;`) and JSON-LD Knowledge Graph schema, AI answer engines can easily quote your business as the direct authority in your industry.
+        </p>
+
+        <div style="margin-top: 32px; padding: 24px; background: var(--gray-50); border-radius: 12px; border-left: 4px solid var(--orange);">
+          <h4 style="color: var(--navy); margin-bottom: 8px;">Ready to upgrade your website to high-performance custom code?</h4>
+          <p style="margin-bottom: 16px; font-size: 0.95rem;">We migrate slow WordPress, Wix, and outdated legacy sites to lightning-fast modern code.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Start Your Upgrade</a>
+            <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20would%20like%20to%20discuss%20migrating%20my%20website%20to%20custom%20code." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 20px; font-size: 0.9rem;">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="section section-dark cta-section">
+    <div class="container text-center">
+      <h2 class="fade-up">Have a Web Project in Mind?</h2>
+      <p class="fade-up">
+        Let's build a fast, modern digital asset that delivers real business growth.
+      </p>
+      <div class="cta-actions fade-up">
         <a href="contact.html" class="btn btn-primary">
-          <i class="fa-solid fa-bell"></i> Get Notified
+          <i class="fa-solid fa-paper-plane"></i> Get a Free Quote
+        </a>
+        <a href="https://wa.me/27648784287" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
         </a>
       </div>
     </div>
@@ -121,6 +355,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Quick Action -->
+  <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20have%20a%20question." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Chat on WhatsApp</span>
+  </a>
 
   <script src="js/main.js"></script>
 </body>

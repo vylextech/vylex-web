@@ -37,17 +37,79 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://web.vylex.co.za",
+    "@id": "https://web.vylex.co.za/#organization",
     "name": "Vylex Web",
     "url": "https://web.vylex.co.za",
-    "description": "Custom web development studio building hand-coded websites, web applications, and business software.",
+    "description": "Custom web development studio building hand-coded websites, web applications, and business software for South African businesses.",
+    "priceRange": "R2500 - R50000+",
+    "currenciesAccepted": "ZAR",
+    "paymentAccepted": "EFT, Credit Card, PayFast, Yoco, Ozow",
+    "sameAs": [
+      "https://vylex.co.za",
+      "https://github.com/vylex"
+    ],
     "areaServed": [
       "Johannesburg",
       "Durban",
       "Cape Town",
       "Pretoria",
-      "Pietermaritzburg"
+      "Pietermaritzburg",
+      "South Africa"
     ],
+    "knowsAbout": [
+      "Custom Web Development",
+      "Core Web Vitals Optimization",
+      "Technical SEO",
+      "E-Commerce Development",
+      "Web Applications",
+      "React",
+      "Next.js"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Starter Website Development",
+            "description": "Custom fast static business website built for speed and local search ranking."
+          },
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "2500",
+            "priceCurrency": "ZAR"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business Platform & Multi-page Site",
+            "description": "Full business website with CMS, contact funnels, and local SEO schema."
+          },
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "5000",
+            "priceCurrency": "ZAR"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom E-Commerce & Web Applications",
+            "description": "Bespoke online store or client portal with South African payment integrations."
+          },
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "12000",
+            "priceCurrency": "ZAR"
+          }
+        }
+      ]
+    },
     "serviceType": ["Web Development", "Software Development", "E-Commerce Development", "Web Application Development"],
     "email": "info@vylex.co.za",
     "telephone": "+27648784287"
@@ -68,6 +130,7 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About</a>
+        <a href="blog.html">Guides</a>
         <a href="contact.html" class="nav-cta">Get a Quote</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
@@ -95,6 +158,9 @@
         <div class="hero-actions">
           <a href="contact.html" class="btn btn-primary">
             Start Your Project <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20would%20like%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
           </a>
           <a href="services.html" class="btn btn-outline">
             View Services <i class="fa-solid fa-chevron-down"></i>
@@ -541,6 +607,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Quick Action -->
+  <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Chat on WhatsApp</span>
+  </a>
 
   <script src="js/main.js"></script>
 </body>

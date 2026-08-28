@@ -26,6 +26,67 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Breadcrumb & Pricing Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://web.vylex.co.za/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Pricing",
+            "item": "https://web.vylex.co.za/pricing.html"
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Vylex Web Development Pricing Packages",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "Vylex Web",
+          "url": "https://web.vylex.co.za"
+        },
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Starter Website",
+            "description": "Fast, responsive static website with 1-5 pages and basic SEO setup.",
+            "price": "2500",
+            "priceCurrency": "ZAR",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Business Website",
+            "description": "Multi-page business site with custom design, animations, forms, and SEO.",
+            "price": "5000",
+            "priceCurrency": "ZAR",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "E-Commerce Store",
+            "description": "Custom online store with product catalogue, checkout, and admin dashboard.",
+            "price": "12000",
+            "priceCurrency": "ZAR",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -41,6 +102,7 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="pricing.html" class="active">Pricing</a>
         <a href="about.html">About</a>
+        <a href="blog.html">Guides</a>
         <a href="contact.html" class="nav-cta">Get a Quote</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
@@ -86,10 +148,15 @@
             <li><i class="fa-solid fa-check"></i> Responsive design</li>
             <li><i class="fa-solid fa-check"></i> Contact form</li>
             <li><i class="fa-solid fa-check"></i> Basic SEO setup</li>
-            <li><i class="fa-solid fa-check"></i> GitHub Pages hosting</li>
+            <li><i class="fa-solid fa-check"></i> Fast CDN hosting</li>
             <li><i class="fa-solid fa-check"></i> 1 round of revisions</li>
           </ul>
-          <a href="contact.html" class="btn btn-light">Get a Quote</a>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="contact.html" class="btn btn-light" style="justify-content: center;">Get a Quote</a>
+            <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20am%20interested%20in%20the%20Starter%20Website%20tier%20(R2%2C500)." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="justify-content: center; font-size: 0.85rem; padding: 10px 16px;">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
         </div>
 
         <!-- Business -->
@@ -110,7 +177,12 @@
             <li><i class="fa-solid fa-check"></i> 2 rounds of revisions</li>
             <li><i class="fa-solid fa-check"></i> Deployment & SSL setup</li>
           </ul>
-          <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="contact.html" class="btn btn-primary" style="justify-content: center;">Get a Quote</a>
+            <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20am%20interested%20in%20the%20Business%20Website%20tier%20(R5%2C000)." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="justify-content: center; font-size: 0.85rem; padding: 10px 16px;">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
         </div>
 
         <!-- E-Commerce -->
@@ -124,13 +196,18 @@
           <ul class="pricing-features">
             <li><i class="fa-solid fa-check"></i> Product catalogue & search</li>
             <li><i class="fa-solid fa-check"></i> Shopping cart & checkout</li>
-            <li><i class="fa-solid fa-check"></i> Payment gateway integration</li>
+            <li><i class="fa-solid fa-check"></i> PayFast / Yoco integration</li>
             <li><i class="fa-solid fa-check"></i> Inventory management</li>
             <li><i class="fa-solid fa-check"></i> Order tracking</li>
             <li><i class="fa-solid fa-check"></i> Admin dashboard</li>
             <li><i class="fa-solid fa-check"></i> Customer accounts</li>
           </ul>
-          <a href="contact.html" class="btn btn-light">Get a Quote</a>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="contact.html" class="btn btn-light" style="justify-content: center;">Get a Quote</a>
+            <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20am%20interested%20in%20an%20E-Commerce%20Store%20(R12%2C000)." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="justify-content: center; font-size: 0.85rem; padding: 10px 16px;">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
         </div>
 
         <!-- Custom Software -->
@@ -150,7 +227,12 @@
             <li><i class="fa-solid fa-check"></i> Real-time features</li>
             <li><i class="fa-solid fa-check"></i> Ongoing support available</li>
           </ul>
-          <a href="contact.html" class="btn btn-light">Request a Quote</a>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="contact.html" class="btn btn-light" style="justify-content: center;">Request a Quote</a>
+            <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20would%20like%20a%20quote%20for%20Custom%20Software%20%2F%20Web%20App." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="justify-content: center; font-size: 0.85rem; padding: 10px 16px;">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
         </div>
 
       </div>
@@ -351,6 +433,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Quick Action -->
+  <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20have%20a%20question%20about%20your%20pricing." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Chat on WhatsApp</span>
+  </a>
 
   <script src="js/main.js"></script>
 </body>

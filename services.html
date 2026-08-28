@@ -27,23 +27,44 @@
 
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Service Schema -->
+  <!-- Service & Breadcrumb Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Vylex Web",
-      "url": "https://web.vylex.co.za"
-    },
-    "serviceType": [
-      "Static Website Development",
-      "Content-Managed Websites",
-      "E-Commerce Development",
-      "Custom Web Application Development",
-      "Full-Stack Platform Development",
-      "MVP & Prototype Development"
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://web.vylex.co.za/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://web.vylex.co.za/services.html"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "Vylex Web",
+          "url": "https://web.vylex.co.za"
+        },
+        "serviceType": [
+          "Static Website Development",
+          "Content-Managed Websites",
+          "E-Commerce Development",
+          "Custom Web Application Development",
+          "Full-Stack Platform Development",
+          "MVP & Prototype Development"
+        ]
+      }
     ]
   }
   </script>
@@ -62,6 +83,7 @@
         <a href="portfolio.html">Portfolio</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About</a>
+        <a href="blog.html">Guides</a>
         <a href="contact.html" class="nav-cta">Get a Quote</a>
       </div>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
@@ -335,6 +357,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Quick Action -->
+  <a href="https://wa.me/27648784287?text=Hi%20Vylex%20Web%2C%20I%20would%20like%20to%20discuss%20your%20web%20services." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Chat on WhatsApp</span>
+  </a>
 
   <script src="js/main.js"></script>
 </body>
