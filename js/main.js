@@ -173,3 +173,16 @@ if (contactForm) {
     }
   });
 }
+
+// ===== BLOG NAVIGATION TABS =====
+const blogFilterBtns = document.querySelectorAll('.blog-filter-btn');
+if (blogFilterBtns.length) {
+  blogFilterBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      blogFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+}
+
+
