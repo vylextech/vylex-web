@@ -442,6 +442,9 @@ img { max-width: 100%; display: block; }
   gap: 28px;
 }
 .portfolio-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--white);
@@ -458,10 +461,22 @@ img { max-width: 100%; display: block; }
   color: rgba(255,255,255,.3); font-size: 3rem;
   position: relative; overflow: hidden;
 }
+.portfolio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.portfolio-card:hover .portfolio-img img {
+  transform: scale(1.05);
+}
 .portfolio-img::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(5,27,56,.6), transparent);
+  background: linear-gradient(to top, rgba(5,27,56,.35), transparent 60%);
+  pointer-events: none;
 }
 .portfolio-body { padding: 28px; }
 .portfolio-body h3 {
@@ -763,6 +778,7 @@ img { max-width: 100%; display: block; }
   transition: border-color .2s, box-shadow .2s;
   outline: none;
   -webkit-appearance: none;
+  appearance: none;
 }
 .form-group input:focus,
 .form-group select:focus,
@@ -940,6 +956,18 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; justify-content: center;
   font-size: 4rem;
   color: rgba(255,255,255,.3);
+  position: relative;
+}
+.case-study-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.case-study-card:hover .case-study-visual img {
+  transform: scale(1.04);
 }
 .case-study-content h3 {
   font-size: 1.4rem; font-weight: 800;
