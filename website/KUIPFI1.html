@@ -594,7 +594,17 @@
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom-inner { flex-direction: column; text-align: center; }
       .hero h1 { font-size: 32px; }
-      .hero .wrap { padding-left: 20px; padding-right: 20px; }
+      .hero {
+        min-height: calc(100svh - 98px);
+        align-items: flex-start;
+        padding: 48px 0 90px;
+        background-position: 62% center;
+      }
+      .hero .wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .hero-content { max-width: 430px; }
       .hero-actions { align-items: stretch; flex-direction: column; }
       .btn-hero, .btn-hero-outline { width: 100%; }
     }
