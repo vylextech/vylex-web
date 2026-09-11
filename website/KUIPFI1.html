@@ -159,9 +159,16 @@
       min-height: calc(100vh - 98px);
       display: flex; align-items: center;
       background-color: var(--forest);
-      background-image: linear-gradient(90deg, rgba(21, 47, 38, 0.94) 0%, rgba(21, 47, 38, 0.72) 48%, rgba(21, 47, 38, 0.45) 100%), url('images/Security_officer.jpeg');
+      background-image: url('images/Security_officer.jpeg');
       background-position: center; background-size: cover;
       color: #fff; padding: 70px 0;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7, 20, 36, 0.82) 0%, rgba(7, 20, 36, 0.62) 48%, rgba(7, 20, 36, 0.34) 100%);
+      pointer-events: none;
     }
 
     @media (min-width: 1081px) {
@@ -177,6 +184,8 @@
       margin: 0;
       padding-left: 7vw;
       padding-right: 7vw;
+      position: relative;
+      z-index: 1;
     }
     .hero-content { width: 100%; max-width: 780px; text-align: left; }
     .hero-kicker {
@@ -613,10 +622,10 @@
   <section class="hero" id="home">
     <div class="wrap">
       <div class="hero-content">
-        <div class="hero-kicker">Protecting assets, managing risk, enabling growth</div>
-        <h1>Strategic risk and protective services for sites that cannot afford failure.</h1>
+        <div class="hero-kicker">KUIPFI Strategic Risk Consultants</div>
+        <h1>Your Trust, Our Protection.</h1>
         <p class="hero-lede">
-          KUIPFI operates as a registered security subcontractor and direct risk partner for commercial, industrial and national infrastructure sites across South Africa, with a guarding and response framework built for disciplined, audit-ready deployment.
+          Protecting assets. Managing risk. Enabling growth.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn-hero">Request a capability briefing</a>
