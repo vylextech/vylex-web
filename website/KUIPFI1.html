@@ -159,7 +159,7 @@
       min-height: calc(100vh - 98px);
       display: flex; align-items: center;
       background-color: var(--forest);
-      background-image: url('images/Security_officer.jpeg');
+      background-image: url('images/officer.jpeg');
       background-position: center; background-size: cover;
       color: #fff; padding: 70px 0;
     }
@@ -167,7 +167,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(7, 20, 36, 0.82) 0%, rgba(7, 20, 36, 0.62) 48%, rgba(7, 20, 36, 0.34) 100%);
+      background: rgba(7, 20, 36, 0.72);
       pointer-events: none;
     }
 
@@ -194,14 +194,22 @@
       text-transform: uppercase; font-family: var(--font-heading);
     }
     .hero h1 {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       color: #fff; font-size: 42px; font-weight: 600;
-      line-height: 1.2;
+      line-height: 1.15; letter-spacing: 0;
     }
     .hero-lede {
       color: #DCE6E0; font-size: 16px; margin-top: 18px;
       line-height: 1.7; max-width: 60ch;
     }
+    .hero-proof {
+      display: flex; flex-wrap: wrap; gap: 10px 24px;
+      margin-top: 24px; padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      color: #fff; font-size: 12px; font-weight: 600;
+    }
+    .hero-proof span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-proof i { color: var(--brass-light); font-size: 13px; }
     .hero-actions { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
     .btn-hero, .btn-hero-outline {
       display: inline-flex; align-items: center; justify-content: center;
@@ -623,13 +631,18 @@
     <div class="wrap">
       <div class="hero-content">
         <div class="hero-kicker">KUIPFI Strategic Risk Consultants</div>
-        <h1>Your Trust, Our Protection.</h1>
+        <h1>Accountable protection for high-risk environments.</h1>
         <p class="hero-lede">
-          Protecting assets. Managing risk. Enabling growth.
+          Registered security subcontractor and direct risk partner for commercial, industrial, and national infrastructure sites across South Africa.
         </p>
+        <div class="hero-proof" aria-label="KUIPFI capability highlights">
+          <span><i class="fa-solid fa-shield-halved"></i>PSIRA-aligned operations</span>
+          <span><i class="fa-solid fa-map-location-dot"></i>All 9 provinces</span>
+          <span><i class="fa-solid fa-clock"></i>24/7 control room monitoring</span>
+        </div>
         <div class="hero-actions">
-          <a href="#contact" class="btn-hero">Request a capability briefing</a>
-          <a href="#capabilities" class="btn-hero-outline">View capability register</a>
+          <a href="#contact" class="btn-hero">Discuss your security requirements</a>
+          <a href="#capabilities" class="btn-hero-outline">Explore our services</a>
         </div>
       </div>
     </div>
