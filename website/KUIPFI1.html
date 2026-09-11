@@ -508,6 +508,11 @@
       font-size: 13.5px; font-weight: 700; margin-bottom: 16px;
       text-transform: uppercase; letter-spacing: 0.5px;
     }
+    .footer-kuipfi-logo {
+      display: block; width: min(100%, 210px); height: auto;
+      padding: 10px 12px; margin-bottom: 24px;
+      background: #fff; border-radius: 6px;
+    }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
     .footer-col ul a { font-size: 12px; color: #B9C4BC; }
     .footer-col ul a:hover { color: #fff; }
@@ -544,6 +549,8 @@
       max-width: 1200px; margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
     }
+    .footer-credit { color: #fff; font-weight: 600; }
+    .footer-credit:hover { color: var(--forest-deep); }
     .footer-social-icons { display: flex; gap: 14px; }
 
     /* ==========================================================================
@@ -1046,6 +1053,9 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-col">
+        <a href="#home" aria-label="KUIPFI home">
+          <img class="footer-kuipfi-logo" src="images/KUPFI_horizontal_corporate_logo.png" alt="KUIPFI Strategic Risk Consultants">
+        </a>
         <h4>About us</h4>
         <ul>
           <li><a href="#about">About KUIPFI</a></li>
@@ -1110,6 +1120,7 @@
     <div class="footer-bottom-bar">
       <div class="footer-bottom-inner">
         <span>Copyright &copy; 2026 KUIPFI Strategic Risk Consultants. All rights reserved.</span>
+        <a class="footer-credit" href="https://vylex.co.za" target="_blank" rel="noopener noreferrer">Developed by Vylex</a>
         <div class="footer-social-icons">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
