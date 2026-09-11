@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUIPFI Strategic Risk Consultants - Security &amp; Risk Management</title>
+  
+  <!-- Typography & Icons from both designs -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       Harmonized Color System & Resets
+       ========================================================================== */
+    :root {
+      --ink: #0b1f38;
+      --forest: #142e52;
+      --forest-deep: #071424;
+      --brass: #ba915d;
+      --brass-light: #c59863;
+      --paper: #f5f7fa;
+      --paper-raised: #ffffff;
+      --text: #242e39;
+      --text-muted: #8395a7;
+      --hairline: #dce3eb;
+      --hairline-dark: rgba(255, 255, 255, 0.16);
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible,
+    select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--brass);
+      outline-offset: 3px;
+    }
+
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+
+    /* ==========================================================================
+       Utility Top Bar (Blended)
+       ========================================================================== */
+    .top-bar {
+      background: var(--forest-deep);
+      color: #cbd5e1;
+      font-size: 11.5px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-bar-inner {
+      max-width: 1240px; margin: 0 auto;
+      height: 40px; display: flex;
+      align-items: center; justify-content: space-between;
+      padding: 0 24px;
+    }
+    .top-bar-links { display: flex; align-items: center; gap: 20px; }
+    .top-bar-links a { display: inline-flex; align-items: center; gap: 7px; }
+    .top-bar-links a:hover { color: #fff; }
+    .top-bar-actions { display: flex; align-items: center; height: 100%; gap: 18px; }
+    .top-bar-socials { display: flex; gap: 12px; font-size: 12px; }
+    .top-bar-socials a { opacity: 0.8; }
+    .top-bar-socials a:hover { opacity: 1; }
+    .top-btn-group { display: flex; height: 100%; margin-left: 10px; }
+    .btn-top {
+      display: inline-flex; align-items: center;
+      padding: 0 16px; font-size: 11px; font-weight: 600;
+      font-family: var(--font-heading); text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .btn-top-profile { background: var(--brass-light); color: #fff; }
+    .btn-top-profile:hover { background: #b88b56; }
+    .btn-top-enquiry { background: var(--brass); color: #fff; }
+    .btn-top-enquiry:hover { background: #ab7f4c; }
+
+    /* ==========================================================================
+       Header & Navigation
+       ========================================================================== */
+    header.site-header {
+      background: var(--paper-raised);
+      border-bottom: 1px solid var(--hairline);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1240px; margin: 0 auto; padding: 10px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-wrap { display: flex; align-items: center; gap: 12px; }
+    .brand-logo-img { width: 44px; height: 44px; object-fit: contain; }
+    .brand-text-wrap { display: flex; flex-direction: column; }
+    .brand-title {
+      font-family: var(--font-heading);
+      font-weight: 800; font-size: 20px;
+      letter-spacing: 2px; color: var(--forest);
+      line-height: 1;
+    }
+    .brand-sub {
+      font-family: var(--font-heading);
+      font-size: 8.5px; letter-spacing: 1.5px;
+      color: var(--text-muted); font-weight: 600;
+      margin-top: 4px; text-transform: uppercase;
+    }
+    .primary-nav { display: flex; align-items: center; gap: 24px; }
+    .primary-nav a {
+      font-family: var(--font-heading);
+      font-size: 12px; font-weight: 600;
+      color: var(--ink); text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .primary-nav a:hover, .primary-nav a.active { color: var(--brass); }
+    .btn-briefing {
+      border: 1.5px solid var(--brass);
+      color: var(--brass) !important;
+      padding: 7px 16px; border-radius: 3px;
+      font-size: 11.5px; font-weight: 700;
+      transition: all 0.2s;
+    }
+    .btn-briefing:hover { background: var(--brass); color: #fff !important; }
+    .nav-toggle {
+      display: none; background: none; border: none;
+      font-size: 20px; color: var(--ink); cursor: pointer;
+      width: 42px; height: 42px; border-radius: 3px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .nav-toggle:hover, .nav-toggle[aria-expanded="true"] {
+      background: var(--forest);
+      color: #fff;
+    }
+
+    /* ==========================================================================
+       Hero (Blends Background Officer photo & Unsplash fallback layer)
+       ========================================================================== */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 98px);
+      display: flex; align-items: center;
+      background-color: var(--forest);
+      background-image: linear-gradient(90deg, rgba(21, 47, 38, 0.94) 0%, rgba(21, 47, 38, 0.72) 48%, rgba(21, 47, 38, 0.45) 100%), url('images/Security_officer.jpeg');
+      background-position: center; background-size: cover;
+      color: #fff; padding: 70px 0;
+    }
+
+    @media (min-width: 1081px) {
+      .hero {
+        min-height: calc(100svh - 108px);
+        padding: 42px 0 48px;
+        background-position: center 18%;
+      }
+    }
+    .hero .wrap {
+      max-width: none;
+      width: 100%;
+      margin: 0;
+      padding-left: 7vw;
+      padding-right: 7vw;
+    }
+    .hero-content { width: 100%; max-width: 780px; text-align: left; }
+    .hero-kicker {
+      color: #F0DFC8; font-size: 11px;
+      font-weight: 700; letter-spacing: 2px; margin-bottom: 22px;
+      text-transform: uppercase; font-family: var(--font-heading);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      color: #fff; font-size: 42px; font-weight: 600;
+      line-height: 1.2;
+    }
+    .hero-lede {
+      color: #DCE6E0; font-size: 16px; margin-top: 18px;
+      line-height: 1.7; max-width: 60ch;
+    }
+    .hero-actions { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+    .btn-hero, .btn-hero-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 44px; padding: 10px 24px; border-radius: 3px;
+      font-size: 12.5px; font-weight: 700;
+      font-family: var(--font-heading); letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .btn-hero { background: var(--brass); color: #fff; }
+    .btn-hero:hover { background: var(--brass-light); }
+    .btn-hero-outline {
+      background: transparent; color: #fff;
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+    .btn-hero-outline:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+
+    /* ==========================================================================
+       Stats Strip
+       ========================================================================== */
+    .stats-strip {
+      background: var(--paper-raised);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .stats-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 28px;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 24px 20px; text-align: center;
+      border-left: 1px solid var(--hairline);
+    }
+    .stat-item:first-child { border-left: none; }
+    .stat-number {
+      font-family: var(--font-display); font-size: 30px;
+      font-weight: 700; color: var(--forest);
+    }
+    .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
+
+    /* ==========================================================================
+       Main Mixed Section: Framework & Sidebar Card Form
+       ========================================================================== */
+    .operational-layout { padding: 65px 0 75px; }
+    .operational-grid {
+      display: grid; grid-template-columns: 1fr 430px; gap: 50px;
+    }
+    .op-article h2 {
+      font-family: var(--font-display); font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .op-article p { font-size: 14.5px; color: var(--text); margin-bottom: 18px; line-height: 1.7; }
+    .industry-list-intro {
+      font-family: var(--font-heading); font-size: 13px;
+      font-weight: 700; color: var(--ink); margin: 30px 0 16px;
+      text-transform: uppercase; letter-spacing: 0.8px;
+    }
+    .industry-list {
+      list-style: none; display: grid;
+      grid-template-columns: repeat(2, 1fr); gap: 14px 20px;
+    }
+    .industry-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 13px; color: var(--ink); font-weight: 500;
+    }
+    .industry-icon {
+      width: 32px; height: 32px; border-radius: 4px;
+      background: rgba(186, 145, 93, 0.12);
+      color: var(--brass); display: flex; align-items: center;
+      justify-content: center; font-size: 14px; flex-shrink: 0;
+    }
+
+    /* Form Box Styled with Elevation */
+    .contact-card-box {
+      background: #fff; border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--hairline);
+      overflow: hidden; align-self: start;
+    }
+    .contact-card-header {
+      background: var(--forest-deep); color: #fff;
+      padding: 24px 24px 20px; text-align: center;
+      border-bottom: 3px solid var(--brass);
+    }
+    .contact-card-header h3 {
+      color: #fff; font-family: var(--font-heading);
+      font-size: 18px; font-weight: 700; margin-bottom: 6px;
+    }
+    .contact-card-header p { font-size: 12px; color: #DCE6E0; }
+    .contact-form-inner { padding: 22px 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .form-group { margin-bottom: 12px; }
+    .form-control {
+      width: 100%; height: 38px;
+      border: 1px solid #DFE3E1; border-radius: 3px;
+      padding: 0 12px; font-size: 12px; font-family: inherit;
+      background: #FAFBFB; color: var(--ink);
+    }
+    .form-control:focus {
+      border-color: var(--forest); background: #fff; outline: none;
+    }
+    textarea.form-control { height: 72px; padding-top: 8px; resize: vertical; }
+    select.form-control {
+      appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23ba915d" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat; background-position: right 10px center;
+    }
+    .recaptcha-widget {
+      width: 100%; height: 58px; background: #F9F9F9;
+      border: 1px solid #dcdcdc; border-radius: 3px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 12px; margin: 14px 0;
+    }
+    .recaptcha-left { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+    .recaptcha-checkbox { width: 20px; height: 20px; cursor: pointer; }
+    .recaptcha-brand { font-size: 8px; text-align: center; color: #666; }
+    .recaptcha-brand img { width: 22px; height: 22px; display: block; margin: 0 auto; }
+    .btn-form-submit {
+      width: 100%; background: var(--forest);
+      color: #fff; border: none; padding: 11px;
+      border-radius: 3px; font-size: 13px; font-weight: 700;
+      font-family: var(--font-heading); text-transform: uppercase;
+      letter-spacing: 0.5px; cursor: pointer; transition: background 0.2s;
+    }
+    .btn-form-submit:hover { background: var(--forest-deep); }
+
+    /* ==========================================================================
+       Service Highlights Cards (Watermark style)
+       ========================================================================== */
+    .services-overview-section {
+      background: var(--paper-raised);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      padding: 60px 0;
+    }
+    .section-head-center { text-align: center; max-width: 600px; margin: 0 auto 40px; }
+    .section-head-center h2 { font-family: var(--font-display); font-size: 28px; }
+    .services-cards-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .service-card {
+      background: var(--paper); border-radius: 4px;
+      position: relative; overflow: hidden;
+      padding: 26px 24px; display: flex; flex-direction: column;
+      justify-content: space-between; min-height: 180px;
+      border-top: 4px solid var(--brass);
+      border-left: 1px solid var(--hairline);
+      border-right: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .service-card-title {
+      font-family: var(--font-heading);
+      font-size: 16px; font-weight: 700; color: var(--forest);
+      margin-bottom: 6px;
+    }
+    .service-card-desc { font-size: 12px; color: var(--text-muted); max-width: 220px; line-height: 1.5; }
+    .service-card-link { font-size: 12px; color: var(--brass); font-weight: 600; margin-top: 16px; display: inline-block; }
+    .service-card-watermark {
+      position: absolute; right: 14px; bottom: 10px;
+      font-size: 60px; color: var(--brass); opacity: 0.15; pointer-events: none;
+    }
+
+    /* ==========================================================================
+       Pillars & Register Section
+       ========================================================================== */
+    .register-section { padding: 65px 0; }
+    .register-head { max-width: 700px; margin-bottom: 36px; }
+    .register-head h2 { font-family: var(--font-display); font-size: 28px; margin-bottom: 8px; }
+    .register-head p { font-size: 14px; color: var(--text-muted); }
+    .register-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      column-gap: 48px; row-gap: 16px; counter-reset: register;
+    }
+    .register-card {
+      position: relative; padding: 22px 0 24px 48px;
+      border-top: 1px solid var(--hairline);
+    }
+    .register-card::before {
+      content: counter(register); counter-increment: register;
+      position: absolute; top: 22px; left: 0; color: var(--brass);
+      font-family: var(--font-display); font-size: 14px; font-weight: 700;
+    }
+    .register-icon { color: var(--forest); font-size: 18px; margin-bottom: 10px; }
+    .register-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .register-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+    .register-list { list-style: none; font-size: 12.5px; line-height: 1.6; }
+    .register-list li::before { content: '+'; color: var(--brass); font-weight: 700; margin-right: 8px; }
+
+    /* ==========================================================================
+       Principles Section
+       ========================================================================== */
+    .principles-section {
+      background: var(--paper-raised);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      padding: 50px 0;
+    }
+    .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+    .principle { border-top: 2px solid var(--brass); padding-top: 16px; }
+    .principle h3 { font-family: var(--font-heading); font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .principle p { font-size: 13px; color: var(--text-muted); }
+
+    /* ==========================================================================
+       Fidelity Subcontractor Compliance Register (Accordion)
+       ========================================================================== */
+    .compliance-section {
+      background: var(--forest-deep); color: #DCE6E0; padding: 70px 0;
+    }
+    .compliance-head { max-width: 700px; margin-bottom: 34px; }
+    .compliance-head h2 { font-family: var(--font-display); color: #fff; font-size: 28px; margin-bottom: 10px; }
+    .compliance-head p { font-size: 14px; color: #B9C4BC; }
+    .compliance-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .compliance-group {
+      border: 1px solid var(--hairline-dark);
+      background: rgba(255,255,255,0.03); border-radius: 2px;
+    }
+    .compliance-group:last-child {
+      grid-column: 1 / -1;
+      width: calc((100% - 12px) / 2);
+      justify-self: center;
+    }
+    .compliance-group summary {
+      cursor: pointer; list-style: none; padding: 16px 20px;
+      color: #fff; font-size: 13.5px; font-weight: 600;
+      font-family: var(--font-heading);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .compliance-group summary::-webkit-details-marker { display: none; }
+    .compliance-group summary::after {
+      content: '+'; color: var(--brass-light); font-size: 18px; font-weight: 400;
+    }
+    .compliance-group[open] summary {
+      border-bottom: 1px solid var(--hairline-dark);
+    }
+    .compliance-group[open] summary::after { content: '−'; }
+    .compliance-group ol { padding: 14px 20px 16px 36px; font-size: 12.5px; line-height: 1.6; }
+    .compliance-group li { padding-left: 4px; margin-bottom: 4px; }
+    .compliance-note {
+      border-left: 2px solid var(--brass);
+      padding: 12px 16px; margin-top: 24px;
+      font-size: 12px; color: #B9C4BC;
+    }
+
+    /* ==========================================================================
+       CTA Band
+       ========================================================================== */
+    .cta-band {
+      background: var(--ink); color: #fff; padding: 48px 0; text-align: center;
+    }
+    .cta-band h2 {
+      font-family: var(--font-display); color: #fff; font-size: 24px;
+      margin-bottom: 18px; max-width: 32ch; margin-left: auto; margin-right: auto;
+    }
+
+    /* ==========================================================================
+       Combined Footer
+       ========================================================================== */
+    footer.site-footer {
+      background: #071424; color: #cbd5e1; padding: 55px 0 0;
+    }
+    .footer-grid {
+      max-width: 1200px; margin: 0 auto; padding: 0 28px 40px;
+      display: grid; grid-template-columns: 1.1fr 1.1fr 0.9fr 1fr; gap: 36px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-heading); color: #fff;
+      font-size: 13.5px; font-weight: 700; margin-bottom: 16px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 12px; color: #B9C4BC; }
+    .footer-col ul a:hover { color: #fff; }
+    .accreditation-badges { display: flex; align-items: center; gap: 8px; margin-top: 14px; }
+    .badge-item-psira {
+      background: #fff; border-radius: 3px; font-weight: 800;
+      color: var(--forest); font-size: 10px; height: 28px;
+      display: flex; align-items: center; padding: 0 8px;
+    }
+    .badge-red {
+      background-color: #8c1e28; color: #ffffff;
+      font-size: 7px; text-align: center; line-height: 1.1;
+      font-weight: 700; border-radius: 2px; width: 44px; height: 28px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .badge-round {
+      border: 1.5px solid var(--brass); border-radius: 50%;
+      width: 28px; height: 28px; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 10px; background: #fff; color: var(--forest);
+    }
+    .footer-secondary-links {
+      border-top: 1px solid var(--hairline-dark);
+      padding: 16px 28px; display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 22px; font-size: 11px;
+    }
+    .footer-secondary-links a { color: #DCE6E0; display: inline-flex; align-items: center; gap: 6px; }
+    .footer-secondary-links a:hover { color: #fff; }
+    .footer-bottom-bar {
+      background: var(--brass); color: #fff;
+      padding: 12px 28px; font-size: 11px;
+    }
+    .footer-bottom-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+    }
+    .footer-social-icons { display: flex; gap: 14px; }
+
+    /* ==========================================================================
+       Responsive Rules
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .primary-nav { display: none; }
+      .nav-toggle { display: block; }
+      .primary-nav.is-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--paper-raised);
+        padding: 8px 24px 18px;
+        border-bottom: 1px solid var(--hairline);
+        box-shadow: 0 12px 24px rgba(7, 20, 36, 0.14);
+        gap: 0;
+      }
+      .primary-nav.is-open a {
+        width: 100%;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--hairline);
+      }
+      .primary-nav.is-open .btn-briefing {
+        margin-top: 12px;
+        text-align: center;
+      }
+      .hero-content { text-align: left; }
+      .operational-grid { grid-template-columns: 1fr; }
+      .services-cards-grid { grid-template-columns: 1fr; }
+      .principles-grid { grid-template-columns: 1fr; gap: 20px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(3) { border-left: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .top-bar-links span, .btn-top { display: none; }
+      .industry-list { grid-template-columns: 1fr; }
+      .register-grid, .compliance-grid { grid-template-columns: 1fr; }
+      .compliance-group:last-child {
+        grid-column: auto;
+        width: min(100%, 520px);
+        justify-self: center;
+      }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom-inner { flex-direction: column; text-align: center; }
+      .hero h1 { font-size: 32px; }
+      .hero .wrap { padding-left: 20px; padding-right: 20px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .btn-hero, .btn-hero-outline { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-links">
+        <a href="mailto:operations@kuipfi.com">
+          <i class="fa-regular fa-envelope"></i>
+          <span>operations@kuipfi.com</span>
+        </a>
+        <a href="mailto:tenders@kuipfi.com">
+          <i class="fa-regular fa-envelope"></i>
+          <span>tenders@kuipfi.com</span>
+        </a>
+        <a href="tel:+27112348900">
+          <i class="fa-solid fa-phone"></i>
+          <span>+27 (0) 11 234 8900</span>
+        </a>
+      </div>
+      <div class="top-bar-actions">
+        <div class="top-bar-socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="top-btn-group">
+          <a href="#compliance" class="btn-top btn-top-profile">Company Profile</a>
+          <a href="#contact" class="btn-top btn-top-enquiry">Request Enquiry</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header with Brand Emblem & Logo -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#home" class="brand-wrap">
+        <img class="brand-logo-img" src="images/emblem.png" alt="KUIPFI Emblem">
+        <div class="brand-text-wrap">
+          <span class="brand-title">KUIPFI</span>
+          <span class="brand-sub">Strategic Risk Consultants</span>
+        </div>
+      </a>
+      <nav class="primary-nav" id="primaryNav">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#services-overview">Service Areas</a>
+        <a href="#governance">Governance</a>
+        <a href="#compliance">Compliance</a>
+        <a href="#contact" class="btn-briefing">Request a briefing</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="hero-kicker">Protecting assets, managing risk, enabling growth</div>
+        <h1>Strategic risk and protective services for sites that cannot afford failure.</h1>
+        <p class="hero-lede">
+          KUIPFI operates as a registered security subcontractor and direct risk partner for commercial, industrial and national infrastructure sites across South Africa, with a guarding and response framework built for disciplined, audit-ready deployment.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-hero">Request a capability briefing</a>
+          <a href="#capabilities" class="btn-hero-outline">View capability register</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-number">10</div><div class="stat-label">Capability areas</div></div>
+      <div class="stat-item"><div class="stat-number">9</div><div class="stat-label">Provinces served</div></div>
+      <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Control room monitoring</div></div>
+      <div class="stat-item"><div class="stat-number">PSIRA</div><div class="stat-label">Compliance framework alignment</div></div>
+    </div>
+  </div>
+
+  <!-- Operational Framework & Sidebar Card Form -->
+  <main class="operational-layout" id="about">
+    <div class="wrap operational-grid">
+      <!-- Left Article -->
+      <article class="op-article">
+        <h2>Operational Framework &amp; Capabilities</h2>
+        <p>
+          KUIPFI Strategic Risk Consultants operates as a registered security subcontractor and direct risk partner for commercial, industrial, and national infrastructure installations across South Africa.
+        </p>
+        <p>
+          Our operational framework is aligned with the compliance demands of corporate partners, municipal departments, and commercial enterprises requiring disciplined guarding forces and uncompromised statutory integrity, from single-site contracts to multi-province deployments.
+        </p>
+
+        <div class="industry-list-intro">Core Capabilities Include:</div>
+
+        <ul class="industry-list">
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-house-chimney"></i></span>
+            <span>Static &amp; Industrial Guarding</span>
+          </li>
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-shield-halved"></i></span>
+            <span>Tactical &amp; Armed Response</span>
+          </li>
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-building-columns"></i></span>
+            <span>National Key Point Protection</span>
+          </li>
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-dog"></i></span>
+            <span>Canine (K9) Patrol &amp; Detection</span>
+          </li>
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-truck-fast"></i></span>
+            <span>Fleet &amp; Asset Tracking Mobility</span>
+          </li>
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+            <span>Strategic Risk Audits &amp; Assessment</span>
+          </li>
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-video"></i></span>
+            <span>Offsite CCTV &amp; Control Room</span>
+          </li>
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-bolt"></i></span>
+            <span>Strike Containment &amp; Unrest Control</span>
+          </li>
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+            <span>Forensic Inquiries &amp; Asset Recovery</span>
+          </li>
+          <li class="industry-item">
+            <span class="industry-icon"><i class="fa-solid fa-city"></i></span>
+            <span>Commercial &amp; National Infrastructure</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Right Contact Box -->
+      <aside class="contact-card-box" id="contact">
+        <div class="contact-card-header">
+          <h3>Procurement Enquiries</h3>
+          <p>Contact KUIPFI regarding guarding tenders, partnerships, or site risk assessments.</p>
+        </div>
+
+        <form class="contact-form-inner" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="First name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Last name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Company / organisation">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email address" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" placeholder="Contact number" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <select class="form-control">
+              <option value="" disabled selected>Select province</option>
+              <option>Gauteng</option><option>KwaZulu-Natal</option><option>Western Cape</option>
+              <option>Eastern Cape</option><option>North West</option><option>Northern Cape</option>
+              <option>Free State</option><option>Limpopo</option><option>Mpumalanga</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-control">
+              <option value="" disabled selected>Scope of engagement</option>
+              <option>Subcontractor / Joint Venture Deployment</option>
+              <option>Commercial Guarding &amp; Access Control</option>
+              <option>Armed Response &amp; Tactical Fleet Services</option>
+              <option>Statutory Compliance &amp; Vendor Pack Request</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Site location, required guard grades, and operational timelines..."></textarea>
+          </div>
+
+          <!-- Simulated reCAPTCHA -->
+          <div class="recaptcha-widget">
+            <label class="recaptcha-left">
+              <input type="checkbox" class="recaptcha-checkbox" required>
+              <span>I'm not a robot</span>
+            </label>
+            <div class="recaptcha-brand">
+              <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
+              <span>reCAPTCHA</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-form-submit">Submit Enquiry</button>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Service Areas (Watermark Cards) -->
+  <section class="services-overview-section" id="services-overview">
+    <div class="wrap">
+      <div class="section-head-center">
+        <h2>KUIPFI Service Areas</h2>
+      </div>
+      <div class="services-cards-grid">
+        <div class="service-card">
+          <div>
+            <h3 class="service-card-title">Protective Services</h3>
+            <p class="service-card-desc">Static guarding, tactical response, K9 patrol, and critical-site protection.</p>
+          </div>
+          <a href="#contact" class="service-card-link">Learn more &rarr;</a>
+          <i class="fa-solid fa-shield-halved service-card-watermark"></i>
+        </div>
+        <div class="service-card">
+          <div>
+            <h3 class="service-card-title">Risk &amp; Compliance</h3>
+            <p class="service-card-desc">Strategic risk audits, statutory governance, and vendor verification.</p>
+          </div>
+          <a href="#compliance" class="service-card-link">Learn more &rarr;</a>
+          <i class="fa-solid fa-magnifying-glass-chart service-card-watermark"></i>
+        </div>
+        <div class="service-card">
+          <div>
+            <h3 class="service-card-title">Operational Mobility</h3>
+            <p class="service-card-desc">Fleet tracking, control-room integration, and asset corridor support.</p>
+          </div>
+          <a href="#contact" class="service-card-link">Learn more &rarr;</a>
+          <i class="fa-solid fa-truck-fast service-card-watermark"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capability Register -->
+  <section class="register-section" id="capabilities">
+    <div class="wrap">
+      <div class="register-head">
+        <h2>Capability Register</h2>
+        <p>Six service pillars covering the protective, investigative and operational needs of commercial and critical sites.</p>
+      </div>
+      <div class="register-grid">
+        <article class="register-card">
+          <i class="fa-solid fa-shield-halved register-icon"></i>
+          <h3 class="register-title">Protective security</h3>
+          <p class="register-desc">Disciplined site protection for commercial, industrial and critical infrastructure environments.</p>
+          <ul class="register-list">
+            <li>Static and industrial guarding</li>
+            <li>National key-point protection</li>
+          </ul>
+        </article>
+        <article class="register-card">
+          <i class="fa-solid fa-bolt register-icon"></i>
+          <h3 class="register-title">Tactical response</h3>
+          <p class="register-desc">Coordinated response capacity for escalated incidents and disrupted operating environments.</p>
+          <ul class="register-list">
+            <li>Armed response</li>
+            <li>Strike and unrest containment</li>
+          </ul>
+        </article>
+        <article class="register-card">
+          <i class="fa-solid fa-video register-icon"></i>
+          <h3 class="register-title">Technology and monitoring</h3>
+          <p class="register-desc">Visibility and control-room support that extends protection beyond the physical site.</p>
+          <ul class="register-list">
+            <li>Offsite CCTV monitoring</li>
+            <li>Fleet and asset tracking</li>
+          </ul>
+        </article>
+        <article class="register-card">
+          <i class="fa-solid fa-magnifying-glass-chart register-icon"></i>
+          <h3 class="register-title">Risk and compliance</h3>
+          <p class="register-desc">Evidence-led risk programmes for organizations that require audit-ready decisions.</p>
+          <ul class="register-list">
+            <li>Strategic risk assessments</li>
+            <li>Forensic inquiries and asset recovery</li>
+          </ul>
+        </article>
+        <article class="register-card">
+          <i class="fa-solid fa-dog register-icon"></i>
+          <h3 class="register-title">Specialist services</h3>
+          <p class="register-desc">Specialist capabilities that strengthen routine guarding and incident response programmes.</p>
+          <ul class="register-list">
+            <li>Canine patrol and detection</li>
+            <li>Specialist site support</li>
+          </ul>
+        </article>
+        <article class="register-card">
+          <i class="fa-solid fa-city register-icon"></i>
+          <h3 class="register-title">Infrastructure support</h3>
+          <p class="register-desc">Combined programmes for multi-site operators and organizations with complex operational footprints.</p>
+          <ul class="register-list">
+            <li>Commercial infrastructure</li>
+            <li>National infrastructure programmes</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles Section -->
+  <section class="principles-section" id="governance">
+    <div class="wrap">
+      <div class="principles-grid">
+        <div class="principle">
+          <h3>Discipline</h3>
+          <p>Guarding forces trained and supervised to a consistent operational standard, regardless of site size.</p>
+        </div>
+        <div class="principle">
+          <h3>Compliance</h3>
+          <p>Operations structured to meet the statutory and procurement requirements of institutional clients.</p>
+        </div>
+        <div class="principle">
+          <h3>Coverage</h3>
+          <p>Deployment capacity across all nine provinces, coordinated through a central control room.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fidelity Subcontractor Compliance Register -->
+  <section class="compliance-section" id="compliance">
+    <div class="wrap">
+      <div class="compliance-head">
+        <h2>Fidelity Subcontractor Readiness</h2>
+        <p>A practical document register for a South African security subcontractor onboarding pack to prepare, check, and submit a complete vendor file.</p>
+      </div>
+      <div class="compliance-grid">
+        <details class="compliance-group" open>
+          <summary>Company &amp; Tax Records</summary>
+          <ol>
+            <li>Completed credit check application form</li>
+            <li>CSD registration report</li>
+            <li>B-BBEE EME affidavit or QSE certificate</li>
+            <li>Current CIPC disclosure with directors</li>
+            <li>Latest original SARS tax PIN letter</li>
+            <li>VAT 103 registration document</li>
+            <li>Current COID and UIF records, including recent EMP201 proof</li>
+            <li>Insurance schedule and certificates</li>
+            <li>Banking details verification letter</li>
+          </ol>
+        </details>
+        <details class="compliance-group">
+          <summary>Security-Sector Compliance</summary>
+          <ol>
+            <li>Valid PSIRA certificate</li>
+            <li>PSIRA letter of good standing with current directors</li>
+            <li>National Bargaining Council registration and good-standing letter</li>
+            <li>Affinity Health letter of good standing</li>
+            <li>SANSEA registration proof</li>
+            <li>Private Security Provident Fund monthly compliance letter</li>
+            <li>ICASA proof where applicable</li>
+            <li>Valid SAIDSA certificate</li>
+            <li>Management team IDs and valid management PSIRA records</li>
+          </ol>
+        </details>
+        <details class="compliance-group">
+          <summary>Directors &amp; Company Profile</summary>
+          <ol>
+            <li>Directors' SAPS 365 clearance certificates, not older than three months</li>
+            <li>Company profile and physical branch addresses</li>
+            <li>Municipal accounts for offices in the company name</li>
+            <li>Office lease agreements and six months' proof of payment</li>
+            <li>Share certificate, shareholding information and organogram</li>
+            <li>Three years of annual financial statements and asset summary</li>
+            <li>References not older than 12 months</li>
+            <li>CVs of owners and directors</li>
+          </ol>
+        </details>
+        <details class="compliance-group">
+          <summary>Firearms, Vehicles &amp; Specialist Services</summary>
+          <ol>
+            <li>Company SAPS firearm accreditation</li>
+            <li>Valid firearm licences and SAPS firearm list</li>
+            <li>National Key Point registration proof, if applicable</li>
+            <li>Proof of vehicles registered in the company name</li>
+            <li>RC1 vehicle registration papers and vehicle list</li>
+            <li>PAPA licence for dogs, if canine services are supplied</li>
+          </ol>
+        </details>
+        <details class="compliance-group">
+          <summary>Operational Employment Records</summary>
+          <ol>
+            <li>Latest guard payslips for Grades A, B and C</li>
+            <li>Area 1 and Area 3 payslip samples, where required</li>
+            <li>Current UIF evidence and employment compliance records</li>
+            <li>Current provident-fund compliance evidence</li>
+          </ol>
+        </details>
+      </div>
+      <p class="compliance-note">This is a preparation register, not a certification. Confirm each requirement, issuing authority, expiry date and Fidelity submission format before presenting the pack. Several documents refer to 2025 and must be refreshed for the current submission.</p>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <div class="cta-band">
+    <div class="wrap">
+      <h2>Ready to have your site's risk profile assessed?</h2>
+      <a href="#contact" class="btn-hero">Start an Enquiry</a>
+    </div>
+  </div>
+
+  <!-- Blended Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About us</h4>
+        <ul>
+          <li><a href="#about">About KUIPFI</a></li>
+          <li><a href="#about">Company Profile</a></li>
+          <li><a href="#governance">Compliance &amp; Certificates</a></li>
+          <li><a href="#compliance">Vendor Onboarding Pack</a></li>
+          <li><a href="#compliance">B-BBEE Verification</a></li>
+          <li><a href="#compliance">COID Certification</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <ul>
+          <li><a href="#capabilities">Static &amp; Industrial Guarding</a></li>
+          <li><a href="#capabilities">Tactical &amp; Armed Response</a></li>
+          <li><a href="#capabilities">National Key Point Protection</a></li>
+          <li><a href="#capabilities">Canine Patrol &amp; Detection</a></li>
+          <li><a href="#capabilities">Strategic Risk Assessment</a></li>
+          <li><a href="#capabilities">Offsite CCTV &amp; Control Room</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Governance</h4>
+        <ul>
+          <li><a href="#governance">PSIRA Registration</a></li>
+          <li><a href="#governance">NBCPSS Adherence</a></li>
+          <li><a href="#governance">SAPS Firearm Accreditation</a></li>
+          <li><a href="#governance">ICASA Communications</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact us</h4>
+        <ul>
+          <li><a href="mailto:operations@kuipfi.com">operations@kuipfi.com</a></li>
+          <li><a href="mailto:tenders@kuipfi.com">tenders@kuipfi.com</a></li>
+          <li><a href="tel:+27112348900">+27 (0) 11 234 8900</a></li>
+          <li><a href="#">South Africa Footprint</a></li>
+        </ul>
+        <div class="accreditation-badges">
+          <div class="badge-item-psira">PSIRA</div>
+          <div class="badge-red">
+            <span>B-BBEE</span>
+            <span>VERIFIED</span>
+          </div>
+          <div class="badge-round">
+            <i class="fa-solid fa-shield"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Download & Legal Quicklinks -->
+    <div class="footer-secondary-links">
+      <a href="#"><i class="fa-solid fa-download"></i> Company Profile</a>
+      <a href="#contact"><i class="fa-solid fa-download"></i> KUIPFI Contact Details</a>
+      <a href="#">Terms of Legal Use</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#compliance"><i class="fa-solid fa-download"></i> Vendor Compliance Pack</a>
+    </div>
+
+    <!-- Bottom Copyright Strip -->
+    <div class="footer-bottom-bar">
+      <div class="footer-bottom-inner">
+        <span>Copyright &copy; 2026 KUIPFI Strategic Risk Consultants. All rights reserved.</span>
+        <div class="footer-social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Combined Interactive Script -->
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      alert('Thank you! Your inquiry has been submitted successfully.');
+      event.target.reset();
+    }
+
+    // Responsive Mobile Nav Toggle
+    const navToggle = document.getElementById('navToggle');
+    const primaryNav = document.getElementById('primaryNav');
+
+    navToggle.addEventListener('click', function() {
+      const isOpen = primaryNav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  </script>
+
+</body>
+</html>
