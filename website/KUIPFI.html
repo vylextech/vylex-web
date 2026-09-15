@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KUIPFI Strategic Risk Consultants | Security, Risk &amp; Operational Resilience</title>
-  <meta name="description" content="KUIPFI Strategic Risk Consultants provides accredited physical security, guarding, tactical response, offsite CCTV monitoring, and compliance risk management across South Africa.">
+  <meta name="description"
+    content="KUIPFI Strategic Risk Consultants provides accredited physical security, guarding, tactical response, offsite CCTV monitoring, and compliance risk management across South Africa.">
 
   <!-- Google Fonts: Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <!-- Font Awesome 6.5.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -92,7 +95,10 @@
       opacity: 0.9;
     }
 
-    button, input, select, textarea {
+    button,
+    input,
+    select,
+    textarea {
       font-family: inherit;
     }
 
@@ -210,9 +216,17 @@
     }
 
     @keyframes statusPulse {
-      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
-      70% { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 6px rgba(52, 211, 153, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+      }
     }
 
     .top-bar-right {
@@ -505,51 +519,194 @@
     }
 
     /* ==========================================================================
-       3. HERO SECTION (Split Card & Operational Readiness Counter Strip)
+       3. VIEWPORT-FITTING HERO SECTION (Full Viewport Corporate Banner)
        ========================================================================== */
-    .hero-section {
-      padding: 50px 0 60px;
-      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    .viewport-hero {
+      position: relative;
+      min-height: calc(100vh - 112px);
+      display: flex;
+      align-items: center;
+      background: url('images/officer.jpeg') center 22% / cover no-repeat;
+      color: #ffffff;
+      overflow: hidden;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .viewport-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14, 53, 40, 0.94) 0%, rgba(22, 79, 61, 0.84) 55%, rgba(15, 23, 42, 0.68) 100%);
+      z-index: 1;
+    }
+
+    .viewport-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 70px 0 60px;
+    }
+
+    .hero-content-inner {
+      max-width: 900px;
+    }
+
+    .hero-kicker-clean {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-kicker-line {
+      width: 32px;
+      height: 2px;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    .hero-title-main {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      color: #ffffff;
+      margin-bottom: 22px;
+    }
+
+    .hero-subtitle-main {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #e2ede8;
+      max-width: 780px;
+      margin-bottom: 34px;
+      font-weight: 400;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .btn-hero-primary {
+      background: var(--gold);
+      color: #ffffff;
+      padding: 14px 30px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 18px rgba(185, 145, 93, 0.35);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-hero-primary:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(185, 145, 93, 0.45);
+    }
+
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+      padding: 14px 26px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-hero-secondary:hover {
+      background: #ffffff;
+      color: var(--green-dark);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* Trust highlights strip inside viewport hero */
+    .hero-trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #e2ede8;
+    }
+
+    .trust-item i {
+      color: var(--gold);
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .readiness-section {
+      padding: 85px 0 65px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       position: relative;
     }
 
-    .hero-intro {
-      text-align: center;
-      max-width: 860px;
-      margin: 0 auto 40px;
+    @media (max-width: 960px) {
+      .viewport-hero {
+        min-height: auto;
+        padding: 50px 0;
+      }
+
+      .hero-title-main {
+        font-size: 34px;
+      }
+
+      .hero-subtitle-main {
+        font-size: 15px;
+      }
+
+      .hero-trust-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--green-light);
-      color: var(--green-dark);
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      border: 1px solid rgba(31, 107, 82, 0.15);
-    }
+    @media (max-width: 640px) {
+      .hero-title-main {
+        font-size: 28px;
+      }
 
-    .hero-headline {
-      font-size: 40px;
-      font-weight: 800;
-      color: var(--ink-dark);
-      line-height: 1.18;
-      letter-spacing: -0.8px;
-      margin-bottom: 18px;
-    }
+      .hero-trust-strip {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
 
-    .hero-subtitle {
-      font-size: 16px;
-      color: var(--text);
-      line-height: 1.7;
-      max-width: 780px;
-      margin: 0 auto;
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-hero-primary,
+      .btn-hero-secondary {
+        justify-content: center;
+      }
     }
 
     /* Split Hero Featured Card */
@@ -1828,12 +1985,14 @@
       .footer-columns {
         grid-template-columns: 1fr 1fr;
       }
+
       .sectors-grid-4 {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 960px) {
+
       .hero-split-card,
       .split-grid-layout,
       .who-grid,
@@ -1885,6 +2044,7 @@
     }
 
     @media (max-width: 640px) {
+
       .metrics-bar,
       .pill-grid,
       .industry-grid,
@@ -1932,6 +2092,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- ==========================================================================
@@ -2002,7 +2163,8 @@
         </a>
       </nav>
 
-      <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenuDrawer">
+      <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-label="Toggle navigation menu"
+        aria-expanded="false" aria-controls="mobileMenuDrawer">
         <i class="fa-solid fa-bars" id="mobileNavIcon"></i>
       </button>
     </div>
@@ -2064,19 +2226,60 @@
 
   <main>
     <!-- ==========================================================================
-         3. HERO SECTION (Split Card & 4-Column Metrics Bar)
+         3. VIEWPORT-FITTING HERO SECTION (Full Viewport Corporate Security Banner)
          ========================================================================== -->
-    <section class="hero-section" id="home">
-      <div class="container">
-        <div class="hero-intro">
-          <div class="hero-badge">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Integrated Protection &bull; Intelligent Risk Management</span>
+    <section class="viewport-hero" id="home" aria-label="KUIPFI Strategic Risk Consultants Hero">
+      <div class="viewport-hero-overlay"></div>
+      <div class="viewport-hero-content">
+        <div class="container">
+          <div class="hero-content-inner">
+            <div class="hero-kicker-clean">
+              <span class="hero-kicker-line"></span>
+              <span>STRATEGIC RISK &bull; PHYSICAL SECURITY SUBCONTRACTOR</span>
+            </div>
+            <h1 class="hero-title-main">Strategic Risk Consultants &amp; Physical Security Subcontractors</h1>
+            <p class="hero-subtitle-main">Deploying disciplined guarding forces, tactical armed response, National Key
+              Point protection, and 24/7 offsite CCTV telemetry across corporate, industrial, and infrastructure assets
+              nationwide.</p>
+            <div class="hero-cta-row">
+              <a href="#contact" class="btn-hero-primary">
+                <span>Start a Conversation</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#governance" class="btn-hero-secondary">
+                <i class="fa-solid fa-file-shield"></i>
+                <span>Download Compliance Pack</span>
+              </a>
+            </div>
+            <!-- Trust highlights strip inside hero -->
+            <div class="hero-trust-strip">
+              <div class="trust-item">
+                <i class="fa-solid fa-stamp"></i>
+                <span>PSIRA Grade A-E Deployments</span>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>9 Provinces Nationwide Footprint</span>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-tower-broadcast"></i>
+                <span>24/7 Offsite Control Room</span>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-certificate"></i>
+                <span>B-BBEE Level 1 Contributor</span>
+              </div>
+            </div>
           </div>
-          <h1 class="hero-headline">Strategic Risk Consultants &amp; Physical Security Subcontractors</h1>
-          <p class="hero-subtitle">Deploying disciplined guarding forces, tactical armed response, National Key Point protection, and 24/7 offsite CCTV telemetry across corporate, industrial, and infrastructure assets nationwide.</p>
         </div>
+      </div>
+    </section>
 
+    <!-- ==========================================================================
+         4. OPERATIONAL READINESS & METRICS SECTION
+         ========================================================================== -->
+    <section class="readiness-section" id="operational-readiness-hero">
+      <div class="container">
         <!-- Split Hero Featured Card -->
         <div class="hero-split-card">
           <div class="hero-image-pane">
@@ -2084,13 +2287,17 @@
             <div class="hero-image-overlay">
               <span class="hero-overlay-kicker">Operational Subcontracting Partner</span>
               <h2>Protective Services &amp; Risk Containment</h2>
-              <p>Tailored physical guarding, perimeter security, and high-visibility tactical readiness throughout South Africa's nine provinces.</p>
+              <p>Tailored physical guarding, perimeter security, and high-visibility tactical readiness throughout South
+                Africa's nine provinces.</p>
             </div>
           </div>
           <div class="hero-content-pane">
             <h3>Focused on Operational Readiness</h3>
-            <p>KUIPFI operates as an accredited security subcontractor and direct risk management partner for commercial, industrial, municipal, and national infrastructure sites. Through rigorous guard force vetting and statutory compliance, we deliver uncompromised operational security.</p>
-            <p>Our approach links on-site guarding personnel directly with central offsite control-room intelligence, ensuring immediate escalation protocols and audit-ready governance.</p>
+            <p>KUIPFI operates as an accredited security subcontractor and direct risk management partner for
+              commercial, industrial, municipal, and national infrastructure sites. Through rigorous guard force vetting
+              and statutory compliance, we deliver uncompromised operational security.</p>
+            <p>Our approach links on-site guarding personnel directly with central offsite control-room intelligence,
+              ensuring immediate escalation protocols and audit-ready governance.</p>
             <div class="hero-cta-group">
               <a href="#contact" class="btn-hero-primary">
                 <span>Request Site Risk Review</span>
@@ -2134,8 +2341,14 @@
         <div class="who-copy-col">
           <span class="section-kicker">WHO WE ARE</span>
           <h2 class="who-title">Pursuing operational resilience, building protected futures</h2>
-          <p class="who-copy">Positive change only happens through disciplined, innovative security solutions that challenge vulnerabilities and manage risk before disruption strikes. We embrace this standard, and our commitment to safeguarding commercial assets, personnel, and critical infrastructure is at the heart of all we do.</p>
-          <p class="who-copy">As trusted risk partners across South Africa, KUIPFI operates as an accredited subcontractor and risk consultancy specializing in static industrial guarding, critical infrastructure (NKP) protection, 24/7 offsite CCTV surveillance, and strike containment. Our collaboration with corporate enterprises and prime contractors ensures complete statutory integrity.</p>
+          <p class="who-copy">Positive change only happens through disciplined, innovative security solutions that
+            challenge vulnerabilities and manage risk before disruption strikes. We embrace this standard, and our
+            commitment to safeguarding commercial assets, personnel, and critical infrastructure is at the heart of all
+            we do.</p>
+          <p class="who-copy">As trusted risk partners across South Africa, KUIPFI operates as an accredited
+            subcontractor and risk consultancy specializing in static industrial guarding, critical infrastructure (NKP)
+            protection, 24/7 offsite CCTV surveillance, and strike containment. Our collaboration with corporate
+            enterprises and prime contractors ensures complete statutory integrity.</p>
           <a href="#contact" class="who-btn">
             <span>Discuss Site Requirements</span>
             <i class="fa-solid fa-arrow-right"></i>
@@ -2144,24 +2357,34 @@
 
         <div class="who-visual">
           <!-- Topographic Contour Vector (Top Right) -->
-          <svg class="topo-vector-top" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M10 20C40 60 70 30 110 50C150 70 180 30 200 70" stroke="#1f6b52" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 4" />
-            <path d="M0 60C50 100 80 70 130 90C180 110 190 80 200 120" stroke="#1f6b52" stroke-opacity="0.3" stroke-width="1.5" />
-            <path d="M10 110C60 150 100 120 150 140C190 160 195 130 200 170" stroke="#1f6b52" stroke-opacity="0.2" stroke-width="1.5" />
-            <path d="M20 160C70 190 120 170 170 190C190 200 195 190 200 200" stroke="#1f6b52" stroke-opacity="0.25" stroke-width="1.5" />
+          <svg class="topo-vector-top" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M10 20C40 60 70 30 110 50C150 70 180 30 200 70" stroke="#1f6b52" stroke-opacity="0.25"
+              stroke-width="1.5" stroke-dasharray="3 4" />
+            <path d="M0 60C50 100 80 70 130 90C180 110 190 80 200 120" stroke="#1f6b52" stroke-opacity="0.3"
+              stroke-width="1.5" />
+            <path d="M10 110C60 150 100 120 150 140C190 160 195 130 200 170" stroke="#1f6b52" stroke-opacity="0.2"
+              stroke-width="1.5" />
+            <path d="M20 160C70 190 120 170 170 190C190 200 195 190 200 200" stroke="#1f6b52" stroke-opacity="0.25"
+              stroke-width="1.5" />
           </svg>
 
           <!-- Back Portrait Image with Asymmetric Curved Border -->
           <img class="who-back-img" src="images/Security_officer.jpeg" alt="KUIPFI Security Officer on duty">
 
           <!-- Front Overlapping Image with Asymmetric Curved Border & Crisp Border -->
-          <img class="who-front-img" src="images/securities-standing.jpeg" alt="KUIPFI Guarding Team in tactical formation">
+          <img class="who-front-img" src="images/securities-standing.jpeg"
+            alt="KUIPFI Guarding Team in tactical formation">
 
           <!-- Topographic Contour Vector (Bottom Left) -->
-          <svg class="topo-vector-bottom" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M0 30C40 10 70 40 110 20C140 30 150 10 160 30" stroke="#b9915d" stroke-opacity="0.3" stroke-width="1.5" />
-            <path d="M0 80C50 60 80 90 120 70C150 80 155 60 160 90" stroke="#b9915d" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 3" />
-            <path d="M10 130C60 110 100 140 140 120C150 130 155 120 160 140" stroke="#b9915d" stroke-opacity="0.2" stroke-width="1.5" />
+          <svg class="topo-vector-bottom" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M0 30C40 10 70 40 110 20C140 30 150 10 160 30" stroke="#b9915d" stroke-opacity="0.3"
+              stroke-width="1.5" />
+            <path d="M0 80C50 60 80 90 120 70C150 80 155 60 160 90" stroke="#b9915d" stroke-opacity="0.25"
+              stroke-width="1.5" stroke-dasharray="3 3" />
+            <path d="M10 130C60 110 100 140 140 120C150 130 155 120 160 140" stroke="#b9915d" stroke-opacity="0.2"
+              stroke-width="1.5" />
           </svg>
         </div>
       </div>
@@ -2177,13 +2400,21 @@
           <article class="operational-narrative">
             <span class="section-kicker">OPERATIONAL EXCELLENCE</span>
             <h2 class="narrative-title">A Disciplined Subcontracting Partner for High-Stakes Environments</h2>
-            <p class="narrative-p">Modern security cannot rely on passive presence alone. As crime dynamics evolve across South African industrial corridors, prime contractors and enterprise asset owners require an agile, highly disciplined subcontractor equipped with specialized PSIRA-registered personnel and responsive supervisory chains.</p>
+            <p class="narrative-p">Modern security cannot rely on passive presence alone. As crime dynamics evolve
+              across South African industrial corridors, prime contractors and enterprise asset owners require an agile,
+              highly disciplined subcontractor equipped with specialized PSIRA-registered personnel and responsive
+              supervisory chains.</p>
 
             <div class="narrative-highlight-box">
-              <p><i class="fa-solid fa-quote-left" style="color: var(--green); margin-right: 8px;"></i> We bridge the gap between high-level risk strategy and boots-on-the-ground operational resilience, ensuring our partners pass statutory audits while mitigating real-world disruptions.</p>
+              <p><i class="fa-solid fa-quote-left" style="color: var(--green); margin-right: 8px;"></i> We bridge the
+                gap between high-level risk strategy and boots-on-the-ground operational resilience, ensuring our
+                partners pass statutory audits while mitigating real-world disruptions.</p>
             </div>
 
-            <p class="narrative-p">Whether supplementing an established guard deployment during elevated threat windows, managing critical access control at distribution centers, or integrating rapid armed response with offsite telemetry, KUIPFI operates seamlessly under your primary branding or as a specialized joint venture contractor.</p>
+            <p class="narrative-p">Whether supplementing an established guard deployment during elevated threat windows,
+              managing critical access control at distribution centers, or integrating rapid armed response with offsite
+              telemetry, KUIPFI operates seamlessly under your primary branding or as a specialized joint venture
+              contractor.</p>
 
             <h3 class="industry-list-heading">
               <i class="fa-solid fa-layer-group"></i>
@@ -2299,10 +2530,12 @@
               </div>
 
               <div class="form-group">
-                <textarea class="form-control" placeholder="Provide site location, required guard grades (A-E), shift structures, or operational timelines..."></textarea>
+                <textarea class="form-control"
+                  placeholder="Provide site location, required guard grades (A-E), shift structures, or operational timelines..."></textarea>
               </div>
 
-              <p class="careers-link-note">We can discuss a new deployment requirement, an existing operation or subcontracting partnership.</p>
+              <p class="careers-link-note">We can discuss a new deployment requirement, an existing operation or
+                subcontracting partnership.</p>
 
               <!-- Simulated Google reCAPTCHA Checkbox -->
               <div class="recaptcha-widget">
@@ -2337,8 +2570,11 @@
         <div class="operating-copy">
           <span class="section-kicker">SITE-SPECIFIC APPROACH</span>
           <h2>Security that works with the way your site works</h2>
-          <p>Every assignment starts with understanding the unique operating environment: the traffic flow of personnel, high-value assets requiring lock-and-key surveillance, shift hours carrying elevated vulnerability, and client statutory KPIs.</p>
-          <p>That comprehensive site survey shapes a disciplined, practical deployment plan, unambiguous command lines, and transparent incident reporting that evolves alongside your facility.</p>
+          <p>Every assignment starts with understanding the unique operating environment: the traffic flow of personnel,
+            high-value assets requiring lock-and-key surveillance, shift hours carrying elevated vulnerability, and
+            client statutory KPIs.</p>
+          <p>That comprehensive site survey shapes a disciplined, practical deployment plan, unambiguous command lines,
+            and transparent incident reporting that evolves alongside your facility.</p>
           <ul class="operating-list">
             <li>
               <i class="fa-solid fa-shield-check"></i>
@@ -2365,7 +2601,8 @@
         <div class="section-title-wrap">
           <span class="section-kicker">SPECIALISED DIVISIONS</span>
           <h2 class="section-title">Our Core Capabilities</h2>
-          <p class="section-desc">Delivering specialized physical security, tactical armed response, and strategic compliance across critical operational sectors.</p>
+          <p class="section-desc">Delivering specialized physical security, tactical armed response, and strategic
+            compliance across critical operational sectors.</p>
           <div class="accent-bar">
             <div class="bar-green"></div>
             <div class="bar-gold"></div>
@@ -2377,7 +2614,8 @@
           <article class="cap-card">
             <div class="cap-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <h3>Protective Security</h3>
-            <p>Disciplined static and industrial site protection for corporate, logistics, and critical infrastructure environments.</p>
+            <p>Disciplined static and industrial site protection for corporate, logistics, and critical infrastructure
+              environments.</p>
             <ul>
               <li><i class="fa-solid fa-circle-check"></i> PSIRA Grade A-E industrial guarding</li>
               <li><i class="fa-solid fa-circle-check"></i> Electronic access control &amp; perimeter gates</li>
@@ -2389,7 +2627,8 @@
           <article class="cap-card">
             <div class="cap-card-icon"><i class="fa-solid fa-truck-shield"></i></div>
             <h3>Tactical Response</h3>
-            <p>Rapid armed intervention and escalation capacity for high-risk zones, perimeter breaches, and riot containment.</p>
+            <p>Rapid armed intervention and escalation capacity for high-risk zones, perimeter breaches, and riot
+              containment.</p>
             <ul>
               <li><i class="fa-solid fa-circle-check"></i> Armed escort &amp; dedicated tactical patrol</li>
               <li><i class="fa-solid fa-circle-check"></i> Strike &amp; industrial unrest containment</li>
@@ -2401,7 +2640,8 @@
           <article class="cap-card">
             <div class="cap-card-icon"><i class="fa-solid fa-video"></i></div>
             <h3>CCTV &amp; Offsite Monitoring</h3>
-            <p>Real-time video telemetry, automated tripwire detection, and incident response dispatched via control rooms.</p>
+            <p>Real-time video telemetry, automated tripwire detection, and incident response dispatched via control
+              rooms.</p>
             <ul>
               <li><i class="fa-solid fa-circle-check"></i> 24/7 proactive virtual perimeter guards</li>
               <li><i class="fa-solid fa-circle-check"></i> AI-assisted thermal &amp; motion tripwires</li>
@@ -2437,7 +2677,8 @@
           <article class="cap-card">
             <div class="cap-card-icon"><i class="fa-solid fa-building-shield"></i></div>
             <h3>Critical Infrastructure</h3>
-            <p>Full-spectrum security integrations customized to National Key Points (NKP) and key economic facilities.</p>
+            <p>Full-spectrum security integrations customized to National Key Points (NKP) and key economic facilities.
+            </p>
             <ul>
               <li><i class="fa-solid fa-circle-check"></i> NKP Act regulatory compliance</li>
               <li><i class="fa-solid fa-circle-check"></i> Multi-facility hub security management</li>
@@ -2456,7 +2697,8 @@
         <div class="section-title-wrap">
           <span class="section-kicker">STRATEGIC DELIVERY</span>
           <h2 class="section-title">How We Support Clients &amp; Prime Contractors</h2>
-          <p class="section-desc">Streamlined operational units structured to provide immediate stability, statutory peace of mind, and transparent execution.</p>
+          <p class="section-desc">Streamlined operational units structured to provide immediate stability, statutory
+            peace of mind, and transparent execution.</p>
           <div class="accent-bar">
             <div class="bar-green"></div>
             <div class="bar-gold"></div>
@@ -2468,7 +2710,8 @@
           <div class="watermark-card">
             <div>
               <h3 class="watermark-card-title">Protective Services</h3>
-              <p class="watermark-card-desc">Guarding, armed response, canine units, and tactical site protection safeguarding corporate personnel, commercial property, and national installations.</p>
+              <p class="watermark-card-desc">Guarding, armed response, canine units, and tactical site protection
+                safeguarding corporate personnel, commercial property, and national installations.</p>
             </div>
             <a href="#contact" class="watermark-card-link">
               <span>Discuss your deployment requirement</span>
@@ -2481,7 +2724,8 @@
           <div class="watermark-card">
             <div>
               <h3 class="watermark-card-title">Risk &amp; Compliance</h3>
-              <p class="watermark-card-desc">Comprehensive vulnerability reviews, statutory governance packs, PSIRA adherence, and practical advisory support for executive decision-makers.</p>
+              <p class="watermark-card-desc">Comprehensive vulnerability reviews, statutory governance packs, PSIRA
+                adherence, and practical advisory support for executive decision-makers.</p>
             </div>
             <a href="#contact" class="watermark-card-link">
               <span>Discuss your deployment requirement</span>
@@ -2494,7 +2738,8 @@
           <div class="watermark-card">
             <div>
               <h3 class="watermark-card-title">Operational Mobility</h3>
-              <p class="watermark-card-desc">Tactical fleet logistics, 24/7 offsite control-room dispatch, asset telemetry, and strike containment deployed for complex working environments.</p>
+              <p class="watermark-card-desc">Tactical fleet logistics, 24/7 offsite control-room dispatch, asset
+                telemetry, and strike containment deployed for complex working environments.</p>
             </div>
             <a href="#contact" class="watermark-card-link">
               <span>Discuss your deployment requirement</span>
@@ -2519,7 +2764,8 @@
         <div class="section-title-wrap">
           <span class="section-kicker">SECTOR PORTFOLIO</span>
           <h2 class="section-title">Protected Environments &amp; Sectors</h2>
-          <p class="section-desc">Tailoring tactical posture and guard protocols to the specific operational realities of South African industries.</p>
+          <p class="section-desc">Tailoring tactical posture and guard protocols to the specific operational realities
+            of South African industries.</p>
           <div class="accent-bar">
             <div class="bar-green"></div>
             <div class="bar-gold"></div>
@@ -2534,7 +2780,8 @@
             </div>
             <div class="sector-card-body">
               <h3>Commercial Real Estate</h3>
-              <p>Corporate office towers, business parks, and retail centers requiring polished access control and professional visitor hospitality.</p>
+              <p>Corporate office towers, business parks, and retail centers requiring polished access control and
+                professional visitor hospitality.</p>
             </div>
           </div>
 
@@ -2545,29 +2792,34 @@
             </div>
             <div class="sector-card-body">
               <h3>Industrial &amp; Logistics</h3>
-              <p>Distribution centers, freight hubs, manufacturing plants, and bonded storage facilities requiring strict loss prevention.</p>
+              <p>Distribution centers, freight hubs, manufacturing plants, and bonded storage facilities requiring
+                strict loss prevention.</p>
             </div>
           </div>
 
           <!-- Sector 3 -->
           <div class="sector-item-card">
             <div class="sector-thumb-wrap">
-              <img class="sector-thumb" src="images/surv-camera.jpeg" alt="Critical Infrastructure and Utilities Protection">
+              <img class="sector-thumb" src="images/surv-camera.jpeg"
+                alt="Critical Infrastructure and Utilities Protection">
             </div>
             <div class="sector-card-body">
               <h3>Critical Infrastructure</h3>
-              <p>National Key Point (NKP) installations, water utilities, electrical substations, and telecommunications towers.</p>
+              <p>National Key Point (NKP) installations, water utilities, electrical substations, and telecommunications
+                towers.</p>
             </div>
           </div>
 
           <!-- Sector 4 -->
           <div class="sector-item-card">
             <div class="sector-thumb-wrap">
-              <img class="sector-thumb" src="images/securities-standing.jpeg" alt="Tactical Escort and Unrest Response Team">
+              <img class="sector-thumb" src="images/securities-standing.jpeg"
+                alt="Tactical Escort and Unrest Response Team">
             </div>
             <div class="sector-card-body">
               <h3>Tactical Corridors</h3>
-              <p>High-value transport escorts, route patrol, strike intervention, and emergency riot containment deployed on demand.</p>
+              <p>High-value transport escorts, route patrol, strike intervention, and emergency riot containment
+                deployed on demand.</p>
             </div>
           </div>
         </div>
@@ -2582,7 +2834,8 @@
         <div class="section-title-wrap">
           <span class="section-kicker">GOVERNANCE &amp; STATUTORY ASSURANCE</span>
           <h2 class="section-title">Procurement &amp; Governance Register</h2>
-          <p class="section-desc">Audit-ready documentation and statutory certifications available immediately for prime contractor tender onboarding.</p>
+          <p class="section-desc">Audit-ready documentation and statutory certifications available immediately for prime
+            contractor tender onboarding.</p>
           <div class="accent-bar">
             <div class="bar-green"></div>
             <div class="bar-gold"></div>
@@ -2637,8 +2890,9 @@
             <div>
               <span class="hero-overlay-kicker">DIRECT ENGAGEMENT</span>
               <h2>Get in Touch with Our National Team</h2>
-              <p>Discuss your operational site requirements, request a guard quote, or obtain our comprehensive vendor onboarding file.</p>
-              
+              <p>Discuss your operational site requirements, request a guard quote, or obtain our comprehensive vendor
+                onboarding file.</p>
+
               <div class="contact-hub-items">
                 <div class="contact-hub-item">
                   <i class="fa-regular fa-envelope"></i>
@@ -2685,7 +2939,8 @@
               </div>
 
               <div class="hub-form-group">
-                <textarea class="hub-form-input" placeholder="Outline site location, number of posts, required PSIRA grades, and scope..."></textarea>
+                <textarea class="hub-form-input"
+                  placeholder="Outline site location, number of posts, required PSIRA grades, and scope..."></textarea>
               </div>
 
               <button type="submit" class="btn-hub-submit">
@@ -2808,7 +3063,7 @@
     const mobileNavIcon = document.getElementById('mobileNavIcon');
 
     if (mobileNavToggle && mobileMenuDrawer) {
-      mobileNavToggle.addEventListener('click', function() {
+      mobileNavToggle.addEventListener('click', function () {
         const isOpen = mobileMenuDrawer.classList.toggle('is-open');
         mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
         if (mobileNavIcon) {
@@ -2817,8 +3072,8 @@
       });
 
       // Auto-close mobile drawer when any link inside it is clicked
-      document.querySelectorAll('.mobile-menu-link').forEach(function(link) {
-        link.addEventListener('click', function() {
+      document.querySelectorAll('.mobile-menu-link').forEach(function (link) {
+        link.addEventListener('click', function () {
           mobileMenuDrawer.classList.remove('is-open');
           mobileNavToggle.setAttribute('aria-expanded', 'false');
           if (mobileNavIcon) {
@@ -2832,11 +3087,11 @@
     const navSections = document.querySelectorAll('section[id], aside[id]');
     const navLinks = document.querySelectorAll('.main-nav .nav-link');
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       let currentSectionId = '';
       const scrollY = window.pageYOffset;
 
-      navSections.forEach(function(section) {
+      navSections.forEach(function (section) {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 120;
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
@@ -2844,7 +3099,7 @@
         }
       });
 
-      navLinks.forEach(function(link) {
+      navLinks.forEach(function (link) {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + currentSectionId) {
           link.classList.add('active');
@@ -2872,4 +3127,5 @@
     }
   </script>
 </body>
+
 </html>
