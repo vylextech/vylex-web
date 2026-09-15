@@ -180,55 +180,20 @@
       margin-left: 8px;
     }
 
-    /* Hero Banner Section */
+    /* Hero Banner Section (Blank Image, No Text) */
     .hero-banner {
       position: relative;
-      height: 280px;
-      background: linear-gradient(rgba(10, 20, 30, 0.45), rgba(10, 20, 30, 0.45)), 
-                  url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
+      width: 100%;
+      height: 380px;
+      background: url('images/officer.jpeg') center 20%/cover no-repeat;
+      display: block;
     }
 
-    .hero-center-branding {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-
-    .hero-logo-mark {
-      position: relative;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 4px solid #ffffff;
-      border-right-color: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-size: 30px;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .hero-logo-text h1 {
-      font-size: 32px;
-      letter-spacing: 9px;
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.1;
-      color: #ffffff;
-    }
-
-    .hero-logo-text p {
-      font-size: 10px;
-      letter-spacing: 6.5px;
-      font-weight: 700;
-      color: #ffffff;
-      text-transform: uppercase;
+    @media (max-width: 768px) {
+      .hero-banner {
+        height: 260px;
+        background-position: center 15%;
+      }
     }
 
     /* Content & Form Grid Section */
@@ -742,16 +707,8 @@
     </div>
   </div>
 
-  <!-- Hero Header Section -->
-  <section class="hero-banner" id="home">
-    <div class="hero-center-branding">
-      <div class="hero-logo-mark">K</div>
-      <div class="hero-logo-text">
-        <h1>KUIPFI</h1>
-        <p>SECURITY, RISK &amp; OPERATIONAL RESILIENCE</p>
-      </div>
-    </div>
-  </section>
+  <!-- Hero Banner Section (Blank Hero Image, No Text) -->
+  <section class="hero-banner" id="home" aria-label="KUIPFI Hero Image"></section>
 
   <!-- Main Body Content & Form -->
   <main class="main-content-section" id="about">
