@@ -1067,9 +1067,28 @@
 
   @media (max-width: 640px) {
     .top-utility { display: none; }
-    .hero-title { font-size: 32px; }
+
+    /* Reduce horizontal spacing */
+    .wrap, .nav-inner { padding: 0 16px; }
+
+    /* Hero adjustments */
+    .hero-container { 
+      min-height: 480px; 
+      padding: 40px 0 60px; 
+      align-items: flex-start; 
+    }
+    .hero-title { font-size: 32px; margin-top: 20px; }
     .hero-buttons { flex-direction: column; }
     .btn-hero-solid, .btn-hero-outline { width: 100%; text-align: center; }
+
+    /* Reduce vertical section paddings */
+    .services-section,
+    .spotlight-section,
+    .intel-section,
+    .methodology-section,
+    .compliance-block,
+    .procurement-section { padding: 50px 0; }
+
     .services-grid-4 { grid-template-columns: 1fr; }
     .intel-grid { grid-template-columns: 1fr; }
     .methodology-grid { grid-template-columns: 1fr; }
@@ -1140,7 +1159,6 @@
 
   <div class="wrap hero-wrap">
     <div class="hero-content">
-      <span class="hero-kicker">Commercial &amp; High-Risk Site Protection</span>
       <h1 class="hero-title">24/7 Strategic Risk &amp; Physical Protection</h1>
       <p class="hero-description">
         KUIPFI operates as an elite security subcontractor and direct risk partner, safeguarding commercial parks, industrial supply chains, and national infrastructure installations across South Africa.
