@@ -2096,48 +2096,39 @@
 <body>
 
   <!-- ==========================================================================
-       1. TOP UTILITY BAR
+       1. TOP UTILITY BAR (Matching Fidelity Style)
        ========================================================================== -->
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <div class="status-pulse-badge">
-        <span class="status-pulse-dot"></span>
-        <span>24/7 National Operations Command</span>
-      </div>
-      <a href="tel:+27112348900" class="top-bar-item">
+  <header class="top-bar">
+    <div class="top-bar-links">
+      <a href="mailto:operations@kuipfi.com">
+        <i class="fa-regular fa-envelope"></i>
+        <span>operations@kuipfi.com</span>
+      </a>
+      <a href="mailto:tenders@kuipfi.com">
+        <i class="fa-regular fa-envelope"></i>
+        <span>tenders@kuipfi.com</span>
+      </a>
+      <a href="tel:+27112348900">
         <i class="fa-solid fa-phone"></i>
         <span>+27 (0) 11 234 8900</span>
       </a>
-      <a href="mailto:operations@kuipfi.com" class="top-bar-item">
-        <i class="fa-solid fa-envelope"></i>
-        <span>operations@kuipfi.com</span>
-      </a>
-    </div>
-
-    <div class="top-bar-right">
       <div class="top-bar-socials">
-        <a href="#compliance" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#compliance" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#compliance" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#compliance" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-      <div class="top-buttons">
-        <a href="#contact" class="btn-top-securefire">
-          <i class="fa-solid fa-shield-halved"></i>
-          <span>SecureFire Link</span>
-        </a>
-        <a href="#contact" class="btn-top-contact">
-          <i class="fa-regular fa-paper-plane"></i>
-          <span>Vendor Portal</span>
-        </a>
+        <a href="#governance" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#governance" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#governance" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#governance" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
     </div>
-  </div>
+    <div class="top-buttons">
+      <a href="#governance" class="btn-top-securefire">Company Profile</a>
+      <a href="#tender-enquiry" class="btn-top-contact">Request Enquiry</a>
+    </div>
+  </header>
 
   <!-- ==========================================================================
-       2. MAIN NAVIGATION HEADER (Sticky)
+       2. MAIN NAVIGATION HEADER (Matching Fidelity Style)
        ========================================================================== -->
-  <header class="main-header" id="mainHeader">
+  <div class="main-header" id="mainHeader">
     <div class="nav-container">
       <a href="#home" class="logo-container" aria-label="KUIPFI Home">
         <div class="logo-mark">K</div>
@@ -2148,19 +2139,13 @@
       </a>
 
       <nav class="main-nav" aria-label="Primary Navigation">
-        <ul>
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#who-we-are" class="nav-link">Who We Are</a></li>
-          <li><a href="#operational-readiness" class="nav-link">Operations</a></li>
-          <li><a href="#capabilities" class="nav-link">Capabilities</a></li>
-          <li><a href="#solutions" class="nav-link">Solutions</a></li>
-          <li><a href="#sectors" class="nav-link">Sectors</a></li>
-          <li><a href="#governance" class="nav-link">Governance</a></li>
-        </ul>
-        <a href="#contact" class="btn-header-quote">
-          <span>Start a conversation</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#who-we-are" class="nav-link">About Us</a>
+        <a href="#capabilities" class="nav-link">Services</a>
+        <a href="#governance" class="nav-link">Governance</a>
+        <a href="#tender-enquiry" class="nav-link">Enquiries</a>
+        <a href="#tender-enquiry" class="nav-link">Contact</a>
+        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
       </nav>
 
       <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-label="Toggle navigation menu"
@@ -2169,165 +2154,59 @@
       </button>
     </div>
 
-    <!-- Mobile Drawer Menu (Fidelity Emerald Style with Indicator Box) -->
+    <!-- Mobile Drawer Menu (Matching Fidelity Style) -->
     <div class="mobile-menu-drawer" id="mobileMenuDrawer">
       <ul class="mobile-menu-list">
         <li class="mobile-menu-item">
-          <a href="#home" class="mobile-menu-link">
-            <span>Home</span>
+          <a href="#home" class="mobile-menu-link active">
+            <span>Corporate / Home</span>
             <span class="mobile-menu-box-icon"></span>
           </a>
         </li>
         <li class="mobile-menu-item">
           <a href="#who-we-are" class="mobile-menu-link">
-            <span>Who We Are</span>
-            <span class="mobile-menu-box-icon"></span>
-          </a>
-        </li>
-        <li class="mobile-menu-item">
-          <a href="#operational-readiness" class="mobile-menu-link">
-            <span>Operations &amp; Sectors</span>
+            <span>About Us</span>
             <span class="mobile-menu-box-icon"></span>
           </a>
         </li>
         <li class="mobile-menu-item">
           <a href="#capabilities" class="mobile-menu-link">
-            <span>Our Capabilities</span>
-            <span class="mobile-menu-box-icon"></span>
-          </a>
-        </li>
-        <li class="mobile-menu-item">
-          <a href="#solutions" class="mobile-menu-link">
-            <span>Protective Solutions</span>
-            <span class="mobile-menu-box-icon"></span>
-          </a>
-        </li>
-        <li class="mobile-menu-item">
-          <a href="#sectors" class="mobile-menu-link">
-            <span>Environments &amp; Sectors</span>
+            <span>Services &amp; Guarding</span>
             <span class="mobile-menu-box-icon"></span>
           </a>
         </li>
         <li class="mobile-menu-item">
           <a href="#governance" class="mobile-menu-link">
-            <span>Governance &amp; Compliance</span>
+            <span>Governance &amp; PSIRA</span>
             <span class="mobile-menu-box-icon"></span>
           </a>
         </li>
         <li class="mobile-menu-item">
-          <a href="#contact" class="mobile-menu-link">
-            <span>Start a conversation</span>
+          <a href="#tender-enquiry" class="mobile-menu-link">
+            <span>Enquiries &amp; Tenders</span>
+            <span class="mobile-menu-box-icon"></span>
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="#tender-enquiry" class="mobile-menu-link">
+            <span>Contact Information</span>
             <span class="mobile-menu-box-icon"></span>
           </a>
         </li>
       </ul>
     </div>
-  </header>
+  </div>
 
   <main>
     <!-- ==========================================================================
-         3. VIEWPORT-FITTING HERO SECTION (Full Viewport Corporate Security Banner)
+         3. HERO BANNER SECTION (Sized Like Fidelity, Unfiltered Photo, Clean Corporate Typography)
          ========================================================================== -->
-    <section class="viewport-hero" id="home" aria-label="KUIPFI Strategic Risk Consultants Hero">
-      <div class="viewport-hero-overlay"></div>
-      <div class="viewport-hero-content">
+    <section class="hero-banner" id="home" aria-label="KUIPFI Strategic Risk Consultants Hero">
+      <div class="hero-banner-inner">
         <div class="container">
-          <div class="hero-content-inner">
-            <div class="hero-kicker-clean">
-              <span class="hero-kicker-line"></span>
-              <span>STRATEGIC RISK &bull; PHYSICAL SECURITY SUBCONTRACTOR</span>
-            </div>
+          <div class="hero-text-wrap">
             <h1 class="hero-title-main">Strategic Risk Consultants &amp; Physical Security Subcontractors</h1>
-            <p class="hero-subtitle-main">Deploying disciplined guarding forces, tactical armed response, National Key
-              Point protection, and 24/7 offsite CCTV telemetry across corporate, industrial, and infrastructure assets
-              nationwide.</p>
-            <div class="hero-cta-row">
-              <a href="#contact" class="btn-hero-primary">
-                <span>Start a Conversation</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <a href="#governance" class="btn-hero-secondary">
-                <i class="fa-solid fa-file-shield"></i>
-                <span>Download Compliance Pack</span>
-              </a>
-            </div>
-            <!-- Trust highlights strip inside hero -->
-            <div class="hero-trust-strip">
-              <div class="trust-item">
-                <i class="fa-solid fa-stamp"></i>
-                <span>PSIRA Grade A-E Deployments</span>
-              </div>
-              <div class="trust-item">
-                <i class="fa-solid fa-map-location-dot"></i>
-                <span>9 Provinces Nationwide Footprint</span>
-              </div>
-              <div class="trust-item">
-                <i class="fa-solid fa-tower-broadcast"></i>
-                <span>24/7 Offsite Control Room</span>
-              </div>
-              <div class="trust-item">
-                <i class="fa-solid fa-certificate"></i>
-                <span>B-BBEE Level 1 Contributor</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         4. OPERATIONAL READINESS & METRICS SECTION
-         ========================================================================== -->
-    <section class="readiness-section" id="operational-readiness-hero">
-      <div class="container">
-        <!-- Split Hero Featured Card -->
-        <div class="hero-split-card">
-          <div class="hero-image-pane">
-            <img src="images/Security_officer.jpeg" alt="KUIPFI Security Officer supporting commercial site operations">
-            <div class="hero-image-overlay">
-              <span class="hero-overlay-kicker">Operational Subcontracting Partner</span>
-              <h2>Protective Services &amp; Risk Containment</h2>
-              <p>Tailored physical guarding, perimeter security, and high-visibility tactical readiness throughout South
-                Africa's nine provinces.</p>
-            </div>
-          </div>
-          <div class="hero-content-pane">
-            <h3>Focused on Operational Readiness</h3>
-            <p>KUIPFI operates as an accredited security subcontractor and direct risk management partner for
-              commercial, industrial, municipal, and national infrastructure sites. Through rigorous guard force vetting
-              and statutory compliance, we deliver uncompromised operational security.</p>
-            <p>Our approach links on-site guarding personnel directly with central offsite control-room intelligence,
-              ensuring immediate escalation protocols and audit-ready governance.</p>
-            <div class="hero-cta-group">
-              <a href="#contact" class="btn-hero-primary">
-                <span>Request Site Risk Review</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <a href="#governance" class="btn-hero-secondary">
-                <i class="fa-solid fa-download"></i>
-                <span>Vendor Compliance Pack</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4-Column Metrics Bar -->
-        <div class="metrics-bar">
-          <div class="metric-item">
-            <div class="metric-value">10+</div>
-            <div class="metric-label">Core Capability Areas</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-value">9</div>
-            <div class="metric-label">Provinces Served</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-value">24/7</div>
-            <div class="metric-label">Control Room Telemetry</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-value">PSIRA</div>
-            <div class="metric-label">Accredited &amp; Compliant</div>
+            <p class="hero-subtitle-main">Deploying disciplined guarding forces, tactical armed response, National Key Point protection, and 24/7 offsite CCTV telemetry across corporate, industrial, and infrastructure assets nationwide.</p>
           </div>
         </div>
       </div>
