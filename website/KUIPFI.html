@@ -251,7 +251,7 @@
     }
 
     /* ==========================================================================
-       2. MAIN NAVIGATION HEADER (Sticky Header & Brand Identity)
+       2. MAIN NAVIGATION HEADER (Matching Fidelity Style)
        ========================================================================== */
     .main-header {
       background-color: #ffffff;
@@ -259,41 +259,35 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-      transition: all 0.3s ease;
     }
 
     .nav-container {
-      max-width: var(--max-width);
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 10px 24px;
+      padding: 12px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      min-height: 72px;
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
     }
 
     .logo-mark {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-      color: #ffffff;
-      border-radius: 8px;
+      width: 38px;
+      height: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-      font-weight: 900;
+      color: #1f6b52;
+      font-size: 30px;
+      font-weight: 800;
       font-style: italic;
       line-height: 1;
-      box-shadow: 0 4px 10px rgba(31, 107, 82, 0.25);
     }
 
     .logo-text-wrap {
@@ -303,109 +297,74 @@
 
     .brand-title {
       font-weight: 800;
-      font-size: 21px;
-      letter-spacing: 3px;
-      color: var(--green-dark);
-      line-height: 1.1;
+      font-size: 19px;
+      letter-spacing: 4px;
+      color: #1f6b52;
+      line-height: 1;
     }
 
     .brand-sub {
-      font-size: 8px;
-      letter-spacing: 1.8px;
-      color: var(--gold);
-      font-weight: 700;
-      text-transform: uppercase;
+      font-size: 7px;
+      letter-spacing: 2px;
+      color: #8c8c8c;
+      font-weight: 600;
       margin-top: 3px;
     }
 
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 24px;
-    }
-
-    .main-nav ul {
-      display: flex;
-      list-style: none;
-      align-items: center;
-      gap: 20px;
+      gap: 28px;
     }
 
     .main-nav a {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 600;
-      color: var(--ink);
-      position: relative;
-      padding: 8px 0;
-      letter-spacing: -0.1px;
+      color: #333333;
+      transition: color 0.2s ease;
     }
 
     .main-nav a:hover,
     .main-nav a.active {
-      color: var(--green);
+      color: #1f6b52;
     }
 
-    .main-nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2.5px;
-      background: var(--green);
-      border-radius: 2px;
+    .search-icon {
+      font-size: 13px;
+      color: #1f6b52;
+      cursor: pointer;
+      margin-left: 8px;
     }
 
-    .btn-header-quote {
-      background-color: var(--green);
-      color: #ffffff !important;
-      padding: 9px 20px;
-      border-radius: var(--radius-sm);
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 0.3px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 12px rgba(31, 107, 82, 0.2);
-      transition: var(--transition-smooth);
-    }
-
-    .btn-header-quote:hover {
-      background-color: var(--green-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(22, 79, 61, 0.3);
-    }
-
-    /* Mobile Toggle Button */
+    /* Mobile Nav Toggle Button */
     .mobile-nav-toggle {
       display: none;
       background: none;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      color: var(--green);
-      font-size: 20px;
-      width: 42px;
-      height: 42px;
+      border: 1px solid #e5e7eb;
+      border-radius: 2px;
+      color: #1f6b52;
+      font-size: 18px;
+      width: 40px;
+      height: 40px;
       cursor: pointer;
       align-items: center;
       justify-content: center;
-      transition: var(--transition-smooth);
+      transition: all 0.2s ease;
     }
 
     .mobile-nav-toggle:hover {
-      background: var(--green-subtle);
-      border-color: var(--green);
+      background: #f0f7f4;
+      border-color: #1f6b52;
     }
 
-    /* Mobile Menu Drawer (Fidelity Emerald Style with Indicator Box) */
+    /* Mobile Drawer Menu (Fidelity Emerald Style with Indicator Box) */
     .mobile-menu-drawer {
       display: none;
       background: #f4f6f8;
-      border-top: 1px solid var(--border-color);
-      border-bottom: 3px solid var(--green);
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 2px solid #1f6b52;
       width: 100%;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.09);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
     .mobile-menu-drawer.is-open {
@@ -430,37 +389,37 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 24px;
+      padding: 16px 26px;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.8px;
       text-transform: uppercase;
-      color: var(--green-dark);
+      color: #1f6b52;
       background: #f4f6f8;
-      transition: all 0.2s ease;
+      transition: background 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
     }
 
     .mobile-menu-link:hover,
     .mobile-menu-link.active {
       background: #e9f2ee;
-      color: var(--green-deeper);
-      padding-left: 28px;
+      color: #154e3c;
+      padding-left: 30px;
     }
 
     .mobile-menu-box-icon {
       display: inline-block;
       width: 13px;
       height: 17px;
-      border: 1.5px solid var(--green);
+      border: 1.5px solid #1f6b52;
       border-radius: 1px;
-      opacity: 0.85;
-      transition: all 0.2s ease;
+      opacity: 0.8;
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
     .mobile-menu-link:hover .mobile-menu-box-icon {
-      border-color: var(--gold);
+      border-color: #ba915d;
       opacity: 1;
-      transform: scale(1.15);
+      transform: scale(1.1);
     }
 
     /* ==========================================================================
