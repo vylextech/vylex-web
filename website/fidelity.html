@@ -196,6 +196,183 @@
       }
     }
 
+    /* ==========================================================================
+       Who We Are Section (Asymmetric Border Shapes & Overlapping Imagery)
+       ========================================================================== */
+    .who-we-are-section {
+      padding: 90px 0 85px;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #eef2f0;
+    }
+
+    .who-we-are-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .who-kicker {
+      color: #ba915d;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .who-title {
+      font-size: 38px;
+      font-weight: 800;
+      color: #1f6b52;
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+    }
+
+    .who-copy {
+      font-size: 14px;
+      color: #555555;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .who-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #1f6b52;
+      color: #ffffff;
+      padding: 13px 28px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 10px;
+      transition: all 0.25s ease;
+    }
+
+    .who-btn:hover {
+      background: #ba915d;
+      color: #ffffff;
+      transform: translateX(3px);
+    }
+
+    /* Asymmetric Border Shapes & Overlapping Images */
+    .who-visual-wrapper {
+      position: relative;
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Topographic contour lines floating in background */
+    .topo-lines-bg {
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      width: 220px;
+      height: 220px;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    .topo-lines-bottom {
+      position: absolute;
+      bottom: -15px;
+      left: 10px;
+      width: 180px;
+      height: 180px;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    /* Primary Back Portrait Photo (Asymmetric Curved Border) */
+    .who-img-back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 62%;
+      height: 380px;
+      object-fit: cover;
+      border-top-left-radius: 75px;
+      border-bottom-right-radius: 75px;
+      border-top-right-radius: 14px;
+      border-bottom-left-radius: 14px;
+      box-shadow: 0 16px 36px rgba(31, 107, 82, 0.14);
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    /* Overlapping Front Landscape Photo (Asymmetric Curved Border) */
+    .who-img-front {
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      width: 68%;
+      height: 250px;
+      object-fit: cover;
+      border-top-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+      border-top-right-radius: 14px;
+      border-bottom-left-radius: 14px;
+      border: 6px solid #ffffff;
+      box-shadow: 0 20px 42px rgba(0, 0, 0, 0.16);
+      z-index: 2;
+      transition: transform 0.3s ease;
+    }
+
+    .who-visual-wrapper:hover .who-img-front {
+      transform: translateY(-4px);
+    }
+    .who-visual-wrapper:hover .who-img-back {
+      transform: translateY(2px);
+    }
+
+    @media (max-width: 992px) {
+      .who-we-are-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+      .who-visual-wrapper {
+        min-height: 380px;
+        max-width: 520px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .who-title {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .who-we-are-section {
+        padding: 60px 0;
+      }
+      .who-visual-wrapper {
+        min-height: 300px;
+      }
+      .who-img-back {
+        height: 280px;
+      }
+      .who-img-front {
+        height: 190px;
+      }
+      .who-title {
+        font-size: 26px;
+      }
+    }
+
     /* Content & Form Grid Section */
     .main-content-section {
       max-width: 1240px;
@@ -841,8 +1018,51 @@
   <!-- Hero Banner Section (Blank Hero Image, No Text) -->
   <section class="hero-banner" id="home" aria-label="KUIPFI Hero Image"></section>
 
+  <!-- WHO WE ARE SECTION (Asymmetric Curved Borders & Overlapping Composition) -->
+  <section class="who-we-are-section" id="about">
+    <div class="who-we-are-grid">
+      <div class="who-copy-col">
+        <span class="who-kicker">WHO WE ARE</span>
+        <h2 class="who-title">Pursuing operational resilience building protected futures</h2>
+        <p class="who-copy">
+          Positive change only happens through disciplined, innovative security solutions that mitigate risk before it escalates. We embrace this standard, and our pioneering commitment to safeguarding commercial assets, personnel, and critical infrastructure daily is at the heart of all we do. As trusted risk partners across South Africa, KUIPFI Strategic Risk Consultants is dedicated to delivering statutory integrity and vigilant physical protection.
+        </p>
+        <p class="who-copy">
+          KUIPFI operates as an accredited security subcontractor and risk management firm specializing in static commercial guarding, National Key Point (NKP) infrastructure protection, 24/7 offsite CCTV surveillance, and strike containment. Our private-public collaboration with corporate enterprises, municipal departments, and prime contractors ensures audit-ready compliance across all provincial deployments.
+        </p>
+        <a href="#contact" class="who-btn">
+          <span>Discuss Site Requirements</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="who-visual-wrapper">
+        <!-- Background Topographic Contour Vector (Top Right) -->
+        <svg class="topo-lines-bg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10 20C40 60 70 30 110 50C150 70 180 30 200 70" stroke="#1f6b52" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 4"/>
+          <path d="M0 60C50 100 80 70 130 90C180 110 190 80 200 120" stroke="#1f6b52" stroke-opacity="0.3" stroke-width="1.5"/>
+          <path d="M10 110C60 150 100 120 150 140C190 160 195 130 200 170" stroke="#1f6b52" stroke-opacity="0.2" stroke-width="1.5"/>
+          <path d="M20 160C70 190 120 170 170 190C190 200 195 190 200 200" stroke="#1f6b52" stroke-opacity="0.25" stroke-width="1.5"/>
+        </svg>
+
+        <!-- Primary Portrait Photo with Asymmetric Curved Border -->
+        <img class="who-img-back" src="images/Security_officer.jpeg" alt="KUIPFI security officer in uniform">
+
+        <!-- Overlapping Landscape Photo with Asymmetric Curved Border -->
+        <img class="who-img-front" src="images/securities-standing.jpeg" alt="KUIPFI guarding team deployment">
+
+        <!-- Background Topographic Contour Vector (Bottom Left) -->
+        <svg class="topo-lines-bottom" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 30C40 10 70 40 110 20C140 30 150 10 160 30" stroke="#ba915d" stroke-opacity="0.3" stroke-width="1.5"/>
+          <path d="M0 80C50 60 80 90 120 70C150 80 155 60 160 90" stroke="#ba915d" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <path d="M10 130C60 110 100 140 140 120C150 130 155 120 160 140" stroke="#ba915d" stroke-opacity="0.2" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <!-- Main Body Content & Form -->
-  <main class="main-content-section" id="about">
+  <main class="main-content-section" id="services-details">
     <!-- Left Column: Content -->
     <article>
       <h1 class="guarding-title">A trusted partner for secure operations</h1>
