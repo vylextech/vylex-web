@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KUIPFI Strategic Risk Consultants | Physical Security &amp; Risk Solutions</title>
+<meta name="description" content="South Africa's premier strategic risk and physical security subcontractor. Comprehensive guarding, critical infrastructure protection, and 24/7 control room operations.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  /* ==========================================================================
+     Design Tokens (Global Guardian Inspired: Deep Navy, Crisp White, Refined Accents)
+     ========================================================================== */
+  :root {
+    --navy-darkest: #04101e;
+    --navy-header: #002347;
+    --navy-primary: #002b5c;
+    --navy-light: #0d3b66;
+    
+    --accent-gold: #c59863;
+    --accent-gold-hover: #b08450;
+    
+    --card-navy: #002347;
+    --card-green: #1b5e43;
+    --card-cyan: #0284c7;
+    --card-burgundy: #7c1a35;
+    
+    --bg-page: #f8fafc;
+    --bg-white: #ffffff;
+    --bg-light: #f1f5f9;
+    
+    --text-heading: #002347;
+    --text-body: #334155;
+    --text-muted: #64748b;
+    --border-light: #e2e8f0;
+    
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+    
+    --shadow-card: 0 4px 20px rgba(0, 35, 71, 0.08);
+    --shadow-hover: 0 10px 30px rgba(0, 35, 71, 0.14);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text-body);
+    background-color: var(--bg-page);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--text-heading);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+  
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--navy-primary);
+    outline-offset: 3px;
+  }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+  /* ==========================================================================
+     Top Utility Bar (White Strip with Emergency Contact)
+     ========================================================================== */
+  .top-utility {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 12px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: #1e293b;
+    height: 38px;
+    display: flex;
+    align-items: center;
+  }
+  .top-utility-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top-utility-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .emergency-support-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #002347;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .emergency-support-link:hover { color: var(--accent-gold-hover); }
+  .pulse-indicator {
+    width: 8px; height: 8px;
+    background: #dc2626;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+  }
+  .top-utility-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .compliance-tag {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .top-utility-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #475569;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .top-utility-search:hover { color: #002347; }
+
+  /* ==========================================================================
+     Primary Navigation Header (Deep Navy Bar)
+     ========================================================================== */
+  header.global-nav {
+    background: var(--navy-header);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+  .nav-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-logo-img {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+  }
+  .brand-text-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand-title {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    line-height: 1;
+  }
+  .brand-subtitle {
+    color: #cbd5e1;
+    font-size: 8.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+
+  nav.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  nav.nav-links a {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    padding: 6px 0;
+  }
+  nav.nav-links a:hover {
+    color: var(--accent-gold);
+  }
+  nav.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-gold);
+  }
+
+  .btn-request-security {
+    background: #ffffff;
+    color: var(--navy-header) !important;
+    font-family: var(--font-heading);
+    font-size: 11.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 22px;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+    transition: all 0.25s ease;
+  }
+  .btn-request-security:hover {
+    background: var(--accent-gold);
+    color: #ffffff !important;
+    border-color: var(--accent-gold);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  /* ==========================================================================
+     Hero Section (3-Second Operational Slideshow Background)
+     ========================================================================== */
+  .hero-container {
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    background-color: var(--navy-darkest);
+    color: #ffffff;
+    padding: 90px 0 95px;
+    overflow: hidden;
+  }
+
+  .hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 25%;
+    opacity: 0;
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 5s ease-out;
+    transform: scale(1.03);
+    will-change: opacity, transform;
+  }
+
+  .hero-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(4, 16, 30, 0.92) 0%, rgba(0, 35, 71, 0.80) 55%, rgba(4, 16, 30, 0.70) 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero-wrap {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+  }
+
+  .hero-content {
+    max-width: 820px;
+    position: relative;
+  }
+
+  .hero-indicators {
+    display: flex;
+    gap: 8px;
+    margin-top: 40px;
+    align-items: center;
+  }
+
+  .hero-dot {
+    width: 24px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s ease, width 0.3s ease;
+    padding: 0;
+  }
+
+  .hero-dot.active {
+    background: var(--accent-gold);
+    width: 44px;
+  }
+
+  .hero-dot:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.65);
+  }
+  .hero-kicker {
+    display: inline-block;
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--accent-gold);
+  }
+  .hero-title {
+    font-size: 46px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .hero-description {
+    font-size: 16px;
+    color: #e2e8f0;
+    margin-top: 20px;
+    line-height: 1.7;
+    max-width: 620px;
+    font-weight: 400;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 18px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+  }
+  .btn-hero-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: var(--navy-header);
+    font-family: var(--font-heading);
+    font-size: 12.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 13px 28px;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+  }
+  .btn-hero-solid:hover {
+    background: var(--accent-gold);
+    color: #ffffff;
+  }
+  .btn-hero-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    font-family: var(--font-heading);
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 13px 28px;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+  }
+  .btn-hero-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+  }
+
+  /* ==========================================================================
+     Flagship Services Section (4 Cards with Colored Border Accents)
+     ========================================================================== */
+  .services-section {
+    padding: 85px 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .section-intro {
+    text-align: center;
+    max-width: 840px;
+    margin: 0 auto 56px;
+  }
+  .section-intro h2 {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    color: var(--navy-header);
+  }
+  .section-intro p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .services-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .service-card-item {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 2px;
+    padding: 38px 24px 34px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .service-card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Distinctive Colored Top & Bottom Accent Bars */
+  .service-card-navy {
+    border-top: 5px solid var(--card-navy);
+    border-bottom: 5px solid var(--card-navy);
+  }
+  .service-card-green {
+    border-top: 5px solid var(--card-green);
+    border-bottom: 5px solid var(--card-green);
+  }
+  .service-card-cyan {
+    border-top: 5px solid var(--card-cyan);
+    border-bottom: 5px solid var(--card-cyan);
+  }
+  .service-card-burgundy {
+    border-top: 5px solid var(--card-burgundy);
+    border-bottom: 5px solid var(--card-burgundy);
+  }
+
+  /* Circular Line-Art Icons */
+  .service-circle-icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    transition: transform 0.2s ease;
+  }
+  .service-card-item:hover .service-circle-icon {
+    transform: scale(1.06);
+  }
+
+  .service-card-navy .service-circle-icon {
+    border: 2px solid var(--card-navy);
+    color: var(--card-navy);
+  }
+  .service-card-green .service-circle-icon {
+    border: 2px solid var(--card-green);
+    color: var(--card-green);
+  }
+  .service-card-cyan .service-circle-icon {
+    border: 2px solid var(--card-cyan);
+    color: var(--card-cyan);
+  }
+  .service-card-burgundy .service-circle-icon {
+    border: 2px solid var(--card-burgundy);
+    color: var(--card-burgundy);
+  }
+
+  .service-card-title {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--navy-header);
+    margin-bottom: 12px;
+  }
+  .service-card-desc {
+    font-size: 13px;
+    color: var(--text-body);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .service-card-link {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--navy-header);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .service-card-link:hover {
+    color: var(--accent-gold);
+  }
+
+  /* ==========================================================================
+     Strategic Collaboration / Prime Subcontractor Spotlight Banner
+     ========================================================================== */
+  .spotlight-section {
+    padding: 75px 0;
+    background: var(--bg-page);
+  }
+  .spotlight-card {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    box-shadow: var(--shadow-card);
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    overflow: hidden;
+  }
+  .spotlight-left {
+    background: #f8fafc;
+    border-right: 1px solid var(--border-light);
+    padding: 46px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .spotlight-logos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .spotlight-logo-main {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    align-self: flex-start;
+  }
+  .spotlight-partner-box {
+    border-left: 3px solid var(--navy-primary);
+    padding-left: 14px;
+    margin-top: 10px;
+  }
+  .spotlight-partner-name {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--navy-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .spotlight-partner-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  
+  /* Angled Ribbon Tag */
+  .angled-ribbon-tag {
+    display: inline-block;
+    background: var(--navy-header);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 8px 24px 8px 16px;
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 100%, 0 100%);
+    margin-top: 32px;
+    align-self: flex-start;
+  }
+
+  .spotlight-right {
+    padding: 46px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .spotlight-eyebrow {
+    font-family: var(--font-heading);
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+  .spotlight-headline {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+  }
+  .spotlight-copy {
+    font-size: 14px;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .spotlight-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--navy-header);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .spotlight-action:hover {
+    color: var(--accent-gold);
+  }
+
+  /* ==========================================================================
+     Intelligence & Advisory Reports Section (3-Column Grid with Angled Ribbons)
+     ========================================================================== */
+  .intel-section {
+    padding: 80px 0;
+    background: #ffffff;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .intel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .intel-card {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .intel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+  .intel-thumb-wrap {
+    position: relative;
+    height: 190px;
+    background-size: cover;
+    background-position: center;
+  }
+  .intel-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 35, 71, 0.2) 0%, rgba(0, 35, 71, 0.85) 100%);
+  }
+  .intel-ribbon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--navy-header);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 20px 6px 14px;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  }
+  .intel-content {
+    padding: 24px 22px;
+  }
+  .intel-date {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .intel-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy-header);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+  .intel-card-desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .intel-card-link {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--navy-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .intel-card-link:hover { color: var(--accent-gold); }
+
+  /* ==========================================================================
+     Operational Execution Protocol (4-Step Chain)
+     ========================================================================== */
+  .methodology-section {
+    padding: 80px 0;
+    background: var(--bg-page);
+  }
+  .methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+  }
+  .methodology-item {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-top: 3px solid var(--navy-header);
+    padding: 26px 20px;
+    border-radius: 2px;
+  }
+  .step-index {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .methodology-item h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy-header);
+    margin-bottom: 8px;
+  }
+  .methodology-item p {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ==========================================================================
+     Subcontractor & Statutory Compliance Register (Accordion)
+     ========================================================================== */
+  .compliance-block {
+    background: var(--navy-darkest);
+    color: #ffffff;
+    padding: 85px 0;
+  }
+  .compliance-block-intro {
+    max-width: 760px;
+    margin-bottom: 40px;
+  }
+  .compliance-block-intro h2 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .compliance-block-intro p {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .accordion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .accordion-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 2px;
+  }
+  .accordion-item summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 22px;
+    font-family: var(--font-heading);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .accordion-item summary::-webkit-details-marker { display: none; }
+  .accordion-item summary::after {
+    content: '+';
+    font-size: 18px;
+    color: var(--accent-gold);
+    font-weight: 400;
+  }
+  .accordion-item[open] summary {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .accordion-item[open] summary::after {
+    content: '−';
+  }
+  .accordion-item ol {
+    padding: 16px 20px 18px 40px;
+    font-size: 12.5px;
+    color: #cbd5e1;
+    line-height: 1.7;
+  }
+  .accordion-item li {
+    padding-left: 4px;
+    margin-bottom: 4px;
+  }
+
+  /* ==========================================================================
+     Institutional Procurement Enquiry Form
+     ========================================================================== */
+  .procurement-section {
+    padding: 85px 0;
+    background: #ffffff;
+  }
+  .procurement-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 54px;
+  }
+  .procurement-info h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--navy-header);
+    margin-bottom: 16px;
+  }
+  .procurement-info p {
+    font-size: 14px;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .contact-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13.5px;
+    padding: 10px 0;
+    color: var(--navy-header);
+    font-weight: 600;
+  }
+  .contact-detail-row i {
+    color: var(--accent-gold);
+    width: 20px;
+    font-size: 16px;
+  }
+
+  .form-box {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-top: 4px solid var(--navy-header);
+    padding: 36px 32px;
+    box-shadow: var(--shadow-card);
+    border-radius: 2px;
+  }
+  .form-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .form-ctrl-group {
+    margin-bottom: 14px;
+  }
+  .form-ctrl-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy-header);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .form-input {
+    width: 100%;
+    height: 42px;
+    border: 1px solid var(--border-light);
+    border-radius: 2px;
+    padding: 0 14px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--text-body);
+    background: #ffffff;
+  }
+  .form-input:focus {
+    border-color: var(--navy-primary);
+  }
+  textarea.form-input {
+    height: 94px;
+    padding-top: 10px;
+    resize: vertical;
+  }
+  select.form-input {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23002347" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  .consent-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 16px 0 20px;
+  }
+  .consent-check input {
+    margin-top: 3px;
+  }
+  .btn-submit-enquiry {
+    background: var(--navy-header);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 13px 32px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .btn-submit-enquiry:hover {
+    background: var(--accent-gold-hover);
+  }
+
+  /* ==========================================================================
+     Footer (Corporate Deep Navy Bar & Accreditations)
+     ========================================================================== */
+  footer.global-footer {
+    background: var(--navy-darkest);
+    color: #94a3b8;
+    padding: 65px 0 0;
+  }
+  .footer-columns {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 45px;
+  }
+  .footer-columns h4 {
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 18px;
+  }
+  .footer-columns ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .footer-columns a {
+    font-size: 13px;
+    color: #cbd5e1;
+  }
+  .footer-columns a:hover {
+    color: var(--accent-gold);
+  }
+
+  /* Accreditations Bar */
+  .footer-accreditation-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .accreditation-badges-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .badge-tag {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+  .badge-tag strong {
+    color: var(--accent-gold);
+  }
+
+  .footer-legal-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 0;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-social-links {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+  }
+
+  /* ==========================================================================
+     Responsive Breakpoints
+     ========================================================================== */
+  @media (max-width: 1080px) {
+    nav.nav-links { display: none; }
+    .mobile-menu-btn { display: block; }
+    .services-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .spotlight-card { grid-template-columns: 1fr; }
+    .spotlight-left { border-right: none; border-bottom: 1px solid var(--border-light); }
+    .intel-grid { grid-template-columns: repeat(2, 1fr); }
+    .methodology-grid { grid-template-columns: repeat(2, 1fr); }
+    .procurement-layout { grid-template-columns: 1fr; }
+    .footer-columns { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .top-utility { display: none; }
+    .hero-title { font-size: 32px; }
+    .hero-buttons { flex-direction: column; }
+    .btn-hero-solid, .btn-hero-outline { width: 100%; text-align: center; }
+    .services-grid-4 { grid-template-columns: 1fr; }
+    .intel-grid { grid-template-columns: 1fr; }
+    .methodology-grid { grid-template-columns: 1fr; }
+    .accordion-grid { grid-template-columns: 1fr; }
+    .form-split { grid-template-columns: 1fr; }
+    .footer-columns { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Utility Strip -->
+<div class="top-utility">
+  <div class="top-utility-inner">
+    <div class="top-utility-left">
+      <a href="tel:+27112348900" class="emergency-support-link">
+        <span class="pulse-indicator"></span>
+        <span>+27 (0) 11 234 8900 | 24/7 Operations Desk &amp; Escalation</span>
+      </a>
+    </div>
+    <div class="top-utility-right">
+      <span class="compliance-tag">PSIRA Registered · NBCPSS Compliant</span>
+      <a href="#contact" class="top-utility-search"><i class="fa-solid fa-file-invoice"></i> Vendor Portal</a>
+    </div>
+  </div>
+</div>
+
+<!-- Primary Global Header -->
+<header class="global-nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand-logo-wrap">
+      <img class="brand-logo-img" src="images/emblem.png" alt="KUIPFI Emblem">
+      <div class="brand-text-block">
+        <span class="brand-title">KUIPFI</span>
+        <span class="brand-subtitle">Strategic Risk Consultants</span>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="mainNav">
+      <a href="#services" class="active">Services</a>
+      <a href="#collaboration">Partnership</a>
+      <a href="#intel">Risk Intel</a>
+      <a href="#methodology">Protocol</a>
+      <a href="#compliance">Compliance</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn-request-security">Request Security</a>
+    </nav>
+
+    <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle mobile menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Hero Section with 3-Second Background Carousel (Real Operations Photos, No Logo) -->
+<section class="hero-container" id="home">
+  <!-- Slideshow Background (Excludes Logos: Security_officer, securities-standing, surv-camera, backview, officer) -->
+  <div class="hero-slides" aria-hidden="true">
+    <div class="hero-slide active" style="background-image: url('images/Security_officer.jpeg');"></div>
+    <div class="hero-slide" style="background-image: url('images/securities-standing.jpeg');"></div>
+    <div class="hero-slide" style="background-image: url('images/surv-camera.jpeg');"></div>
+    <div class="hero-slide" style="background-image: url('images/backview.jpeg');"></div>
+    <div class="hero-slide" style="background-image: url('images/officer.jpeg');"></div>
+  </div>
+  
+  <!-- Contrast Overlay for Crystal Clear Typography -->
+  <div class="hero-overlay"></div>
+
+  <div class="wrap hero-wrap">
+    <div class="hero-content">
+      <span class="hero-kicker">Commercial &amp; High-Risk Site Protection</span>
+      <h1 class="hero-title">24/7 Strategic Risk &amp; Physical Protection</h1>
+      <p class="hero-description">
+        KUIPFI operates as an elite security subcontractor and direct risk partner, safeguarding commercial parks, industrial supply chains, and national infrastructure installations across South Africa.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-hero-solid">Connect With Us</a>
+        <a href="#methodology" class="btn-hero-outline"><i class="fa-solid fa-play"></i> Operational Protocol</a>
+      </div>
+
+      <!-- 5 Slide Indicators (3 Seconds Each) -->
+      <div class="hero-indicators" aria-label="Hero carousel controls">
+        <button class="hero-dot active" aria-label="Slide 1: Security Officer" data-index="0"></button>
+        <button class="hero-dot" aria-label="Slide 2: Guarding Formation" data-index="1"></button>
+        <button class="hero-dot" aria-label="Slide 3: Surveillance Camera" data-index="2"></button>
+        <button class="hero-dot" aria-label="Slide 4: Facility Patrol" data-index="3"></button>
+        <button class="hero-dot" aria-label="Slide 5: Tactical Officer" data-index="4"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Flagship Services (Inspired by Global Guardian 4-Card System) -->
+<section class="services-section" id="services">
+  <div class="wrap">
+    <div class="section-intro">
+      <h2>Strategic Security Services</h2>
+      <p>
+        KUIPFI provides enterprise clients and prime contractors with an integrated suite of guarding, tactical response, offsite surveillance, and compliance management solutions.
+      </p>
+    </div>
+
+    <div class="services-grid-4">
+      <!-- 01 Protective Guarding (Navy Accent) -->
+      <div class="service-card-item service-card-navy">
+        <div>
+          <div class="service-circle-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="service-card-title">Protective Guarding</h3>
+          <p class="service-card-desc">
+            24/7 static guarding, disciplined access control, and tactical facility protection across commercial and industrial environments.
+          </p>
+        </div>
+        <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 02 Asset & Surveillance (Forest Green Accent) -->
+      <div class="service-card-item service-card-green">
+        <div>
+          <div class="service-circle-icon">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <h3 class="service-card-title">Asset Security</h3>
+          <p class="service-card-desc">
+            24/7 real-time offsite CCTV monitoring, AI tripwire perimeter surveillance, and rapid incident dispatch integration.
+          </p>
+        </div>
+        <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 03 Critical Infrastructure (Cyan Accent) -->
+      <div class="service-card-item service-card-cyan">
+        <div>
+          <div class="service-circle-icon">
+            <i class="fa-solid fa-building-shield"></i>
+          </div>
+          <h3 class="service-card-title">Critical Infrastructure</h3>
+          <p class="service-card-desc">
+            National Key Point (NKP) alignment, utilities, transport corridors, and high-compliance installations requiring statutory integrity.
+          </p>
+        </div>
+        <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 04 Tactical Response (Burgundy Accent) -->
+      <div class="service-card-item service-card-burgundy">
+        <div>
+          <div class="service-circle-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <h3 class="service-card-title">Tactical Response</h3>
+          <p class="service-card-desc">
+            Strike containment, armed response mobilization, emergency crisis control, and asset recovery for escalated environments.
+          </p>
+        </div>
+        <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Subcontractor Partnership Spotlight (Inspired by Global Guardian Collaboration Banner) -->
+<section class="spotlight-section" id="collaboration">
+  <div class="wrap">
+    <div class="spotlight-card">
+      <div class="spotlight-left">
+        <div class="spotlight-logos">
+          <img class="spotlight-logo-main" src="images/KUPFI_horizontal_corporate_logo.png" alt="KUIPFI Corporate Logo">
+          <div class="spotlight-partner-box">
+            <div class="spotlight-partner-name">Prime Contractor &amp; Joint Ventures</div>
+            <div class="spotlight-partner-sub">Tier-1 Subcontractor Readiness Framework</div>
+          </div>
+        </div>
+        <div class="angled-ribbon-tag">Subcontractor Readiness</div>
+      </div>
+      <div class="spotlight-right">
+        <span class="spotlight-eyebrow">Enterprise Procurement Alignment</span>
+        <h3 class="spotlight-headline">Fidelity &amp; Institutional Subcontractor File</h3>
+        <p class="spotlight-copy">
+          KUIPFI maintains an active, pre-vetted onboarding pack engineered for seamless submission to prime security contractors, corporate panels, and municipal tenders. Full statutory clearance across PSIRA, NBCPSS, SARS Tax PIN, SAPS firearm licensing, and COID good-standing.
+        </p>
+        <a href="#compliance" class="spotlight-action">View Vendor Pack Register <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Intel & Risk Reports Section (Inspired by Global Guardian 3-Report Cards) -->
+<section class="intel-section" id="intel">
+  <div class="wrap">
+    <div class="section-intro">
+      <h2>Operational Intelligence &amp; Risk Reports</h2>
+      <p>
+        Strategic threat assessments, compliance advisories, and site vulnerability analyses prepared by KUIPFI operational leads.
+      </p>
+    </div>
+
+    <div class="intel-grid">
+      <!-- Report 01 -->
+      <article class="intel-card">
+        <div class="intel-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80');">
+          <div class="intel-thumb-overlay"></div>
+          <div class="intel-ribbon">Intel Report</div>
+        </div>
+        <div class="intel-content">
+          <div class="intel-date">2026 Assessment · Infrastructure</div>
+          <h3 class="intel-card-title">Commercial Supply Chain &amp; Logistics Vulnerability Audit</h3>
+          <p class="intel-card-desc">Comprehensive analysis of corridor transit hazards, cargo hijack prevention, and distribution depot perimeter protocols.</p>
+          <a href="#contact" class="intel-card-link">Read Briefing <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Report 02 -->
+      <article class="intel-card">
+        <div class="intel-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');">
+          <div class="intel-thumb-overlay"></div>
+          <div class="intel-ribbon">Advisory Brief</div>
+        </div>
+        <div class="intel-content">
+          <div class="intel-date">Statutory Review · Governance</div>
+          <h3 class="intel-card-title">National Key Point (NKP) Compliance &amp; Vetting Manual</h3>
+          <p class="intel-card-desc">Operational benchmarks for guarding forces deployed at utility plants, power substations, and essential communications sites.</p>
+          <a href="#contact" class="intel-card-link">Read Briefing <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Report 03 -->
+      <article class="intel-card">
+        <div class="intel-thumb-wrap" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80');">
+          <div class="intel-thumb-overlay"></div>
+          <div class="intel-ribbon">Operational Dossier</div>
+        </div>
+        <div class="intel-content">
+          <div class="intel-date">Field Report · Crisis Ops</div>
+          <h3 class="intel-card-title">Industrial Strike Containment &amp; Unrest Response Standard</h3>
+          <p class="intel-card-desc">Non-lethal containment methodologies, evidence logging, and site continuity strategies during industrial action.</p>
+          <a href="#contact" class="intel-card-link">Read Briefing <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Operational Protocol (4-Step Chain) -->
+<section class="methodology-section" id="methodology">
+  <div class="wrap">
+    <div class="section-intro">
+      <h2>Operational Protocol &amp; Methodology</h2>
+      <p>How KUIPFI structures, deploys, and maintains uncompromised guarding standards across every deployed site.</p>
+    </div>
+
+    <div class="methodology-grid">
+      <div class="methodology-item">
+        <span class="step-index">01. Threat Survey</span>
+        <h3>Site Risk Audit</h3>
+        <p>Thorough physical survey, access point assessment, vulnerability mapping, and formulation of customized post orders.</p>
+      </div>
+      <div class="methodology-item">
+        <span class="step-index">02. Guard Vetting</span>
+        <h3>Disciplined Deployment</h3>
+        <p>Deployment of PSIRA Grade A–C officers, uniform inspection, communication checks, and prime contractor SLA sign-off.</p>
+      </div>
+      <div class="methodology-item">
+        <span class="step-index">03. Control Desk</span>
+        <h3>24/7 Monitoring</h3>
+        <p>Continuous offsite surveillance, Occurrence Book (OB) verification, patrol wand tracking, and central dispatch oversight.</p>
+      </div>
+      <div class="methodology-item">
+        <span class="step-index">04. Governance</span>
+        <h3>Audit &amp; Reconciliation</h3>
+        <p>Daily incident reporting, monthly compliance pack renewal, statutory wage reconciliation (NBCPSS), and vendor reviews.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Subcontractor Compliance Register (Accordion) -->
+<section class="compliance-block" id="compliance">
+  <div class="wrap">
+    <div class="compliance-block-intro">
+      <h2>Subcontractor Statutory Readiness Register</h2>
+      <p>
+        A complete document inventory maintained for immediate vendor onboarding, main contractor compliance checks, and municipal audit files.
+      </p>
+    </div>
+
+    <div class="accordion-grid">
+      <details class="accordion-item">
+        <summary>Company, Tax &amp; Corporate Records</summary>
+        <ol>
+          <li>Completed credit check application form</li>
+          <li>Central Supplier Database (CSD) registration report</li>
+          <li>B-BBEE EME affidavit or QSE verification certificate</li>
+          <li>Current CIPC disclosure certificate listing directors</li>
+          <li>Latest original SARS tax PIN confirmation letter</li>
+          <li>VAT 103 registration document</li>
+          <li>Current COID and UIF records with recent EMP201 proof</li>
+          <li>Public liability insurance schedule</li>
+        </ol>
+      </details>
+
+      <details class="accordion-item">
+        <summary>Security Sector Regulatory Adherence</summary>
+        <ol>
+          <li>Valid PSIRA company registration certificate</li>
+          <li>PSIRA letter of good standing with active directors</li>
+          <li>National Bargaining Council (NBCPSS) registration letter</li>
+          <li>Affinity Health letter of good standing</li>
+          <li>Private Security Provident Fund monthly compliance letter</li>
+          <li>Valid SAIDSA certificate</li>
+          <li>Management team PSIRA certificates and clearances</li>
+        </ol>
+      </details>
+
+      <details class="accordion-item">
+        <summary>Directors, Facilities &amp; Governance</summary>
+        <ol>
+          <li>Directors' SAPS 365 clearance certificates (under 3 months)</li>
+          <li>Company profile with physical branch locations</li>
+          <li>Municipal accounts and office lease proof of payment</li>
+          <li>Share certificates and organizational organogram</li>
+          <li>Annual financial statements and asset register</li>
+          <li>Client reference letters not older than 12 months</li>
+        </ol>
+      </details>
+
+      <details class="accordion-item">
+        <summary>Firearms, Fleet &amp; Employment Records</summary>
+        <ol>
+          <li>Company SAPS firearm business accreditation</li>
+          <li>Valid firearm licences and SAPS asset list</li>
+          <li>National Key Point (NKP) registration documentation</li>
+          <li>Proof of response fleet vehicles registered to company</li>
+          <li>Latest guard payslips for Grades A, B, and C (Area 1 &amp; 3)</li>
+          <li>Provident fund monthly payment schedules</li>
+        </ol>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Procurement Enquiry Form -->
+<section class="procurement-section" id="contact">
+  <div class="wrap">
+    <div class="procurement-layout">
+      <div class="procurement-info">
+        <h2>Initiate Procurement Briefing</h2>
+        <p>
+          Connect with KUIPFI regarding prime contractor subcontracting, commercial guarding tenders, or site risk surveys. Our senior operations desk will respond promptly with our full vendor compliance dossier.
+        </p>
+        <div class="contact-detail-row">
+          <i class="fa-solid fa-phone"></i> +27 (0) 11 234 8900
+        </div>
+        <div class="contact-detail-row">
+          <i class="fa-solid fa-envelope"></i> operations@kuipfi.com
+        </div>
+        <div class="contact-detail-row">
+          <i class="fa-solid fa-envelope"></i> tenders@kuipfi.com
+        </div>
+        <div class="contact-detail-row">
+          <i class="fa-solid fa-location-dot"></i> South Africa Operational Footprint (9 Provinces)
+        </div>
+      </div>
+
+      <div class="form-box">
+        <form onsubmit="handleFormSubmit(event)">
+          <div class="form-split">
+            <div class="form-ctrl-group">
+              <label for="fName">First Name</label>
+              <input type="text" id="fName" class="form-input" placeholder="First Name" required>
+            </div>
+            <div class="form-ctrl-group">
+              <label for="lName">Last Name</label>
+              <input type="text" id="lName" class="form-input" placeholder="Last Name" required>
+            </div>
+          </div>
+          <div class="form-ctrl-group">
+            <label for="cOrg">Company / Organisation</label>
+            <input type="text" id="cOrg" class="form-input" placeholder="Company Name" required>
+          </div>
+          <div class="form-split">
+            <div class="form-ctrl-group">
+              <label for="cEmail">Email Address</label>
+              <input type="email" id="cEmail" class="form-input" placeholder="name@company.co.za" required>
+            </div>
+            <div class="form-ctrl-group">
+              <label for="cPhone">Contact Phone</label>
+              <input type="tel" id="cPhone" class="form-input" placeholder="+27 ..." required>
+            </div>
+          </div>
+          <div class="form-split">
+            <div class="form-ctrl-group">
+              <label for="cProvince">Deployment Province</label>
+              <select id="cProvince" class="form-input" required>
+                <option value="" disabled selected>Select Province</option>
+                <option>Gauteng</option><option>KwaZulu-Natal</option><option>Western Cape</option>
+                <option>Eastern Cape</option><option>North West</option><option>Northern Cape</option>
+                <option>Free State</option><option>Limpopo</option><option>Mpumalanga</option>
+              </select>
+            </div>
+            <div class="form-ctrl-group">
+              <label for="cScope">Scope of Services</label>
+              <select id="cScope" class="form-input" required>
+                <option value="" disabled selected>Select Scope</option>
+                <option>Subcontractor / Joint Venture Guarding</option>
+                <option>Commercial Facility Physical Security</option>
+                <option>Critical Infrastructure (NKP) Protection</option>
+                <option>Offsite CCTV &amp; Control Room Monitoring</option>
+                <option>Tactical Response &amp; Strike Containment</option>
+                <option>Vendor File / Due Diligence Pack Request</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-ctrl-group">
+            <label for="cMsg">Site Requirements &amp; Timelines</label>
+            <textarea id="cMsg" class="form-input" placeholder="Location, required guard grades, site shifts, and operational deadlines..."></textarea>
+          </div>
+
+          <label class="consent-check">
+            <input type="checkbox" required>
+            <span>I confirm this is a bona fide commercial enquiry and consent to KUIPFI processing these details.</span>
+          </label>
+
+          <button type="submit" class="btn-submit-enquiry">Submit Procurement Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Corporate Footer -->
+<footer class="global-footer">
+  <div class="wrap">
+    <div class="footer-columns">
+      <div>
+        <h4>KUIPFI Strategic Risk</h4>
+        <ul>
+          <li><a href="#home">About Our Firm</a></li>
+          <li><a href="#services">Capability Framework</a></li>
+          <li><a href="#collaboration">Subcontractor Readiness</a></li>
+          <li><a href="#compliance">Statutory Due Diligence</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Key Services</h4>
+        <ul>
+          <li><a href="#services">Protective Guarding</a></li>
+          <li><a href="#services">Asset &amp; CCTV Security</a></li>
+          <li><a href="#services">Critical Infrastructure (NKP)</a></li>
+          <li><a href="#services">Tactical Response &amp; Strike Ops</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Governance</h4>
+        <ul>
+          <li><a href="#compliance">PSIRA Accreditation</a></li>
+          <li><a href="#compliance">NBCPSS Bargaining Council</a></li>
+          <li><a href="#compliance">SAPS Firearm Compliance</a></li>
+          <li><a href="#compliance">B-BBEE Transformation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Operations Desk</h4>
+        <ul>
+          <li><a href="tel:+27112348900">+27 (0) 11 234 8900</a></li>
+          <li><a href="mailto:operations@kuipfi.com">operations@kuipfi.com</a></li>
+          <li><a href="mailto:tenders@kuipfi.com">tenders@kuipfi.com</a></li>
+          <li><a href="#contact">24/7 National Operations Footprint</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Accreditations Strip -->
+    <div class="footer-accreditation-row">
+      <div class="accreditation-badges-group">
+        <span class="badge-tag"><strong>PSIRA</strong> Reg. Subcontractor</span>
+        <span class="badge-tag"><strong>NBCPSS</strong> Compliant</span>
+        <span class="badge-tag"><strong>SAPS</strong> Firearm Accredited</span>
+        <span class="badge-tag"><strong>B-BBEE</strong> Level 1 / EME</span>
+        <span class="badge-tag"><strong>SARS &amp; COID</strong> Verified</span>
+      </div>
+      <div class="footer-social-links">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+
+    <!-- Copyright & Disclaimer -->
+    <div class="footer-legal-bottom">
+      <span>&copy; 2026 KUIPFI Strategic Risk Consultants. All rights reserved.</span>
+      <span>Designed for High-Risk Commercial &amp; Critical Infrastructure Protection.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    alert('Thank you. Your procurement enquiry has been logged with the KUIPFI Operations Desk.');
+    e.target.reset();
+  }
+
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mainNav = document.getElementById('mainNav');
+
+  mobileToggle.addEventListener('click', () => {
+    const isVisible = mainNav.style.display === 'flex';
+    mainNav.style.display = isVisible ? 'none' : 'flex';
+    if (!isVisible) {
+      mainNav.style.flexDirection = 'column';
+      mainNav.style.position = 'absolute';
+      mainNav.style.top = '72px';
+      mainNav.style.left = '0';
+      mainNav.style.right = '0';
+      mainNav.style.background = '#002347';
+      mainNav.style.padding = '24px 32px';
+      mainNav.style.gap = '18px';
+      mainNav.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
+    }
+  });
+
+  document.querySelectorAll('#mainNav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 1080) {
+        mainNav.style.display = 'none';
+      }
+    });
+  });
+
+  // Hero Background Carousel - Cycles all 5 operational images every 3 seconds (3000ms)
+  (function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+    let timer = null;
+    const SLIDE_DURATION = 3000; // Exactly 3 seconds
+
+    function goToSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      currentIndex = index;
+    }
+
+    function advanceSlide() {
+      const nextIndex = (currentIndex + 1) % slides.length;
+      goToSlide(nextIndex);
+    }
+
+    function resetTimer() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(advanceSlide, SLIDE_DURATION);
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const targetIndex = parseInt(dot.getAttribute('data-index'), 10);
+        goToSlide(targetIndex);
+        resetTimer();
+      });
+    });
+
+    // Start 3-second cycle immediately
+    resetTimer();
+  })();
+</script>
+
+</body>
+</html>
