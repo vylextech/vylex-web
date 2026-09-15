@@ -418,9 +418,205 @@
 
     .operating-image {
       min-height: 390px;
-      border-radius: var(--radius-lg);
+      border-top-left-radius: 65px;
+      border-bottom-right-radius: 65px;
+      border-top-right-radius: 14px;
+      border-bottom-left-radius: 14px;
       overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+      border: 4px solid var(--white);
+    }
+
+    /* =========================================================
+       WHO WE ARE (Asymmetric Border Shapes & Topographic Flow)
+    ========================================================= */
+    .who-we-are-section {
+      padding: 95px 0 85px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #eef2f0;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .who-kicker {
+      color: var(--gold);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .who-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1.2;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .who-copy {
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .who-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: var(--white);
+      padding: 13px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 12px;
+      transition: all 0.25s ease;
+    }
+
+    .who-btn:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateX(4px);
+    }
+
+    /* Asymmetric Visual Wrapper */
+    .who-visual {
+      position: relative;
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .topo-vector-top {
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      width: 220px;
+      height: 220px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .topo-vector-bottom {
+      position: absolute;
+      bottom: -15px;
+      left: 10px;
+      width: 180px;
+      height: 180px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .who-back-img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 62%;
+      height: 380px;
+      object-fit: cover;
+      border-top-left-radius: 75px;
+      border-bottom-right-radius: 75px;
+      border-top-right-radius: 14px;
+      border-bottom-left-radius: 14px;
+      box-shadow: 0 16px 36px rgba(22, 79, 61, 0.14);
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .who-front-img {
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      width: 68%;
+      height: 250px;
+      object-fit: cover;
+      border-top-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+      border-top-right-radius: 14px;
+      border-bottom-left-radius: 14px;
+      border: 6px solid var(--white);
+      box-shadow: 0 20px 42px rgba(0, 0, 0, 0.16);
+      z-index: 2;
+      transition: transform 0.3s ease;
+    }
+
+    .who-visual:hover .who-front-img {
+      transform: translateY(-4px);
+    }
+    .who-visual:hover .who-back-img {
+      transform: translateY(2px);
+    }
+
+    /* =========================================================
+       EXPANDED SECTORS SECTION (Asymmetric Card Shapes)
+    ========================================================= */
+    .sectors-expanded-section {
+      padding: 90px 0;
+      background: var(--bg-light);
+      border-bottom: 1px solid #eef2f0;
+    }
+
+    .sectors-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .sector-item-card {
+      background: var(--white);
+      border-top-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.04);
       box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .sector-item-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--green);
+    }
+
+    .sector-thumb {
+      height: 160px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .sector-card-body {
+      padding: 24px 20px;
+    }
+
+    .sector-card-body h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+
+    .sector-card-body p {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
     }
 
     .operating-image img {
@@ -747,6 +943,7 @@
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Our Capabilities</a></li>
+          <li><a href="#sectors">Sectors</a></li>
           <li><a href="#governance">Governance</a></li>
           <li><a href="#contact" class="nav-btn">Contact Us</a></li>
         </ul>
@@ -798,11 +995,54 @@
       </div>
     </section>
 
+    <!-- WHO WE ARE SECTION (Asymmetric Curved Borders & Overlapping Imagery) -->
+    <section class="who-we-are-section" id="about">
+      <div class="container who-grid">
+        <div class="who-copy-col">
+          <span class="who-kicker">WHO WE ARE</span>
+          <h2 class="who-title">Pursuing operational resilience building protected futures</h2>
+          <p class="who-copy">
+            Positive change only happens through disciplined, innovative security solutions that challenge vulnerabilities and manage risk before disruption strikes. We embrace this standard, and our pioneering commitment to safeguarding commercial assets, personnel, and national infrastructure daily is at the heart of all we do. As trusted risk partners across South Africa, KUIPFI is dedicated to building resilient, audit-ready futures.
+          </p>
+          <p class="who-copy">
+            KUIPFI operates as an accredited security subcontractor and risk management firm specializing in static guarding, critical infrastructure (NKP) protection, 24/7 offsite CCTV surveillance, and strike containment. Our private-public collaboration with corporate enterprises, municipal departments, and prime contractors ensures uncompromised statutory integrity.
+          </p>
+          <a href="#contact" class="who-btn">
+            <span>Discuss Site Requirements</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="who-visual">
+          <!-- Topographic Contour Vector (Top Right) -->
+          <svg class="topo-vector-top" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10 20C40 60 70 30 110 50C150 70 180 30 200 70" stroke="#1f6b52" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <path d="M0 60C50 100 80 70 130 90C180 110 190 80 200 120" stroke="#1f6b52" stroke-opacity="0.3" stroke-width="1.5"/>
+            <path d="M10 110C60 150 100 120 150 140C190 160 195 130 200 170" stroke="#1f6b52" stroke-opacity="0.2" stroke-width="1.5"/>
+            <path d="M20 160C70 190 120 170 170 190C190 200 195 190 200 200" stroke="#1f6b52" stroke-opacity="0.25" stroke-width="1.5"/>
+          </svg>
+
+          <!-- Back Portrait Image with Asymmetric Curved Border -->
+          <img class="who-back-img" src="images/Security_officer.jpeg" alt="KUIPFI Security Officer in uniform">
+
+          <!-- Front Overlapping Image with Asymmetric Curved Border -->
+          <img class="who-front-img" src="images/securities-standing.jpeg" alt="KUIPFI Guarding Team in formation">
+
+          <!-- Topographic Contour Vector (Bottom Left) -->
+          <svg class="topo-vector-bottom" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 30C40 10 70 40 110 20C140 30 150 10 160 30" stroke="#b9915d" stroke-opacity="0.3" stroke-width="1.5"/>
+            <path d="M0 80C50 60 80 90 120 70C150 80 155 60 160 90" stroke="#b9915d" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <path d="M10 130C60 110 100 140 140 120C150 130 155 120 160 140" stroke="#b9915d" stroke-opacity="0.2" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
     <!-- OPERATING MODEL -->
     <section class="operating-section" id="approach">
       <div class="container operating-grid">
         <div class="operating-image">
-          <img src="https://www.shutterstock.com/image-photo/security-guard-monitoring-cctv-cameras-600w-2660314967.jpg" alt="Security guard monitoring CCTV cameras">
+          <img src="images/surv-camera.jpeg" alt="Security guard surveillance camera and monitoring equipment">
         </div>
         <div class="operating-copy">
           <h2>Security that works with the way your site works</h2>
@@ -888,6 +1128,50 @@
               <li><i class="fa-solid fa-circle-check"></i> Multi-facility coordination</li>
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPANDED SECTORS SECTION (Asymmetric Card Shapes & Real Operational Photos) -->
+    <section class="sectors-expanded-section" id="sectors">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Protected Environments &amp; Sectors</h2>
+          <div class="accent-bar">
+            <div class="bar-green"></div>
+            <div class="bar-gold"></div>
+          </div>
+        </div>
+
+        <div class="sectors-grid-4">
+          <div class="sector-item-card">
+            <img class="sector-thumb" src="images/officer.jpeg" alt="Commercial Real Estate Security">
+            <div class="sector-card-body">
+              <h3>Commercial Real Estate</h3>
+              <p>Corporate parks, commercial head offices, and retail centers requiring polished access control.</p>
+            </div>
+          </div>
+          <div class="sector-item-card">
+            <img class="sector-thumb" src="images/backview.jpeg" alt="Industrial Logistics Security">
+            <div class="sector-card-body">
+              <h3>Industrial &amp; Logistics</h3>
+              <p>Distribution centers, manufacturing sites, and freight hubs requiring loss prevention.</p>
+            </div>
+          </div>
+          <div class="sector-item-card">
+            <img class="sector-thumb" src="images/surv-camera.jpeg" alt="Critical Infrastructure Protection">
+            <div class="sector-card-body">
+              <h3>Critical Infrastructure</h3>
+              <p>National Key Point (NKP) installations, utilities, and telecommunications installations.</p>
+            </div>
+          </div>
+          <div class="sector-item-card">
+            <img class="sector-thumb" src="images/securities-standing.jpeg" alt="Tactical Escort & Corridors">
+            <div class="sector-card-body">
+              <h3>Tactical Corridors</h3>
+              <p>High-value transport escorts, strike containment, and emergency unrest containment.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
