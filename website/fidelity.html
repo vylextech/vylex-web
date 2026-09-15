@@ -624,6 +624,89 @@
       font-size: 13px;
     }
 
+    /* Mobile Menu Toggle Button */
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid #e5e7eb;
+      border-radius: 2px;
+      color: #1f6b52;
+      font-size: 18px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .mobile-nav-toggle:hover {
+      background: #f0f7f4;
+      border-color: #1f6b52;
+    }
+
+    /* Mobile Drawer Menu (Matching Screenshot Style with Fidelity Emerald Green) */
+    .mobile-menu-drawer {
+      display: none;
+      background: #f4f6f8;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 2px solid #1f6b52;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    .mobile-menu-drawer.is-open {
+      display: block;
+    }
+
+    .mobile-menu-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mobile-menu-item {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .mobile-menu-item:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 26px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #1f6b52;
+      background: #f4f6f8;
+      transition: background 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
+    }
+
+    .mobile-menu-link:hover,
+    .mobile-menu-link.active {
+      background: #e9f2ee;
+      color: #154e3c;
+      padding-left: 30px;
+    }
+
+    /* Right indicator box matching the screenshot */
+    .mobile-menu-box-icon {
+      display: inline-block;
+      width: 13px;
+      height: 17px;
+      border: 1.5px solid #1f6b52;
+      border-radius: 1px;
+      opacity: 0.8;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .mobile-menu-link:hover .mobile-menu-box-icon {
+      border-color: #ba915d;
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
     /* Responsive Design */
     @media (max-width: 992px) {
       .main-content-section {
@@ -637,6 +720,9 @@
       }
       .main-nav {
         display: none; /* Can be toggled on mobile menu */
+      }
+      .mobile-nav-toggle {
+        display: inline-flex;
       }
     }
 
@@ -704,6 +790,51 @@
         <a href="#contact">Contact</a>
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
       </nav>
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars" id="mobileNavIcon"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Menu (Matching Screenshot Style) -->
+    <div class="mobile-menu-drawer" id="mobileMenuDrawer">
+      <ul class="mobile-menu-list">
+        <li class="mobile-menu-item">
+          <a href="#home" class="mobile-menu-link active">
+            <span>Corporate / Home</span>
+            <span class="mobile-menu-box-icon"></span>
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="#about" class="mobile-menu-link">
+            <span>About Us</span>
+            <span class="mobile-menu-box-icon"></span>
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="#services" class="mobile-menu-link">
+            <span>Services &amp; Guarding</span>
+            <span class="mobile-menu-box-icon"></span>
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="#compliance" class="mobile-menu-link">
+            <span>Governance &amp; PSIRA</span>
+            <span class="mobile-menu-box-icon"></span>
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="#contact" class="mobile-menu-link">
+            <span>Enquiries &amp; Tenders</span>
+            <span class="mobile-menu-box-icon"></span>
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="#contact" class="mobile-menu-link">
+            <span>Contact Information</span>
+            <span class="mobile-menu-box-icon"></span>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 
@@ -988,6 +1119,32 @@
       event.preventDefault();
       alert('Thank you! Your inquiry has been submitted successfully.');
       event.target.reset();
+    }
+
+    // Mobile Navigation Drawer Toggle
+    const mobileNavToggle = document.getElementById('mobileNavToggle');
+    const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+    const mobileNavIcon = document.getElementById('mobileNavIcon');
+
+    if (mobileNavToggle && mobileMenuDrawer) {
+      mobileNavToggle.addEventListener('click', function() {
+        const isOpen = mobileMenuDrawer.classList.toggle('is-open');
+        mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+        if (mobileNavIcon) {
+          mobileNavIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        }
+      });
+
+      // Automatically close drawer when a navigation link is clicked
+      document.querySelectorAll('.mobile-menu-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenuDrawer.classList.remove('is-open');
+          mobileNavToggle.setAttribute('aria-expanded', 'false');
+          if (mobileNavIcon) {
+            mobileNavIcon.className = 'fa-solid fa-bars';
+          }
+        });
+      });
     }
   </script>
 </body>
