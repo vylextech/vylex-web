@@ -1054,8 +1054,6 @@
      Responsive Breakpoints
      ========================================================================== */
   @media (max-width: 1080px) {
-    nav.nav-links { display: none; }
-    .mobile-menu-btn { display: block; }
     .services-grid-4 { grid-template-columns: repeat(2, 1fr); }
     .spotlight-card { grid-template-columns: 1fr; }
     .spotlight-left { border-right: none; border-bottom: 1px solid var(--border-light); }
@@ -1063,6 +1061,11 @@
     .methodology-grid { grid-template-columns: repeat(2, 1fr); }
     .procurement-layout { grid-template-columns: 1fr; }
     .footer-columns { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 900px) {
+    nav.nav-links { display: none; }
+    .mobile-menu-btn { display: block; }
   }
 
   @media (max-width: 640px) {
@@ -1613,10 +1616,16 @@
 
   document.querySelectorAll('#mainNav a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 1080) {
+      if (window.innerWidth <= 900) {
         mainNav.style.display = 'none';
       }
     });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      mainNav.removeAttribute('style');
+    }
   });
 
   // Hero Background Carousel - Cycles all 5 operational images every 3 seconds (3000ms)
