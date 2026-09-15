@@ -67,6 +67,9 @@
         html {
             scroll-behavior: smooth;
             font-size: 16px;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         body {
@@ -75,7 +78,10 @@
             background-color: var(--bg-white);
             line-height: 1.65;
             -webkit-font-smoothing: antialiased;
+            width: 100%;
+            max-width: 100%;
             overflow-x: hidden;
+            position: relative;
         }
 
         img {
@@ -98,7 +104,10 @@
         }
 
         .container {
-            width: min(var(--max-width), calc(100% - 48px));
+            width: 100%;
+            max-width: var(--max-width);
+            padding-left: 24px;
+            padding-right: 24px;
             margin: 0 auto;
         }
 
@@ -410,6 +419,46 @@
             transform: scale(1.1);
         }
 
+        .mobile-drawer-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 18px 20px 24px;
+            background: #f0f5f2;
+        }
+
+        .btn-drawer-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-drawer-profile {
+            background-color: var(--gold);
+            color: #ffffff;
+        }
+
+        .btn-drawer-profile:hover {
+            background-color: var(--gold-dark);
+        }
+
+        .btn-drawer-enquiry {
+            background-color: var(--green);
+            color: #ffffff;
+        }
+
+        .btn-drawer-enquiry:hover {
+            background-color: var(--green-dark);
+        }
+
         /* ==========================================================================
        3. HERO BANNER
        ========================================================================== */
@@ -530,6 +579,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .topo-vector-top {
@@ -741,6 +791,8 @@
 
         .form-control {
             width: 100%;
+            min-width: 0;
+            max-width: 100%;
             height: 42px;
             background-color: #fdfdfd;
             border: 1px solid #d1d5db;
@@ -1336,6 +1388,8 @@
 
         .hub-form-input {
             width: 100%;
+            min-width: 0;
+            max-width: 100%;
             height: 46px;
             border: 1px solid #e2e8e5;
             border-radius: var(--radius-sm);
@@ -1571,7 +1625,6 @@
         }
 
         @media (max-width: 960px) {
-
             .split-grid-layout,
             .who-grid,
             .operating-grid,
@@ -1608,7 +1661,7 @@
 
             .top-bar {
                 font-size: 10.5px;
-                padding: 6px 20px;
+                padding: 6px 16px;
                 height: auto;
                 min-height: 36px;
                 justify-content: space-between;
@@ -1644,18 +1697,25 @@
         @media (max-width: 768px) {
             .top-bar {
                 justify-content: center;
-                padding: 6px 12px;
+                padding: 6px 10px;
                 min-height: 32px;
+                width: 100%;
             }
 
             .top-bar-links {
                 margin-right: 0;
-                gap: 14px;
+                gap: 12px;
                 justify-content: center;
+                flex-wrap: wrap;
             }
 
             .top-bar-links a span {
                 display: none;
+            }
+
+            .top-bar-socials {
+                gap: 10px;
+                margin-left: 0;
             }
 
             .top-buttons {
@@ -1668,13 +1728,56 @@
             }
 
             .nav-container {
-                padding: 10px 20px;
+                padding: 10px 16px;
+            }
+
+            .who-we-are-section,
+            .operational-split-section,
+            .operating-section,
+            .capabilities-section,
+            .solutions-watermark-section,
+            .sectors-expanded-section,
+            .compliance-section,
+            .contact-hub-section {
+                padding: 60px 0;
+            }
+
+            .operational-narrative {
+                padding: 28px 20px;
+            }
+
+            .sticky-contact-card {
+                padding: 26px 18px;
+            }
+
+            .form-row,
+            .hub-form-group-row {
+                grid-template-columns: 1fr;
+            }
+
+            .industry-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pill-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hub-info,
+            .contact-hub-form-pane {
+                padding: 35px 22px;
+            }
+
+            .footer-columns {
+                grid-template-columns: 1fr;
+                gap: 32px;
             }
         }
 
         @media (max-width: 640px) {
             .container {
-                width: min(var(--max-width), calc(100% - 30px));
+                padding-left: 16px;
+                padding-right: 16px;
             }
 
             .pill-grid,
@@ -1693,7 +1796,7 @@
             }
 
             .section-title-wrap {
-                margin-bottom: 34px;
+                margin-bottom: 30px;
             }
 
             .operating-image-wrap {
@@ -1715,14 +1818,14 @@
             }
 
             .watermark-card {
-                padding: 32px 24px 28px;
+                padding: 28px 20px 24px;
             }
 
             .watermark-icon {
-                font-size: 64px;
-                right: 15px;
-                bottom: 15px;
-                opacity: 0.12;
+                font-size: 54px;
+                right: 12px;
+                bottom: 12px;
+                opacity: 0.1;
             }
 
             .copyright-inner {
@@ -1758,12 +1861,17 @@
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
             .nav-container {
                 padding: 10px 14px;
             }
 
             .brand-title {
-                font-size: 16.5px;
+                font-size: 16px;
                 letter-spacing: 2px;
             }
 
@@ -1789,10 +1897,64 @@
                 font-size: 12px;
             }
 
+            .operational-narrative {
+                padding: 22px 14px;
+            }
+
+            .sticky-contact-card {
+                padding: 20px 12px;
+            }
+
+            .contact-hub-info,
+            .contact-hub-form-pane {
+                padding: 24px 14px;
+            }
+
+            .contact-hub-info h2 {
+                font-size: 21px;
+            }
+
+            .narrative-title {
+                font-size: 21px;
+            }
+
+            .cap-card {
+                padding: 24px 18px;
+            }
+
+            .pill-item {
+                padding: 14px 14px;
+            }
+
+            .recaptcha-widget {
+                padding: 0 10px;
+                gap: 6px;
+            }
+
+            .recaptcha-left {
+                gap: 8px;
+                font-size: 11px;
+            }
+
+            .recaptcha-checkbox {
+                width: 18px;
+                height: 18px;
+            }
+
+            .recaptcha-brand {
+                font-size: 7px;
+            }
+
+            .recaptcha-brand img {
+                width: 18px;
+                height: 18px;
+            }
+
             .footer-bottom-links {
                 flex-direction: column;
                 gap: 10px;
-                align-items: flex-start;
+                align-items: center;
+                text-align: center;
             }
 
             .hero-banner {
@@ -1805,6 +1967,55 @@
 
             .hero-subtitle-main {
                 font-size: 12.5px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .nav-container {
+                padding: 8px 10px;
+            }
+
+            .brand-title {
+                font-size: 14px;
+                letter-spacing: 1.5px;
+            }
+
+            .brand-sub {
+                font-size: 6px;
+                letter-spacing: 1px;
+            }
+
+            .logo-mark {
+                width: 30px;
+                height: 30px;
+                font-size: 20px;
+            }
+
+            .operational-narrative {
+                padding: 18px 10px;
+            }
+
+            .sticky-contact-card {
+                padding: 18px 10px;
+            }
+
+            .contact-hub-info,
+            .contact-hub-form-pane {
+                padding: 20px 10px;
+            }
+
+            .watermark-card {
+                padding: 22px 14px 20px;
+            }
+
+            .btn-hub-submit {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -1908,6 +2119,12 @@
                         <span>Contact Information</span>
                         <span class="mobile-menu-box-icon" aria-hidden="true"></span>
                     </a>
+                </li>
+                <li class="mobile-menu-item mobile-menu-actions-item">
+                    <div class="mobile-drawer-actions">
+                        <a href="#governance" class="btn-drawer-action btn-drawer-profile">Company Profile</a>
+                        <a href="#tender-enquiry" class="btn-drawer-action btn-drawer-enquiry">Request Enquiry</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -2692,8 +2909,21 @@
             const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
             const mobileNavIcon = document.getElementById('mobileNavIcon');
 
+            function closeMobileMenu() {
+                if (mobileMenuDrawer) {
+                    mobileMenuDrawer.classList.remove('is-open');
+                }
+                if (mobileNavToggle) {
+                    mobileNavToggle.setAttribute('aria-expanded', 'false');
+                }
+                if (mobileNavIcon) {
+                    mobileNavIcon.className = 'fa-solid fa-bars';
+                }
+            }
+
             if (mobileNavToggle && mobileMenuDrawer) {
-                mobileNavToggle.addEventListener('click', () => {
+                mobileNavToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     const isOpen = mobileMenuDrawer.classList.toggle('is-open');
                     mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
                     if (mobileNavIcon) {
@@ -2701,20 +2931,33 @@
                     }
                 });
 
-                document.querySelectorAll('.mobile-menu-link').forEach(link => {
+                // Auto-close when any link or action button inside the drawer is clicked
+                mobileMenuDrawer.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
-                        mobileMenuDrawer.classList.remove('is-open');
-                        mobileNavToggle.setAttribute('aria-expanded', 'false');
-                        if (mobileNavIcon) {
-                            mobileNavIcon.className = 'fa-solid fa-bars';
-                        }
+                        closeMobileMenu();
                     });
+                });
+
+                // Close drawer when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (mobileMenuDrawer.classList.contains('is-open')) {
+                        if (!mobileMenuDrawer.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+                            closeMobileMenu();
+                        }
+                    }
+                });
+
+                // Close drawer on Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && mobileMenuDrawer.classList.contains('is-open')) {
+                        closeMobileMenu();
+                    }
                 });
             }
 
             // 2. Active Nav Highlighting on Scroll (Throttled with rAF)
             const navSections = document.querySelectorAll('section[id], aside[id]');
-            const navLinks = document.querySelectorAll('.main-nav .nav-link');
+            const allNavLinks = document.querySelectorAll('.main-nav .nav-link, .mobile-menu-drawer .mobile-menu-link');
             let isTicking = false;
 
             window.addEventListener('scroll', () => {
@@ -2732,7 +2975,7 @@
                         });
 
                         if (currentSectionId) {
-                            navLinks.forEach(link => {
+                            allNavLinks.forEach(link => {
                                 link.classList.toggle('active', link.getAttribute('href') === `#${currentSectionId}`);
                             });
                         }
@@ -2754,6 +2997,7 @@
                     }
                     alert('Thank you! Your strategic risk inquiry has been logged with KUIPFI Operations. An operational director will review your site specifications and contact you shortly.');
                     stickyForm.reset();
+                    if (checkbox) checkbox.checked = false;
                 });
             }
 
