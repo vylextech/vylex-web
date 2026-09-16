@@ -69,7 +69,6 @@
             font-size: 16px;
             width: 100%;
             max-width: 100%;
-            overflow-x: hidden;
         }
 
         body {
@@ -80,7 +79,7 @@
             -webkit-font-smoothing: antialiased;
             width: 100%;
             max-width: 100%;
-            overflow-x: hidden;
+            overflow-x: clip;
             position: relative;
         }
 
@@ -253,6 +252,16 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+            will-change: transform;
+        }
+
+        .main-header.header-hidden {
+            transform: translateY(-100%);
+        }
+
+        .main-header.header-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .nav-container {
@@ -341,6 +350,29 @@
             border-color: var(--green);
         }
 
+        /* Mobile Backdrop Overlay */
+        .mobile-menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(14, 53, 40, 0.45);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+
+        .mobile-menu-backdrop.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
         /* Mobile Drawer Menu */
         .mobile-menu-drawer {
             display: none;
@@ -350,7 +382,9 @@
             width: 100%;
             max-height: calc(100vh - 70px);
             overflow-y: auto;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+            position: relative;
+            z-index: 1001;
         }
 
         .mobile-menu-drawer.is-open {
@@ -394,6 +428,7 @@
             color: var(--green);
             background: var(--bg-light);
             min-height: 48px;
+            transition: var(--transition-smooth);
         }
 
         .mobile-menu-link:hover,
@@ -403,20 +438,52 @@
             padding-left: 28px;
         }
 
+        /* Active Section Checklist Indicator */
         .mobile-menu-box-icon {
-            display: inline-block;
-            width: 13px;
-            height: 17px;
-            border: 1.5px solid var(--green);
-            border-radius: 1px;
-            opacity: 0.8;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border: 1.5px solid #a4b8af;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: transparent;
+            font-size: 11px;
             transition: var(--transition-smooth);
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .mobile-menu-box-icon::after {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            opacity: 0;
+            transform: scale(0.6);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .mobile-menu-link:hover .mobile-menu-box-icon {
-            border-color: var(--gold);
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        .mobile-menu-link:hover .mobile-menu-box-icon::after {
+            opacity: 0.45;
+            transform: scale(0.85);
+        }
+
+        .mobile-menu-link.active .mobile-menu-box-icon {
+            background-color: var(--green);
+            border-color: var(--green);
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(31, 107, 82, 0.35);
+        }
+
+        .mobile-menu-link.active .mobile-menu-box-icon::after {
             opacity: 1;
-            transform: scale(1.1);
+            transform: scale(1);
         }
 
         .mobile-drawer-actions {
@@ -2058,6 +2125,7 @@
     </header>
 
     <!-- 2. MAIN NAVIGATION HEADER -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
     <div class="main-header" id="mainHeader">
         <div class="nav-container">
             <a href="#home" class="logo-container" aria-label="KUIPFI Strategic Risk Consultants Home">
@@ -2906,14 +2974,19 @@
     <!-- 13. JAVASCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Mobile Navigation Toggle & Drawer
+            // 1. Mobile Navigation Toggle, Backdrop & Drawer
             const mobileNavToggle = document.getElementById('mobileNavToggle');
             const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
             const mobileNavIcon = document.getElementById('mobileNavIcon');
+            const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+            const mainHeader = document.getElementById('mainHeader');
 
             function closeMobileMenu() {
                 if (mobileMenuDrawer) {
                     mobileMenuDrawer.classList.remove('is-open');
+                }
+                if (mobileMenuBackdrop) {
+                    mobileMenuBackdrop.classList.remove('is-open');
                 }
                 if (mobileNavToggle) {
                     mobileNavToggle.setAttribute('aria-expanded', 'false');
@@ -2927,11 +3000,24 @@
                 mobileNavToggle.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const isOpen = mobileMenuDrawer.classList.toggle('is-open');
+                    if (mobileMenuBackdrop) {
+                        mobileMenuBackdrop.classList.toggle('is-open', isOpen);
+                    }
                     mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
                     if (mobileNavIcon) {
                         mobileNavIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
                     }
+                    if (isOpen && mainHeader) {
+                        mainHeader.classList.remove('header-hidden');
+                    }
                 });
+
+                // Close when clicking the backdrop overlay
+                if (mobileMenuBackdrop) {
+                    mobileMenuBackdrop.addEventListener('click', () => {
+                        closeMobileMenu();
+                    });
+                }
 
                 // Auto-close when any link or action button inside the drawer is clicked
                 mobileMenuDrawer.querySelectorAll('a').forEach(link => {
@@ -2957,17 +3043,44 @@
                 });
             }
 
-            // 2. Active Nav Highlighting on Scroll (Throttled with rAF)
+            // 2. Active Nav Highlighting & Smart Scroll-Up Reveal Header (Throttled with rAF)
             const navSections = document.querySelectorAll('section[id], aside[id]');
             const allNavLinks = document.querySelectorAll('.main-nav .nav-link, .mobile-menu-drawer .mobile-menu-link');
             let isTicking = false;
+            let lastScrollY = window.scrollY;
+            const scrollThreshold = 8;
 
             window.addEventListener('scroll', () => {
                 if (!isTicking) {
                     window.requestAnimationFrame(() => {
                         const scrollY = window.scrollY;
-                        let currentSectionId = '';
+                        const isDrawerOpen = mobileMenuDrawer && mobileMenuDrawer.classList.contains('is-open');
 
+                        // Elevation shadow & smart reveal on scroll-up
+                        if (mainHeader) {
+                            if (scrollY > 15) {
+                                mainHeader.classList.add('header-shadow');
+                            } else {
+                                mainHeader.classList.remove('header-shadow');
+                            }
+
+                            if (!isDrawerOpen) {
+                                if (scrollY <= 80) {
+                                    // Near top of page, always show header
+                                    mainHeader.classList.remove('header-hidden');
+                                } else if (scrollY > lastScrollY + scrollThreshold) {
+                                    // Scrolling DOWN: hide header
+                                    mainHeader.classList.add('header-hidden');
+                                } else if (scrollY < lastScrollY - scrollThreshold) {
+                                    // Scrolling UP: reveal header immediately
+                                    mainHeader.classList.remove('header-hidden');
+                                }
+                            }
+                        }
+                        lastScrollY = Math.max(0, scrollY);
+
+                        // Section highlighting
+                        let currentSectionId = '';
                         navSections.forEach(section => {
                             const sectionHeight = section.offsetHeight;
                             const sectionTop = section.offsetTop - 120;

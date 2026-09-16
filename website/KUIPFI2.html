@@ -242,6 +242,37 @@
     color: #ffffff;
     font-size: 22px;
     cursor: pointer;
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .mobile-menu-btn i {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mobile-menu-btn[aria-expanded="true"] i {
+    transform: rotate(90deg);
+  }
+
+  /* Mobile Backdrop Overlay */
+  .mobile-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(4, 16, 30, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+  .mobile-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   /* ==========================================================================
@@ -1065,7 +1096,118 @@
 
   @media (max-width: 900px) {
     nav.nav-links { display: none; }
-    .mobile-menu-btn { display: block; }
+    .mobile-menu-btn { display: inline-flex; }
+
+    nav.nav-links.is-open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--navy-header);
+      padding: 16px 20px 24px;
+      gap: 8px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+      border-bottom: 3px solid var(--accent-gold);
+      z-index: 1001;
+      align-items: stretch;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+      animation: navMenuSlide2 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes navMenuSlide2 {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Card-style links aligned to the left */
+    nav.nav-links.is-open a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 3px solid transparent;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    nav.nav-links.is-open a::after {
+      content: "\f054";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 11px;
+      opacity: 0.5;
+      position: static;
+      height: auto;
+      background: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    nav.nav-links.is-open a:hover,
+    nav.nav-links.is-open a:focus-visible {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(212, 160, 23, 0.3);
+      border-left-color: var(--accent-gold);
+      color: #ffffff;
+      padding-left: 22px;
+    }
+
+    nav.nav-links.is-open a:hover::after {
+      opacity: 1;
+      transform: translateX(3px);
+    }
+
+    nav.nav-links.is-open a.active {
+      background: rgba(212, 160, 23, 0.12);
+      border-color: rgba(212, 160, 23, 0.4);
+      border-left: 3px solid var(--accent-gold);
+      color: #ffffff;
+    }
+
+    nav.nav-links.is-open a.active::after {
+      opacity: 1;
+      color: var(--accent-gold);
+    }
+
+    /* Request Security Action Button as Card CTA */
+    nav.nav-links.is-open .btn-request-security {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-gold) !important;
+      color: #ffffff !important;
+      border: 1px solid var(--accent-gold) !important;
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 14px 20px;
+      border-radius: 4px;
+      box-shadow: 0 4px 14px rgba(212, 160, 23, 0.3);
+      letter-spacing: 1.2px;
+    }
+
+    nav.nav-links.is-open .btn-request-security::after {
+      content: "\f0a9";
+      margin-left: 8px;
+      opacity: 0.9;
+    }
+
+    nav.nav-links.is-open .btn-request-security:hover {
+      background: #c59312 !important;
+      border-color: #c59312 !important;
+      transform: translateY(-1px);
+    }
   }
 
   @media (max-width: 640px) {
@@ -1140,11 +1282,12 @@
       <a href="#contact" class="btn-request-security">Request Security</a>
     </nav>
 
-    <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle mobile menu">
-      <i class="fa-solid fa-bars"></i>
+    <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+      <i class="fa-solid fa-bars" id="mobileToggleIcon"></i>
     </button>
   </div>
 </header>
+<div class="mobile-overlay" id="mobileOverlay"></div>
 
 <!-- Hero Section with 3-Second Background Carousel (Real Operations Photos, No Logo) -->
 <section class="hero-container" id="home">
@@ -1595,38 +1738,70 @@
     e.target.reset();
   }
 
+  // Mobile Navigation Toggle, Icon Swap & Outside Tap Overlay
   const mobileToggle = document.getElementById('mobileToggle');
   const mainNav = document.getElementById('mainNav');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const mobileToggleIcon = document.getElementById('mobileToggleIcon');
 
-  mobileToggle.addEventListener('click', () => {
-    const isVisible = mainNav.style.display === 'flex';
-    mainNav.style.display = isVisible ? 'none' : 'flex';
-    if (!isVisible) {
-      mainNav.style.flexDirection = 'column';
-      mainNav.style.position = 'absolute';
-      mainNav.style.top = '72px';
-      mainNav.style.left = '0';
-      mainNav.style.right = '0';
-      mainNav.style.background = '#002347';
-      mainNav.style.padding = '24px 32px';
-      mainNav.style.gap = '18px';
-      mainNav.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
+  function closeMobileNav() {
+    if (mainNav) mainNav.classList.remove('is-open');
+    if (mobileOverlay) mobileOverlay.classList.remove('is-open');
+    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+    if (mobileToggleIcon) {
+      mobileToggleIcon.className = 'fa-solid fa-bars';
     }
-  });
+  }
 
-  document.querySelectorAll('#mainNav a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 900) {
-        mainNav.style.display = 'none';
+  if (mobileToggle && mainNav) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = mainNav.classList.toggle('is-open');
+      mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      if (mobileOverlay) {
+        mobileOverlay.classList.toggle('is-open', isOpen);
+      }
+      if (mobileToggleIcon) {
+        mobileToggleIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
       }
     });
-  });
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) {
-      mainNav.removeAttribute('style');
+    // Close when clicking the backdrop overlay
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', closeMobileNav);
     }
-  });
+
+    // Auto-close when clicking any nav link
+    document.querySelectorAll('#mainNav a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          closeMobileNav();
+        }
+      });
+    });
+
+    // Close when tapping outside
+    document.addEventListener('click', (e) => {
+      if (mainNav.classList.contains('is-open')) {
+        if (!mainNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+          closeMobileNav();
+        }
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mainNav.classList.contains('is-open')) {
+        closeMobileNav();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900 && mainNav.classList.contains('is-open')) {
+        closeMobileNav();
+      }
+    });
+  }
 
   // Hero Background Carousel - Cycles all 5 operational images every 3 seconds (3000ms)
   (function initHeroSlider() {

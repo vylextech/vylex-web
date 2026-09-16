@@ -145,10 +145,33 @@
       font-size: 20px; color: var(--ink); cursor: pointer;
       width: 42px; height: 42px; border-radius: 3px;
       transition: background 0.2s ease, color 0.2s ease;
+      align-items: center; justify-content: center;
+    }
+    .nav-toggle i {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .nav-toggle:hover, .nav-toggle[aria-expanded="true"] {
       background: var(--forest);
       color: #fff;
+    }
+
+    /* Mobile Navigation Backdrop Overlay */
+    .nav-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(7, 20, 36, 0.55);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .nav-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
 
     /* ==========================================================================
@@ -558,17 +581,23 @@
        ========================================================================== */
     @media (max-width: 1024px) {
       .primary-nav { display: none; }
-      .nav-toggle { display: block; }
+      .nav-toggle { display: inline-flex; }
       .primary-nav.is-open {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%; left: 0; right: 0;
         background: var(--paper-raised);
-        padding: 8px 24px 18px;
-        border-bottom: 1px solid var(--hairline);
-        box-shadow: 0 12px 24px rgba(7, 20, 36, 0.14);
+        padding: 8px 24px 22px;
+        border-bottom: 3px solid var(--forest);
+        box-shadow: 0 16px 36px rgba(7, 20, 36, 0.18);
         gap: 0;
+        z-index: 1001;
+        animation: navSlideDown1 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      @keyframes navSlideDown1 {
+        from { opacity: 0; transform: translateY(-8px); }
+        to { opacity: 1; transform: translateY(0); }
       }
       .primary-nav.is-open a {
         width: 100%;
@@ -576,7 +605,7 @@
         border-bottom: 1px solid var(--hairline);
       }
       .primary-nav.is-open .btn-briefing {
-        margin-top: 12px;
+        margin-top: 14px;
         text-align: center;
       }
       .hero-content { text-align: left; }
@@ -670,10 +699,11 @@
         <a href="#contact" class="btn-briefing">Request a briefing</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars" id="navToggleIcon"></i>
       </button>
     </div>
   </header>
+  <div class="nav-overlay" id="navOverlay"></div>
 
   <!-- Hero Banner -->
   <section class="hero" id="home">
@@ -1138,14 +1168,60 @@
       event.target.reset();
     }
 
-    // Responsive Mobile Nav Toggle
+    // Responsive Mobile Nav Toggle, Icon Swap & Outside Tap Overlay
     const navToggle = document.getElementById('navToggle');
     const primaryNav = document.getElementById('primaryNav');
+    const navOverlay = document.getElementById('navOverlay');
+    const navToggleIcon = document.getElementById('navToggleIcon');
 
-    navToggle.addEventListener('click', function() {
-      const isOpen = primaryNav.classList.toggle('is-open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-    });
+    function closeNavMenu() {
+      if (primaryNav) primaryNav.classList.remove('is-open');
+      if (navOverlay) navOverlay.classList.remove('is-open');
+      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+      if (navToggleIcon) {
+        navToggleIcon.className = 'fa-solid fa-bars';
+      }
+    }
+
+    if (navToggle && primaryNav) {
+      navToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = primaryNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        if (navOverlay) {
+          navOverlay.classList.toggle('is-open', isOpen);
+        }
+        if (navToggleIcon) {
+          navToggleIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        }
+      });
+
+      // Close when clicking on the overlay backdrop
+      if (navOverlay) {
+        navOverlay.addEventListener('click', closeNavMenu);
+      }
+
+      // Close when clicking any nav link
+      primaryNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeNavMenu);
+      });
+
+      // Close when tapping outside
+      document.addEventListener('click', function(e) {
+        if (primaryNav.classList.contains('is-open')) {
+          if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+            closeNavMenu();
+          }
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && primaryNav.classList.contains('is-open')) {
+          closeNavMenu();
+        }
+      });
+    }
   </script>
 
 </body>
