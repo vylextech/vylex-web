@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KUIPFI Strategic Risk Consultants | Physical Security &amp; Risk Solutions</title>
-<meta name="description" content="South Africa's premier strategic risk and physical security subcontractor. Comprehensive guarding, critical infrastructure protection, and 24/7 control room operations.">
+<title>KUIPFI Strategic Risk Consultants | Protecting Assets. Managing Risk. Enabling Growth.</title>
+<meta name="description" content="KUIPFI Strategic Risk Consultants is a specialist risk advisory and consulting firm helping organisations identify, assess, manage, and mitigate risks impacting their people, assets, operations, reputation, and profitability.">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,8 @@
 
 <style>
   /* ==========================================================================
-     Design Tokens (Global Guardian Inspired: Deep Navy, Crisp White, Refined Accents)
+     Design Tokens — KUIPFI Uniform-Derived Palette
+     Gold/Khaki (#c8a55a) + Deep Navy (#002347) from the official uniform design
      ========================================================================== */
   :root {
     --navy-darkest: #04101e;
@@ -22,8 +23,9 @@
     --navy-primary: #002b5c;
     --navy-light: #0d3b66;
     
-    --accent-gold: #c29b62;
-    --accent-gold-hover: #ad824a;
+    --accent-gold: #c8a55a;
+    --accent-gold-hover: #b08d3e;
+    --accent-gold-light: rgba(200, 165, 90, 0.12);
     
     --card-navy: #002347;
     --card-green: #1b5e43;
@@ -74,7 +76,7 @@
   .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 
   /* ==========================================================================
-     Top Utility Bar (White Strip with Emergency Contact)
+     Top Utility Bar
      ========================================================================== */
   .top-utility {
     background: #ffffff;
@@ -116,6 +118,11 @@
     border-radius: 50%;
     display: inline-block;
     box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+    animation: pulseAnim 2s ease-in-out infinite;
+  }
+  @keyframes pulseAnim {
+    0%, 100% { box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2); }
+    50% { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.05); }
   }
   .top-utility-right {
     display: flex;
@@ -180,7 +187,7 @@
     line-height: 1;
   }
   .brand-subtitle {
-    color: #cbd5e1;
+    color: var(--accent-gold);
     font-size: 8.5px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -217,8 +224,8 @@
   }
 
   .btn-request-security {
-    background: #ffffff;
-    color: var(--navy-header) !important;
+    background: var(--accent-gold);
+    color: #ffffff !important;
     font-family: var(--font-heading);
     font-size: 11.5px;
     font-weight: 800;
@@ -226,13 +233,12 @@
     letter-spacing: 1px;
     padding: 10px 22px;
     border-radius: 2px;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--accent-gold);
     transition: all 0.25s ease;
   }
   .btn-request-security:hover {
-    background: var(--accent-gold);
-    color: #ffffff !important;
-    border-color: var(--accent-gold);
+    background: var(--accent-gold-hover);
+    border-color: var(--accent-gold-hover);
   }
 
   .mobile-menu-btn {
@@ -280,7 +286,7 @@
      ========================================================================== */
   .hero-container {
     position: relative;
-    min-height: 580px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     background-color: var(--navy-darkest);
@@ -315,7 +321,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(4, 16, 30, 0.75) 0%, rgba(0, 35, 71, 0.55) 55%, rgba(4, 16, 30, 0.45) 100%);
+    background: linear-gradient(90deg, rgba(4, 16, 30, 0.82) 0%, rgba(0, 35, 71, 0.62) 55%, rgba(4, 16, 30, 0.50) 100%);
     z-index: 2;
     pointer-events: none;
   }
@@ -377,10 +383,19 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
+  .hero-tagline {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent-gold);
+    margin-top: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
   .hero-description {
     font-size: 16px;
     color: #e2e8f0;
-    margin-top: 20px;
+    margin-top: 18px;
     line-height: 1.7;
     max-width: 620px;
     font-weight: 400;
@@ -395,8 +410,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #ffffff;
-    color: var(--navy-header);
+    background: var(--accent-gold);
+    color: #ffffff;
     font-family: var(--font-heading);
     font-size: 12.5px;
     font-weight: 800;
@@ -407,8 +422,9 @@
     transition: all 0.25s ease;
   }
   .btn-hero-solid:hover {
-    background: var(--accent-gold);
-    color: #ffffff;
+    background: var(--accent-gold-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(200, 165, 90, 0.3);
   }
   .btn-hero-outline {
     display: inline-flex;
@@ -433,11 +449,170 @@
   }
 
   /* ==========================================================================
-     Flagship Services Section (4 Cards with Colored Border Accents)
+     About Us Section — Full Company Identity
+     ========================================================================== */
+  .about-section {
+    padding: 90px 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .about-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 60px;
+  }
+  .about-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    color: var(--navy-header);
+  }
+  .about-header .position-statement {
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 1.7;
+    font-style: italic;
+    border-left: 4px solid var(--accent-gold);
+    padding-left: 20px;
+    text-align: left;
+    margin-top: 24px;
+  }
+
+  .about-description {
+    max-width: 920px;
+    margin: 0 auto 50px;
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  /* Vision & Mission Cards */
+  .vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 60px;
+  }
+  .vm-card {
+    background: var(--navy-header);
+    color: #ffffff;
+    padding: 42px 36px;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+  .vm-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent-gold);
+  }
+  .vm-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+  }
+  .vm-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .vm-card p {
+    font-size: 14px;
+    color: #cbd5e1;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* Core Values Grid */
+  .values-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .values-header h3 {
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--navy-header);
+    margin-bottom: 10px;
+  }
+  .values-header p {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .value-card {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-top: 4px solid var(--accent-gold);
+    border-radius: 3px;
+    padding: 30px 22px 26px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+  .value-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent-gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    font-size: 22px;
+    color: var(--accent-gold);
+    transition: transform 0.2s ease;
+  }
+  .value-card:hover .value-icon {
+    transform: scale(1.08);
+  }
+  .value-card h4 {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--navy-header);
+    margin-bottom: 10px;
+  }
+  .value-card p {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ==========================================================================
+     Flagship Services Section (8 Cards — reflecting actual KUIPFI focus areas)
      ========================================================================== */
   .services-section {
     padding: 85px 0;
-    background: #ffffff;
+    background: var(--bg-page);
     border-bottom: 1px solid var(--border-light);
   }
   .section-intro {
@@ -499,6 +674,10 @@
     border-top: 5px solid var(--card-burgundy);
     border-bottom: 5px solid var(--card-burgundy);
   }
+  .service-card-gold {
+    border-top: 5px solid var(--accent-gold);
+    border-bottom: 5px solid var(--accent-gold);
+  }
 
   /* Circular Line-Art Icons */
   .service-circle-icon {
@@ -531,6 +710,10 @@
   .service-card-burgundy .service-circle-icon {
     border: 2px solid var(--card-burgundy);
     color: var(--card-burgundy);
+  }
+  .service-card-gold .service-circle-icon {
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
   }
 
   .service-card-title {
@@ -568,7 +751,7 @@
      ========================================================================== */
   .spotlight-section {
     padding: 75px 0;
-    background: var(--bg-page);
+    background: #ffffff;
   }
   .spotlight-card {
     background: #ffffff;
@@ -600,7 +783,7 @@
     align-self: flex-start;
   }
   .spotlight-partner-box {
-    border-left: 3px solid var(--navy-primary);
+    border-left: 3px solid var(--accent-gold);
     padding-left: 14px;
     margin-top: 10px;
   }
@@ -678,11 +861,11 @@
   }
 
   /* ==========================================================================
-     Intelligence & Advisory Reports Section (3-Column Grid with Angled Ribbons)
+     Intelligence & Advisory Reports Section
      ========================================================================== */
   .intel-section {
     padding: 80px 0;
-    background: #ffffff;
+    background: var(--bg-page);
     border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
   }
@@ -770,7 +953,7 @@
      ========================================================================== */
   .methodology-section {
     padding: 80px 0;
-    background: var(--bg-page);
+    background: #ffffff;
   }
   .methodology-grid {
     display: grid;
@@ -784,6 +967,10 @@
     border-top: 3px solid var(--navy-header);
     padding: 26px 20px;
     border-radius: 2px;
+    transition: transform 0.2s ease;
+  }
+  .methodology-item:hover {
+    transform: translateY(-2px);
   }
   .step-index {
     font-family: var(--font-heading);
@@ -955,9 +1142,12 @@
     font-size: 13px;
     color: var(--text-body);
     background: #ffffff;
+    transition: border-color 0.2s ease;
   }
   .form-input:focus {
-    border-color: var(--navy-primary);
+    border-color: var(--accent-gold);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(200, 165, 90, 0.12);
   }
   textarea.form-input {
     height: 94px;
@@ -993,10 +1183,11 @@
     border: none;
     border-radius: 2px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
   }
   .btn-submit-enquiry:hover {
     background: var(--accent-gold-hover);
+    transform: translateY(-1px);
   }
 
   /* ==========================================================================
@@ -1034,6 +1225,15 @@
   .footer-columns a:hover {
     color: var(--accent-gold);
   }
+  .footer-tagline {
+    font-size: 12px;
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
 
   /* Accreditations Bar */
   .footer-accreditation-row {
@@ -1045,24 +1245,17 @@
     flex-wrap: wrap;
     gap: 16px;
   }
-  .accreditation-badges-group {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+  .accreditation-text {
+    font-size: 12px;
+    color: #94a3b8;
+    line-height: 1.6;
   }
-  .badge-tag {
-    font-family: var(--font-heading);
-    font-size: 11px;
-    font-weight: 700;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    padding: 5px 12px;
-    border-radius: 2px;
+  .accreditation-text span {
+    color: #cbd5e1;
   }
-  .badge-tag strong {
-    color: var(--accent-gold);
+  .accreditation-text .sep {
+    color: #475569;
+    margin: 0 6px;
   }
 
   .footer-legal-bottom {
@@ -1080,6 +1273,22 @@
     gap: 16px;
     font-size: 14px;
   }
+  .footer-social-links a:hover {
+    color: var(--accent-gold);
+  }
+
+  /* ==========================================================================
+     Scroll-triggered Fade-In Animations
+     ========================================================================== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   /* ==========================================================================
      Responsive Breakpoints
@@ -1092,6 +1301,7 @@
     .methodology-grid { grid-template-columns: repeat(2, 1fr); }
     .procurement-layout { grid-template-columns: 1fr; }
     .footer-columns { grid-template-columns: 1fr 1fr; }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 900px) {
@@ -1157,7 +1367,7 @@
     nav.nav-links.is-open a:hover,
     nav.nav-links.is-open a:focus-visible {
       background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(212, 160, 23, 0.3);
+      border-color: rgba(200, 165, 90, 0.3);
       border-left-color: var(--accent-gold);
       color: #ffffff;
       padding-left: 22px;
@@ -1169,8 +1379,8 @@
     }
 
     nav.nav-links.is-open a.active {
-      background: rgba(212, 160, 23, 0.12);
-      border-color: rgba(212, 160, 23, 0.4);
+      background: rgba(200, 165, 90, 0.12);
+      border-color: rgba(200, 165, 90, 0.4);
       border-left: 3px solid var(--accent-gold);
       color: #ffffff;
     }
@@ -1193,7 +1403,7 @@
       font-weight: 800;
       padding: 14px 20px;
       border-radius: 4px;
-      box-shadow: 0 4px 14px rgba(212, 160, 23, 0.3);
+      box-shadow: 0 4px 14px rgba(200, 165, 90, 0.3);
       letter-spacing: 1.2px;
     }
 
@@ -1204,8 +1414,8 @@
     }
 
     nav.nav-links.is-open .btn-request-security:hover {
-      background: #c59312 !important;
-      border-color: #c59312 !important;
+      background: var(--accent-gold-hover) !important;
+      border-color: var(--accent-gold-hover) !important;
       transform: translateY(-1px);
     }
   }
@@ -1222,11 +1432,13 @@
       padding: 40px 0 60px; 
       align-items: flex-start; 
     }
-    .hero-title { font-size: 32px; margin-top: 20px; }
+    .hero-title { font-size: 28px; margin-top: 20px; }
+    .hero-tagline { font-size: 14px; letter-spacing: 1px; }
     .hero-buttons { flex-direction: column; }
     .btn-hero-solid, .btn-hero-outline { width: 100%; text-align: center; }
 
     /* Reduce vertical section paddings */
+    .about-section,
     .services-section,
     .spotlight-section,
     .intel-section,
@@ -1234,12 +1446,21 @@
     .compliance-block,
     .procurement-section { padding: 50px 0; }
 
+    .vm-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
     .services-grid-4 { grid-template-columns: 1fr; }
     .intel-grid { grid-template-columns: 1fr; }
     .methodology-grid { grid-template-columns: 1fr; }
     .accordion-grid { grid-template-columns: 1fr; }
     .form-split { grid-template-columns: 1fr; }
     .footer-columns { grid-template-columns: 1fr; }
+
+    .about-header h2 { font-size: 26px; }
+    .section-intro h2 { font-size: 26px; }
+  }
+
+  @media (max-width: 420px) {
+    .values-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -1273,13 +1494,14 @@
     </a>
 
     <nav class="nav-links" id="mainNav">
-      <a href="#services" class="active">Services</a>
+      <a href="#about" class="active">About</a>
+      <a href="#services">Services</a>
       <a href="#collaboration">Partnership</a>
       <a href="#intel">Risk Intel</a>
       <a href="#methodology">Protocol</a>
       <a href="#compliance">Compliance</a>
       <a href="#contact">Contact</a>
-      <a href="#contact" class="btn-request-security">Request Security</a>
+      <a href="#contact" class="btn-request-security">Request Consultation</a>
     </nav>
 
     <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -1289,9 +1511,8 @@
 </header>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- Hero Section with 3-Second Background Carousel (Real Operations Photos, No Logo) -->
+<!-- Hero Section with 3-Second Background Carousel -->
 <section class="hero-container" id="home">
-  <!-- Slideshow Background (Excludes Logos: Security_officer, securities-standing, surv-camera, backview, officer) -->
   <div class="hero-slides" aria-hidden="true">
     <div class="hero-slide active" style="background-image: url('images/Security_officer.jpeg');"></div>
     <div class="hero-slide" style="background-image: url('images/securities-standing.jpeg');"></div>
@@ -1300,21 +1521,21 @@
     <div class="hero-slide" style="background-image: url('images/officer.jpeg');"></div>
   </div>
   
-  <!-- Contrast Overlay for Crystal Clear Typography -->
   <div class="hero-overlay"></div>
 
   <div class="wrap hero-wrap">
     <div class="hero-content">
-      <h1 class="hero-title">Protecting Assets. Managing Risk. Enabling Growth.</h1>
+      <span class="hero-kicker">Specialist Risk Advisory &amp; Consulting</span>
+      <h1 class="hero-title">KUIPFI Strategic Risk Consultants</h1>
+      <p class="hero-tagline">Protecting Assets. Managing Risk. Enabling Growth.</p>
       <p class="hero-description">
-        KUIPFI operates as an elite security subcontractor and direct risk partner, safeguarding commercial parks, industrial supply chains, and national infrastructure installations across South Africa.
+        A specialist risk advisory and consulting firm helping organisations identify, assess, manage, and mitigate risks that impact their people, assets, operations, reputation, and profitability.
       </p>
       <div class="hero-buttons">
         <a href="#contact" class="btn-hero-solid">Connect With Us</a>
-        <a href="#methodology" class="btn-hero-outline"><i class="fa-solid fa-play"></i> Operational Protocol</a>
+        <a href="#about" class="btn-hero-outline"><i class="fa-solid fa-building"></i> About Our Firm</a>
       </div>
 
-      <!-- 5 Slide Indicators (3 Seconds Each) -->
       <div class="hero-indicators" aria-label="Hero carousel controls">
         <button class="hero-dot active" aria-label="Slide 1: Security Officer" data-index="0"></button>
         <button class="hero-dot" aria-label="Slide 2: Guarding Formation" data-index="1"></button>
@@ -1326,68 +1547,207 @@
   </div>
 </section>
 
-<!-- Flagship Services (Inspired by Global Guardian 4-Card System) -->
+<!-- =====================================================================
+     ABOUT US — Full Company Identity Section
+     ===================================================================== -->
+<section class="about-section" id="about">
+  <div class="wrap">
+    <div class="about-header fade-up">
+      <h2>About Our Firm</h2>
+      <div class="position-statement">
+        KUIPFI Strategic Risk Consultants is a specialist risk advisory firm committed to helping organisations protect their people, assets, operations, reputation, and profitability through strategic, practical, and intelligence-driven risk management solutions.
+      </div>
+    </div>
+
+    <p class="about-description fade-up">
+      Our approach combines strategic thinking, practical industry experience, risk intelligence, and sound governance principles to develop <strong>tailored, sustainable, and measurable solutions</strong>. We work in partnership with our clients to strengthen controls, improve operational resilience, reduce losses, and enable informed business decision-making.<br><br>
+      KUIPFI brings a strong focus to <strong>Strategic Risk Management, Loss Prevention, Fraud Risk Management, Security Consulting, Investigations, Compliance, Business Resilience, and Operational Risk</strong>. Our objective is not merely to respond to incidents after they occur, but to help organisations understand their risk exposure and establish proactive measures to prevent, minimise, and effectively manage risk.<br><br>
+      We believe that effective risk management should be viewed as a <strong>strategic business enabler</strong>—protecting value while creating an environment in which organisations can operate confidently, responsibly, and sustainably.
+    </p>
+
+    <!-- Vision & Mission -->
+    <div class="vm-grid fade-up">
+      <div class="vm-card">
+        <div class="vm-card-icon"><i class="fa-solid fa-eye"></i></div>
+        <h3>Our Vision</h3>
+        <p>To become a trusted and leading strategic risk consulting firm in Africa, recognised for professional excellence, innovative thinking, integrity, and measurable impact in protecting and strengthening organisations.</p>
+      </div>
+      <div class="vm-card">
+        <div class="vm-card-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>Our Mission</h3>
+        <p>To provide organisations with practical, innovative, and sustainable risk management, loss prevention, security, investigation, and business resilience solutions that reduce risk exposure, strengthen controls, protect assets, and enable sustainable growth.</p>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="values-header fade-up">
+      <h3>Core Values</h3>
+      <p>The principles that guide every engagement, decision, and deliverable</p>
+    </div>
+
+    <div class="values-grid fade-up">
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h4>Integrity</h4>
+        <p>We conduct our business with honesty, transparency, confidentiality, and ethical discipline.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-award"></i></div>
+        <h4>Professionalism</h4>
+        <p>We uphold the highest standards of competence, conduct, reliability, and service delivery.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-star"></i></div>
+        <h4>Excellence</h4>
+        <p>We pursue continuous improvement and strive to deliver solutions that create measurable value.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+        <h4>Accountability</h4>
+        <p>We take ownership of our responsibilities, decisions, commitments, and outcomes.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <h4>Innovation</h4>
+        <p>We embrace intelligence, technology, and forward-thinking approaches to address evolving and emerging risks.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h4>Trust</h4>
+        <p>We build lasting relationships through reliability, respect, confidentiality, and consistent delivery.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-people-group"></i></div>
+        <h4>Partnership</h4>
+        <p>We work collaboratively with our clients, becoming a trusted extension of their risk management and business leadership teams.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h4>Resilience</h4>
+        <p>We help organisations anticipate, prepare for, respond to, and recover from risks and disruptions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Flagship Services (Reflecting KUIPFI's actual focus areas) -->
 <section class="services-section" id="services">
   <div class="wrap">
-    <div class="section-intro">
-      <h2>Strategic Security Services</h2>
+    <div class="section-intro fade-up">
+      <h2>Strategic Risk &amp; Security Services</h2>
       <p>
-        KUIPFI provides enterprise clients and prime contractors with an integrated suite of guarding, tactical response, offsite surveillance, and compliance management solutions.
+        KUIPFI provides organisations with an integrated suite of risk management, security consulting, loss prevention, and business resilience solutions tailored to protect and strengthen your operations.
       </p>
     </div>
 
-    <div class="services-grid-4">
-      <!-- 01 Protective Guarding (Navy Accent) -->
+    <div class="services-grid-4 fade-up">
+      <!-- 01 Strategic Risk Management -->
       <div class="service-card-item service-card-navy">
+        <div>
+          <div class="service-circle-icon">
+            <i class="fa-solid fa-chess-rook"></i>
+          </div>
+          <h3 class="service-card-title">Strategic Risk Management</h3>
+          <p class="service-card-desc">
+            Comprehensive risk identification, assessment, and mitigation strategies that protect value and enable confident business decision-making.
+          </p>
+        </div>
+        <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 02 Loss Prevention -->
+      <div class="service-card-item service-card-green">
+        <div>
+          <div class="service-circle-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="service-card-title">Loss Prevention</h3>
+          <p class="service-card-desc">
+            Proactive controls and monitoring frameworks to identify, prevent, and reduce losses across supply chains, operations, and assets.
+          </p>
+        </div>
+        <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 03 Fraud Risk Management -->
+      <div class="service-card-item service-card-cyan">
+        <div>
+          <div class="service-circle-icon">
+            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+          </div>
+          <h3 class="service-card-title">Fraud Risk Management</h3>
+          <p class="service-card-desc">
+            Intelligence-driven fraud prevention, detection, and investigation services that protect organisations from financial crime and misconduct.
+          </p>
+        </div>
+        <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 04 Security Consulting -->
+      <div class="service-card-item service-card-burgundy">
         <div>
           <div class="service-circle-icon">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
-          <h3 class="service-card-title">Protective Guarding</h3>
+          <h3 class="service-card-title">Security Consulting</h3>
           <p class="service-card-desc">
-            24/7 static guarding, disciplined access control, and tactical facility protection across commercial and industrial environments.
+            Physical security assessments, guarding strategies, surveillance design, and critical infrastructure protection across commercial and industrial environments.
           </p>
         </div>
         <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
-      <!-- 02 Asset & Surveillance (Forest Green Accent) -->
-      <div class="service-card-item service-card-green">
+      <!-- 05 Investigations -->
+      <div class="service-card-item service-card-gold">
         <div>
           <div class="service-circle-icon">
-            <i class="fa-solid fa-video"></i>
+            <i class="fa-solid fa-user-secret"></i>
           </div>
-          <h3 class="service-card-title">Asset Security</h3>
+          <h3 class="service-card-title">Investigations</h3>
           <p class="service-card-desc">
-            24/7 real-time offsite CCTV monitoring, AI tripwire perimeter surveillance, and rapid incident dispatch integration.
+            Forensic, commercial, and workplace investigations conducted with discretion, integrity, and evidential rigour for disciplinary and legal proceedings.
           </p>
         </div>
         <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
-      <!-- 03 Critical Infrastructure (Cyan Accent) -->
-      <div class="service-card-item service-card-cyan">
+      <!-- 06 Compliance -->
+      <div class="service-card-item service-card-navy">
+        <div>
+          <div class="service-circle-icon">
+            <i class="fa-solid fa-gavel"></i>
+          </div>
+          <h3 class="service-card-title">Compliance</h3>
+          <p class="service-card-desc">
+            Regulatory compliance frameworks, statutory readiness, governance audits, and adherence to industry standards and legislation.
+          </p>
+        </div>
+        <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <!-- 07 Business Resilience -->
+      <div class="service-card-item service-card-green">
         <div>
           <div class="service-circle-icon">
             <i class="fa-solid fa-building-shield"></i>
           </div>
-          <h3 class="service-card-title">Critical Infrastructure</h3>
+          <h3 class="service-card-title">Business Resilience</h3>
           <p class="service-card-desc">
-            National Key Point (NKP) alignment, utilities, transport corridors, and high-compliance installations requiring statutory integrity.
+            Business continuity planning, crisis management, disaster recovery, and operational resilience strategies to withstand disruptions.
           </p>
         </div>
         <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
-      <!-- 04 Tactical Response (Burgundy Accent) -->
-      <div class="service-card-item service-card-burgundy">
+      <!-- 08 Operational Risk -->
+      <div class="service-card-item service-card-cyan">
         <div>
           <div class="service-circle-icon">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-gears"></i>
           </div>
-          <h3 class="service-card-title">Tactical Response</h3>
+          <h3 class="service-card-title">Operational Risk</h3>
           <p class="service-card-desc">
-            Strike containment, armed response mobilization, emergency crisis control, and asset recovery for escalated environments.
+            End-to-end operational risk assessments, control environment reviews, and process optimisation to minimise exposure and improve efficiency.
           </p>
         </div>
         <a href="#contact" class="service-card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
@@ -1396,43 +1756,43 @@
   </div>
 </section>
 
-<!-- Subcontractor Partnership Spotlight (Inspired by Global Guardian Collaboration Banner) -->
+<!-- Subcontractor Partnership Spotlight -->
 <section class="spotlight-section" id="collaboration">
   <div class="wrap">
-    <div class="spotlight-card">
+    <div class="spotlight-card fade-up">
       <div class="spotlight-left">
         <div class="spotlight-logos">
           <img class="spotlight-logo-main" src="images/KUPFI_horizontal_corporate_logo.png" alt="KUIPFI Corporate Logo">
           <div class="spotlight-partner-box">
-            <div class="spotlight-partner-name">Prime Contractor &amp; Joint Ventures</div>
-            <div class="spotlight-partner-sub">Tier-1 Subcontractor Readiness Framework</div>
+            <div class="spotlight-partner-name">Enterprise &amp; Institutional Partnerships</div>
+            <div class="spotlight-partner-sub">Trusted Risk Advisory Extension</div>
           </div>
         </div>
-        <div class="angled-ribbon-tag">Subcontractor Readiness</div>
+        <div class="angled-ribbon-tag">Strategic Partner</div>
       </div>
       <div class="spotlight-right">
-        <span class="spotlight-eyebrow">Enterprise Procurement Alignment</span>
-        <h3 class="spotlight-headline">Fidelity &amp; Institutional Subcontractor File</h3>
+        <span class="spotlight-eyebrow">Partnership &amp; Collaboration</span>
+        <h3 class="spotlight-headline">Your Trusted Risk Management Partner</h3>
         <p class="spotlight-copy">
-          KUIPFI maintains an active, pre-vetted onboarding pack engineered for seamless submission to prime security contractors, corporate panels, and municipal tenders. Full statutory clearance across PSIRA, NBCPSS, SARS Tax PIN, SAPS firearm licensing, and COID good-standing.
+          KUIPFI works collaboratively with clients, becoming a trusted extension of their risk management and business leadership teams. We maintain full statutory clearance and professional standards for seamless integration across PSIRA, NBCPSS, SARS Tax PIN, SAPS firearm licensing, and COID good-standing.
         </p>
-        <a href="#compliance" class="spotlight-action">View Vendor Pack Register <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#compliance" class="spotlight-action">View Compliance Register <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Intel & Risk Reports Section (Inspired by Global Guardian 3-Report Cards) -->
+<!-- Intel & Risk Reports Section -->
 <section class="intel-section" id="intel">
   <div class="wrap">
-    <div class="section-intro">
+    <div class="section-intro fade-up">
       <h2>Operational Intelligence &amp; Risk Reports</h2>
       <p>
         Strategic threat assessments, compliance advisories, and site vulnerability analyses prepared by KUIPFI operational leads.
       </p>
     </div>
 
-    <div class="intel-grid">
+    <div class="intel-grid fade-up">
       <!-- Report 01 -->
       <article class="intel-card">
         <div class="intel-thumb-wrap" style="background-image: url('images/supply_chain_security.jpg');">
@@ -1481,31 +1841,31 @@
 <!-- Operational Protocol (4-Step Chain) -->
 <section class="methodology-section" id="methodology">
   <div class="wrap">
-    <div class="section-intro">
+    <div class="section-intro fade-up">
       <h2>Operational Protocol &amp; Methodology</h2>
-      <p>How KUIPFI structures, deploys, and maintains uncompromised guarding standards across every deployed site.</p>
+      <p>How KUIPFI structures, deploys, and maintains uncompromised risk management standards across every engagement.</p>
     </div>
 
-    <div class="methodology-grid">
+    <div class="methodology-grid fade-up">
       <div class="methodology-item">
-        <span class="step-index">01. Threat Survey</span>
-        <h3>Site Risk Audit</h3>
-        <p>Thorough physical survey, access point assessment, vulnerability mapping, and formulation of customized post orders.</p>
+        <span class="step-index">01. Risk Assessment</span>
+        <h3>Identify &amp; Analyse</h3>
+        <p>Thorough risk assessment, vulnerability mapping, threat identification, and formulation of customized risk management strategies.</p>
       </div>
       <div class="methodology-item">
-        <span class="step-index">02. Guard Vetting</span>
-        <h3>Disciplined Deployment</h3>
-        <p>Deployment of PSIRA Grade A–C officers, uniform inspection, communication checks, and prime contractor SLA sign-off.</p>
+        <span class="step-index">02. Solution Design</span>
+        <h3>Tailored Strategy</h3>
+        <p>Development of bespoke, sustainable, and measurable solutions aligned to your organisation's specific risk profile and business objectives.</p>
       </div>
       <div class="methodology-item">
-        <span class="step-index">03. Control Desk</span>
-        <h3>24/7 Monitoring</h3>
-        <p>Continuous offsite surveillance, Occurrence Book (OB) verification, patrol wand tracking, and central dispatch oversight.</p>
+        <span class="step-index">03. Implementation</span>
+        <h3>Execute &amp; Monitor</h3>
+        <p>Controlled rollout of risk controls, security measures, compliance frameworks, and continuous monitoring of effectiveness.</p>
       </div>
       <div class="methodology-item">
         <span class="step-index">04. Governance</span>
-        <h3>Audit &amp; Reconciliation</h3>
-        <p>Daily incident reporting, monthly compliance pack renewal, statutory wage reconciliation (NBCPSS), and vendor reviews.</p>
+        <h3>Review &amp; Optimise</h3>
+        <p>Ongoing governance reviews, incident analysis, compliance auditing, and continuous improvement of risk management protocols.</p>
       </div>
     </div>
   </div>
@@ -1514,14 +1874,14 @@
 <!-- Subcontractor Compliance Register (Accordion) -->
 <section class="compliance-block" id="compliance">
   <div class="wrap">
-    <div class="compliance-block-intro">
-      <h2>Subcontractor Statutory Readiness Register</h2>
+    <div class="compliance-block-intro fade-up">
+      <h2>Statutory Readiness Register</h2>
       <p>
-        A complete document inventory maintained for immediate vendor onboarding, main contractor compliance checks, and municipal audit files.
+        A complete document inventory maintained for immediate vendor onboarding, contractor compliance checks, and regulatory audit files.
       </p>
     </div>
 
-    <div class="accordion-grid">
+    <div class="accordion-grid fade-up">
       <details class="accordion-item">
         <summary>Company, Tax &amp; Corporate Records</summary>
         <ol>
@@ -1580,10 +1940,10 @@
 <section class="procurement-section" id="contact">
   <div class="wrap">
     <div class="procurement-layout">
-      <div class="procurement-info">
-        <h2>Initiate Procurement Briefing</h2>
+      <div class="procurement-info fade-up">
+        <h2>Get In Touch</h2>
         <p>
-          Connect with KUIPFI regarding prime contractor subcontracting, commercial guarding tenders, or site risk surveys. Our senior operations desk will respond promptly with our full vendor compliance dossier.
+          Connect with KUIPFI regarding risk advisory services, security consulting, compliance management, or any of our specialist solutions. Our senior operations desk will respond promptly.
         </p>
         <div class="contact-detail-row">
           <i class="fa-solid fa-phone"></i> +27 (0) 11 234 8900
@@ -1599,7 +1959,7 @@
         </div>
       </div>
 
-      <div class="form-box">
+      <div class="form-box fade-up">
         <form onsubmit="handleFormSubmit(event)">
           <div class="form-split">
             <div class="form-ctrl-group">
@@ -1627,7 +1987,7 @@
           </div>
           <div class="form-split">
             <div class="form-ctrl-group">
-              <label for="cProvince">Deployment Province</label>
+              <label for="cProvince">Province</label>
               <select id="cProvince" class="form-input" required>
                 <option value="" disabled selected>Select Province</option>
                 <option>Gauteng</option><option>KwaZulu-Natal</option><option>Western Cape</option>
@@ -1639,26 +1999,29 @@
               <label for="cScope">Scope of Services</label>
               <select id="cScope" class="form-input" required>
                 <option value="" disabled selected>Select Scope</option>
-                <option>Subcontractor / Joint Venture Guarding</option>
-                <option>Commercial Facility Physical Security</option>
-                <option>Critical Infrastructure (NKP) Protection</option>
-                <option>Offsite CCTV &amp; Control Room Monitoring</option>
-                <option>Tactical Response &amp; Strike Containment</option>
-                <option>Vendor File / Due Diligence Pack Request</option>
+                <option>Strategic Risk Management</option>
+                <option>Loss Prevention</option>
+                <option>Fraud Risk Management</option>
+                <option>Security Consulting</option>
+                <option>Investigations</option>
+                <option>Compliance Advisory</option>
+                <option>Business Resilience</option>
+                <option>Operational Risk</option>
+                <option>Vendor File / Due Diligence Pack</option>
               </select>
             </div>
           </div>
           <div class="form-ctrl-group">
-            <label for="cMsg">Site Requirements &amp; Timelines</label>
-            <textarea id="cMsg" class="form-input" placeholder="Location, required guard grades, site shifts, and operational deadlines..."></textarea>
+            <label for="cMsg">Requirements &amp; Details</label>
+            <textarea id="cMsg" class="form-input" placeholder="Describe your requirements, timelines, and any specific areas of concern..."></textarea>
           </div>
 
           <label class="consent-check">
             <input type="checkbox" required>
-            <span>I confirm this is a bona fide commercial enquiry and consent to KUIPFI processing these details.</span>
+            <span>I confirm this is a bona fide enquiry and consent to KUIPFI processing these details.</span>
           </label>
 
-          <button type="submit" class="btn-submit-enquiry">Submit Procurement Request</button>
+          <button type="submit" class="btn-submit-enquiry">Submit Enquiry</button>
         </form>
       </div>
     </div>
@@ -1672,19 +2035,22 @@
       <div>
         <h4>KUIPFI Strategic Risk</h4>
         <ul>
-          <li><a href="#home">About Our Firm</a></li>
-          <li><a href="#services">Capability Framework</a></li>
-          <li><a href="#collaboration">Subcontractor Readiness</a></li>
-          <li><a href="#compliance">Statutory Due Diligence</a></li>
+          <li><a href="#about">About Our Firm</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#collaboration">Partnership</a></li>
+          <li><a href="#compliance">Statutory Compliance</a></li>
         </ul>
+        <p class="footer-tagline">Protecting Assets. Managing Risk.<br>Enabling Growth.</p>
       </div>
       <div>
         <h4>Key Services</h4>
         <ul>
-          <li><a href="#services">Protective Guarding</a></li>
-          <li><a href="#services">Asset &amp; CCTV Security</a></li>
-          <li><a href="#services">Critical Infrastructure (NKP)</a></li>
-          <li><a href="#services">Tactical Response &amp; Strike Ops</a></li>
+          <li><a href="#services">Strategic Risk Management</a></li>
+          <li><a href="#services">Loss Prevention</a></li>
+          <li><a href="#services">Security Consulting</a></li>
+          <li><a href="#services">Fraud Risk Management</a></li>
+          <li><a href="#services">Investigations</a></li>
+          <li><a href="#services">Business Resilience</a></li>
         </ul>
       </div>
       <div>
@@ -1709,12 +2075,8 @@
 
     <!-- Accreditations Strip -->
     <div class="footer-accreditation-row">
-      <div class="accreditation-badges-group">
-        <span class="badge-tag"><strong>PSIRA</strong> Reg. Subcontractor</span>
-        <span class="badge-tag"><strong>NBCPSS</strong> Compliant</span>
-        <span class="badge-tag"><strong>SAPS</strong> Firearm Accredited</span>
-        <span class="badge-tag"><strong>B-BBEE</strong> Level 1 / EME</span>
-        <span class="badge-tag"><strong>SARS &amp; COID</strong> Verified</span>
+      <div class="accreditation-text">
+        <span>PSIRA Reg. Subcontractor</span><span class="sep">·</span><span>NBCPSS Compliant</span><span class="sep">·</span><span>SAPS Firearm Accredited</span><span class="sep">·</span><span>B-BBEE Level 1 / EME</span><span class="sep">·</span><span>SARS &amp; COID Verified</span>
       </div>
       <div class="footer-social-links">
         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -1726,7 +2088,7 @@
     <!-- Copyright & Disclaimer -->
     <div class="footer-legal-bottom">
       <span>&copy; 2026 KUIPFI Strategic Risk Consultants. All rights reserved.</span>
-      <span>Designed for High-Risk Commercial &amp; Critical Infrastructure Protection.</span>
+      <span>Protecting Assets. Managing Risk. Enabling Growth.</span>
     </div>
   </div>
 </footer>
@@ -1734,7 +2096,7 @@
 <script>
   function handleFormSubmit(e) {
     e.preventDefault();
-    alert('Thank you. Your procurement enquiry has been logged with the KUIPFI Operations Desk.');
+    alert('Thank you. Your enquiry has been submitted to the KUIPFI Operations Desk. We will respond promptly.');
     e.target.reset();
   }
 
@@ -1843,6 +2205,25 @@
 
     // Start 3-second cycle immediately
     resetTimer();
+  })();
+
+  // Scroll-triggered fade-in animations
+  (function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
+    });
   })();
 </script>
 
