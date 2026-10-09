@@ -212,7 +212,8 @@
     padding: 6px 0;
     white-space: nowrap;
   }
-  nav.nav-links a:hover {
+  nav.nav-links a:hover,
+  nav.nav-links a.active {
     color: var(--accent-gold);
   }
   nav.nav-links a.active::after {
@@ -2663,10 +2664,10 @@
           <i class="fa-solid fa-phone"></i> +27 (0) 11 234 8900
         </div>
         <div class="contact-detail-row">
-          <i class="fa-solid fa-envelope"></i> operations@kuipfi.com
+          <i class="fa-solid fa-envelope"></i> <a href="mailto:operations@kuipfi.co.za" style="color: inherit;">operations@kuipfi.co.za</a>
         </div>
         <div class="contact-detail-row">
-          <i class="fa-solid fa-envelope"></i> tenders@kuipfi.com
+          <i class="fa-solid fa-envelope"></i> <a href="mailto:tenders@kuipfi.co.za" style="color: inherit;">tenders@kuipfi.co.za</a>
         </div>
         <div class="contact-detail-row">
           <i class="fa-solid fa-location-dot"></i> South Africa Operational Footprint (9 Provinces)
@@ -2781,8 +2782,8 @@
         <h4>Operations Desk</h4>
         <ul>
           <li><a href="tel:+27112348900">+27 (0) 11 234 8900</a></li>
-          <li><a href="mailto:operations@kuipfi.com">operations@kuipfi.com</a></li>
-          <li><a href="mailto:tenders@kuipfi.com">tenders@kuipfi.com</a></li>
+          <li><a href="mailto:operations@kuipfi.co.za">operations@kuipfi.co.za</a></li>
+          <li><a href="mailto:tenders@kuipfi.co.za">tenders@kuipfi.co.za</a></li>
           <li><a href="#contact">24/7 National Operations Footprint</a></li>
         </ul>
       </div>
@@ -2970,6 +2971,74 @@
     document.querySelectorAll('.fade-up').forEach(el => {
       observer.observe(el);
     });
+  })();
+
+  // Dynamic ScrollSpy: highlights the navigation link matching the section in view
+  (function initScrollSpy() {
+    const navLinks = document.querySelectorAll('#mainNav a:not(.btn-request-security)');
+    if (!navLinks.length) return;
+
+    const sections = [];
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const target = document.querySelector(href);
+        if (target) {
+          sections.push({ href: href, element: target, link: link });
+        }
+      }
+    });
+
+    let isTicking = false;
+
+    function highlightCurrentSection() {
+      // 140px accounts for sticky header + utility bar
+      const scrollPos = window.scrollY + 140;
+      let currentSection = null;
+
+      // Check if user is scrolled to the bottom of the page
+      const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 50);
+
+      if (atBottom) {
+        currentSection = sections[sections.length - 1];
+      } else {
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const sec = sections[i];
+          if (sec.element.offsetTop <= scrollPos) {
+            currentSection = sec;
+            break;
+          }
+        }
+      }
+
+      sections.forEach(sec => {
+        if (currentSection && sec.href === currentSection.href) {
+          sec.link.classList.add('active');
+        } else {
+          sec.link.classList.remove('active');
+        }
+      });
+
+      isTicking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!isTicking) {
+        window.requestAnimationFrame(highlightCurrentSection);
+        isTicking = true;
+      }
+    }, { passive: true });
+
+    // Handle instant click highlight
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Run on page load
+    highlightCurrentSection();
   })();
 </script>
 
