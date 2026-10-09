@@ -2099,7 +2099,7 @@
 <header class="global-nav">
   <div class="nav-inner">
     <a href="#home" class="brand-logo-wrap">
-      <img class="brand-logo-img" src="images/emblem.png" alt="KUIPFI Emblem">
+      <img class="brand-logo-img" src="images/kuipfi-emblem-gold.png" alt="KUIPFI Emblem">
       <div class="brand-text-block">
         <span class="brand-title">KUIPFI</span>
         <span class="brand-subtitle">Strategic Risk Consultants</span>
@@ -2122,21 +2122,28 @@
 </header>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- Hero Section with 3-Second Background Carousel -->
+<!-- Hero Section with 3-Second Background Carousel (Custom Combat Uniform & Tactical Patrol Deployments) -->
 <section class="hero-container" id="home">
   <div class="hero-slides" aria-hidden="true">
-    <div class="hero-slide active" style="background-image: url('images/Security_officer.jpeg');"></div>
-    <div class="hero-slide" style="background-image: url('images/securities-standing.jpeg');"></div>
-    <div class="hero-slide" style="background-image: url('images/surv-camera.jpeg');"></div>
-    <div class="hero-slide" style="background-image: url('images/backview.jpeg');"></div>
-    <div class="hero-slide" style="background-image: url('images/officer.jpeg');"></div>
+    <div class="hero-slide active" style="background-image: url('images/kuipfi-patrol-officers-alert.jpg'); background-position: center 25%;"></div>
+    <div class="hero-slide" style="background-image: url('images/kuipfi-officer-radio-dispatch.jpg'); background-position: center 22%;"></div>
+    <div class="hero-slide" style="background-image: url('images/kuipfi-officer-entrance-security.jpg'); background-position: center 25%;"></div>
+    <div class="hero-slide" style="background-image: url('images/kuipfi-patrol-evening-facility.jpg'); background-position: center 35%;"></div>
+    <div class="hero-slide" style="background-image: url('images/kuipfi-patrol-infrastructure.jpg'); background-position: center 25%;"></div>
+    <div class="hero-slide" style="background-image: url('images/kuipfi-patrol-supply-chain.jpg'); background-position: center 40%;"></div>
   </div>
   
   <div class="hero-overlay"></div>
 
   <div class="wrap hero-wrap">
     <div class="hero-content">
-      <span class="hero-kicker">Specialist Risk Advisory &amp; Consulting</span>
+      <div class="hero-meta-badge-row">
+        <span class="hero-kicker">Specialist Risk Advisory &amp; Consulting</span>
+        <div class="hero-slide-badge" id="heroSlideBadge">
+          <span class="slide-badge-dot"></span>
+          <span class="slide-badge-text" id="slideBadgeText">Slide 01 / 06 · Frontline Officers in Custom Combat Uniform</span>
+        </div>
+      </div>
       <h1 class="hero-title">KUIPFI Strategic Risk Consultants</h1>
       <p class="hero-tagline">Protecting Assets. Managing Risk. Enabling Growth.</p>
       <p class="hero-description">
@@ -2147,12 +2154,24 @@
         <a href="#uniform" class="btn-hero-outline"><i class="fa-solid fa-shield-halved"></i> Combat Uniform</a>
       </div>
 
-      <div class="hero-indicators" aria-label="Hero carousel controls">
-        <button class="hero-dot active" aria-label="Slide 1: Security Officer" data-index="0"></button>
-        <button class="hero-dot" aria-label="Slide 2: Guarding Formation" data-index="1"></button>
-        <button class="hero-dot" aria-label="Slide 3: Surveillance Camera" data-index="2"></button>
-        <button class="hero-dot" aria-label="Slide 4: Facility Patrol" data-index="3"></button>
-        <button class="hero-dot" aria-label="Slide 5: Tactical Officer" data-index="4"></button>
+      <div class="hero-controls-row">
+        <div class="hero-indicators" aria-label="Hero carousel controls">
+          <button class="hero-dot active" aria-label="Slide 1: Frontline Officers in Custom Combat Uniform" data-index="0" title="Custom Combat Uniform · Officers Alert"></button>
+          <button class="hero-dot" aria-label="Slide 2: Tactical Radio Comms &amp; Dispatch" data-index="1" title="Tactical Radio Comms &amp; Dispatch"></button>
+          <button class="hero-dot" aria-label="Slide 3: Corporate Access Control &amp; Entrance Guard" data-index="2" title="Corporate Access Control"></button>
+          <button class="hero-dot" aria-label="Slide 4: Evening Facility &amp; Logistics Patrol" data-index="3" title="Evening Facility Patrol"></button>
+          <button class="hero-dot" aria-label="Slide 5: Critical Infrastructure Security" data-index="4" title="Critical Infrastructure Protection"></button>
+          <button class="hero-dot" aria-label="Slide 6: Supply Chain &amp; Freight Logistics Security" data-index="5" title="Supply Chain &amp; Logistics Security"></button>
+        </div>
+
+        <div class="hero-arrows">
+          <button type="button" class="hero-arrow-btn" id="heroPrevBtn" aria-label="Previous Slide" title="Previous Slide">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button type="button" class="hero-arrow-btn" id="heroNextBtn" aria-label="Next Slide" title="Next Slide">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2331,7 +2350,7 @@
 
       <!-- Centerpiece: Main Uniform Board Visual & Lightbox Trigger -->
       <div class="uniform-centerpiece-wrap" onclick="openUniformLightbox()" title="Click to view full Combat Uniform Collection specification sheet in high resolution">
-        <img class="uniform-poster-img" src="images/kuipfi_combat_uniform_collection.jpg" alt="KUIPFI Combat Uniform Collection - Official Presentation Board">
+        <img class="uniform-poster-img" src="images/kuipfi-uniform-collection-board-hd.jpg" alt="KUIPFI Combat Uniform Collection - Official Presentation Board">
         <div class="uniform-centerpiece-badge">
           <div class="badge-text-left">
             <h4>Official Uniform Design</h4>
@@ -2343,15 +2362,33 @@
         </div>
       </div>
 
-      <!-- Right Panel: 360-Degree Perspective Profiles -->
+      <!-- Right Panel: Tactical Field Views & Perspectives -->
       <div class="uniform-card-panel">
         <div class="uniform-panel-header">
-          <h3><i class="fa-solid fa-arrows-spin"></i> 360° Field Views</h3>
-          <p>Standardized profile and rear perspectives ensuring complete uniform conformity.</p>
+          <h3><i class="fa-solid fa-arrows-spin"></i> Tactical Field Views</h3>
+          <p>Verified deployment cuts and standardized perspectives ensuring uniform conformity.</p>
         </div>
 
-        <div class="uniform-profiles-img-wrap">
-          <img src="images/uniform_profiles.jpg" alt="KUIPFI Uniform Side Profiles and Back Views">
+        <div class="uniform-view-switcher">
+          <button type="button" class="btn-uniform-tab active" id="tabUniformDuo" onclick="switchUniformView('duo')">
+            <i class="fa-solid fa-user-group"></i> Deployed Officer Duo
+          </button>
+          <button type="button" class="btn-uniform-tab" id="tabUniform360" onclick="switchUniformView('360')">
+            <i class="fa-solid fa-arrows-rotate"></i> 360° Field Angles
+          </button>
+        </div>
+
+        <div class="uniform-profiles-img-wrap" id="uniformDuoWrap">
+          <img src="images/kuipfi-uniform-officers-duo.jpg" alt="KUIPFI Deployed Security Officers Duo in Official Combat Uniform">
+          <div class="profiles-caption-list">
+            <span>Male Officer</span>
+            <span>Frontline Duo</span>
+            <span>Female Officer</span>
+          </div>
+        </div>
+
+        <div class="uniform-profiles-img-wrap" id="uniform360Wrap" style="display: none;">
+          <img src="images/kuipfi-uniform-profiles-360.jpg" alt="KUIPFI Uniform Side Profiles and Back Views">
           <div class="profiles-caption-list">
             <span>Male Side</span>
             <span>Female Side</span>
@@ -2382,7 +2419,7 @@
         <!-- 01 Combat Short Sleeve Shirt -->
         <div class="garment-card">
           <div class="garment-img-box">
-            <img src="images/uniform_shirt.jpg" alt="KUIPFI Combat Short Sleeve Shirt">
+            <img src="images/kuipfi-uniform-combat-shirt.jpg" alt="KUIPFI Combat Short Sleeve Shirt">
           </div>
           <div class="garment-body">
             <h4 class="garment-title">Combat Short Sleeve Shirt</h4>
@@ -2401,7 +2438,7 @@
         <!-- 02 Combat Trousers -->
         <div class="garment-card">
           <div class="garment-img-box">
-            <img src="images/uniform_trousers.jpg" alt="KUIPFI Combat Trousers">
+            <img src="images/kuipfi-uniform-combat-trousers.jpg" alt="KUIPFI Combat Trousers">
           </div>
           <div class="garment-body">
             <h4 class="garment-title">Combat Trousers</h4>
@@ -2420,7 +2457,7 @@
         <!-- 03 Combat Parka Jacket -->
         <div class="garment-card">
           <div class="garment-img-box">
-            <img src="images/uniform_parka.jpg" alt="KUIPFI Combat Parka Jacket">
+            <img src="images/kuipfi-uniform-combat-parka.jpg" alt="KUIPFI Combat Parka Jacket">
           </div>
           <div class="garment-body">
             <h4 class="garment-title">Combat Parka Jacket</h4>
@@ -2572,7 +2609,7 @@
     <div class="spotlight-card fade-up">
       <div class="spotlight-left">
         <div class="spotlight-logos">
-          <img class="spotlight-logo-main" src="images/KUPFI_horizontal_corporate_logo.png" alt="KUIPFI Corporate Logo">
+          <img class="spotlight-logo-main" src="images/kuipfi-corporate-logo.png" alt="KUIPFI Corporate Logo">
           <div class="spotlight-partner-box">
             <div class="spotlight-partner-name">Enterprise &amp; Institutional Partnerships</div>
             <div class="spotlight-partner-sub">Trusted Risk Advisory Extension</div>
@@ -2605,7 +2642,7 @@
     <div class="intel-grid fade-up">
       <!-- Report 01 -->
       <article class="intel-card">
-        <div class="intel-thumb-wrap" style="background-image: url('images/supply_chain_security.jpg');">
+        <div class="intel-thumb-wrap" style="background-image: url('images/kuipfi-patrol-supply-chain.jpg');">
           <div class="intel-thumb-overlay"></div>
           <div class="intel-ribbon">Intel Report</div>
         </div>
@@ -2619,7 +2656,7 @@
 
       <!-- Report 02 -->
       <article class="intel-card">
-        <div class="intel-thumb-wrap" style="background-image: url('images/infrastructure_security.jpg');">
+        <div class="intel-thumb-wrap" style="background-image: url('images/kuipfi-patrol-infrastructure.jpg');">
           <div class="intel-thumb-overlay"></div>
           <div class="intel-ribbon">Advisory Brief</div>
         </div>
@@ -2633,7 +2670,7 @@
 
       <!-- Report 03 -->
       <article class="intel-card">
-        <div class="intel-thumb-wrap" style="background-image: url('images/strike_containment.jpg');">
+        <div class="intel-thumb-wrap" style="background-image: url('images/kuipfi-tactical-strike-containment.jpg');">
           <div class="intel-thumb-overlay"></div>
           <div class="intel-ribbon">Operational Dossier</div>
         </div>
