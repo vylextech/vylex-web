@@ -1752,38 +1752,6 @@
   }
 
   /* Right Column: Tactical Perspectives */
-  .uniform-view-switcher {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 12px;
-  }
-  .btn-uniform-tab {
-    flex: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 8px 10px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    background: rgba(255, 255, 255, 0.06);
-    color: #cbd5e1;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .btn-uniform-tab.active {
-    background: var(--accent-gold);
-    color: var(--navy-darkest);
-    border-color: var(--accent-gold);
-  }
-  .btn-uniform-tab:hover:not(.active) {
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
-  }
   .uniform-profiles-img-wrap {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 3px;
@@ -2074,13 +2042,7 @@
 
   <div class="wrap hero-wrap">
     <div class="hero-content">
-      <div class="hero-meta-badge-row">
-        <span class="hero-kicker">Specialist Risk Advisory &amp; Consulting</span>
-        <div class="hero-slide-badge" id="heroSlideBadge">
-          <span class="slide-badge-dot"></span>
-          <span class="slide-badge-text" id="slideBadgeText">Slide 01 / 06 · Frontline Officers in Custom Combat Uniform</span>
-        </div>
-      </div>
+      <span class="hero-kicker">Specialist Risk Advisory &amp; Consulting</span>
       <h1 class="hero-title">KUIPFI Strategic Risk Consultants</h1>
       <p class="hero-tagline">Protecting Assets. Managing Risk. Enabling Growth.</p>
       <p class="hero-description">
@@ -2091,24 +2053,13 @@
         <a href="#uniform" class="btn-hero-outline"><i class="fa-solid fa-shield-halved"></i> Combat Uniform</a>
       </div>
 
-      <div class="hero-controls-row">
-        <div class="hero-indicators" aria-label="Hero carousel controls">
-          <button class="hero-dot active" aria-label="Slide 1: Frontline Officers in Custom Combat Uniform" data-index="0" title="Custom Combat Uniform · Officers Alert"></button>
-          <button class="hero-dot" aria-label="Slide 2: Tactical Radio Comms &amp; Dispatch" data-index="1" title="Tactical Radio Comms &amp; Dispatch"></button>
-          <button class="hero-dot" aria-label="Slide 3: Corporate Access Control &amp; Entrance Guard" data-index="2" title="Corporate Access Control"></button>
-          <button class="hero-dot" aria-label="Slide 4: Evening Facility &amp; Logistics Patrol" data-index="3" title="Evening Facility Patrol"></button>
-          <button class="hero-dot" aria-label="Slide 5: Critical Infrastructure Security" data-index="4" title="Critical Infrastructure Protection"></button>
-          <button class="hero-dot" aria-label="Slide 6: Supply Chain &amp; Freight Logistics Security" data-index="5" title="Supply Chain &amp; Logistics Security"></button>
-        </div>
-
-        <div class="hero-arrows">
-          <button type="button" class="hero-arrow-btn" id="heroPrevBtn" aria-label="Previous Slide" title="Previous Slide">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button type="button" class="hero-arrow-btn" id="heroNextBtn" aria-label="Next Slide" title="Next Slide">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
+      <div class="hero-indicators" aria-label="Hero carousel controls">
+        <button class="hero-dot active" aria-label="Slide 1: Officers Alert" data-index="0"></button>
+        <button class="hero-dot" aria-label="Slide 2: Radio Dispatch" data-index="1"></button>
+        <button class="hero-dot" aria-label="Slide 3: Entrance Security" data-index="2"></button>
+        <button class="hero-dot" aria-label="Slide 4: Evening Patrol" data-index="3"></button>
+        <button class="hero-dot" aria-label="Slide 5: Infrastructure Security" data-index="4"></button>
+        <button class="hero-dot" aria-label="Slide 6: Supply Chain Logistics" data-index="5"></button>
       </div>
     </div>
   </div>
@@ -2299,32 +2250,14 @@
         </div>
       </div>
 
-      <!-- Right Panel: Tactical Field Views & Perspectives -->
+      <!-- Right Panel: 360-Degree Perspective Profiles -->
       <div class="uniform-card-panel">
         <div class="uniform-panel-header">
-          <h3><i class="fa-solid fa-arrows-spin"></i> Tactical Field Views</h3>
-          <p>Verified deployment cuts and standardized perspectives ensuring uniform conformity.</p>
+          <h3><i class="fa-solid fa-arrows-spin"></i> 360° Field Views</h3>
+          <p>Standardized profile and rear perspectives ensuring complete uniform conformity.</p>
         </div>
 
-        <div class="uniform-view-switcher">
-          <button type="button" class="btn-uniform-tab active" id="tabUniformDuo" onclick="switchUniformView('duo')">
-            <i class="fa-solid fa-user-group"></i> Deployed Officer Duo
-          </button>
-          <button type="button" class="btn-uniform-tab" id="tabUniform360" onclick="switchUniformView('360')">
-            <i class="fa-solid fa-arrows-rotate"></i> 360° Field Angles
-          </button>
-        </div>
-
-        <div class="uniform-profiles-img-wrap" id="uniformDuoWrap">
-          <img src="images/kuipfi-uniform-officers-duo.jpg" alt="KUIPFI Deployed Security Officers Duo in Official Combat Uniform">
-          <div class="profiles-caption-list">
-            <span>Male Officer</span>
-            <span>Frontline Duo</span>
-            <span>Female Officer</span>
-          </div>
-        </div>
-
-        <div class="uniform-profiles-img-wrap" id="uniform360Wrap" style="display: none;">
+        <div class="uniform-profiles-img-wrap">
           <img src="images/kuipfi-uniform-profiles-360.jpg" alt="KUIPFI Uniform Side Profiles and Back Views">
           <div class="profiles-caption-list">
             <span>Male Side</span>
