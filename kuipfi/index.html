@@ -26,18 +26,25 @@
 <body>
 
     <!-- Top Utility Strip -->
-    <div class="top-utility">
+    <div class="top-utility" role="region" aria-label="Quick Contacts and Compliance">
         <div class="top-utility-inner">
             <div class="top-utility-left">
-                <a href="tel:+27112348900" class="emergency-support-link">
-                    <span class="pulse-indicator"></span>
-                    <span>+27 (0) 11 234 8900 | Consultations &amp; Client Enquiries</span>
+                <a href="tel:+27112348900" class="emergency-support-link" title="Call KUIPFI Strategic Risk Consultants">
+                    <span class="pulse-indicator" aria-hidden="true"></span>
+                    <span class="phone-number">+27 (0) 11 234 8900</span>
+                    <span class="utility-divider" aria-hidden="true">|</span>
+                    <span class="utility-subtext">Client Advisory</span>
                 </a>
             </div>
             <div class="top-utility-right">
-                <span class="compliance-tag">PSIRA Registered · NBCPSS Compliant</span>
-                <a href="contact.html" class="top-utility-search"><i class="fa-solid fa-file-invoice"></i> Vendor
-                    Portal</a>
+                <span class="compliance-tag">
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                    <span>PSIRA Registered<span class="desktop-only-txt"> · NBCPSS Compliant</span></span>
+                </span>
+                <a href="contact.html" class="top-utility-search" title="Client &amp; Vendor Portal">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    <span>Portal</span>
+                </a>
             </div>
         </div>
     </div>

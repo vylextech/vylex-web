@@ -73,41 +73,18 @@
     }
 }
 
-@media (max-width: 860px) {
-    .uniform-console {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .uniform-console-specs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-    }
-
-    .console-specs-header {
-        grid-column: span 2;
-    }
-
-    .console-palette-box {
-        grid-column: span 2;
-    }
-
-    .stage-garment-horizontal {
-        grid-template-columns: 1fr;
-    }
-
-    .stage-garment-media {
-        border-right: none;
-        border-bottom: 1px solid rgba(200, 165, 90, 0.2);
-    }
-
-    .stage-garment-media img {
-        max-height: 280px;
-    }
 }
 
 @media (max-width: 960px) {
+    .top-utility-inner {
+        padding: 0 24px;
+    }
+
+    .emergency-support-link .utility-divider,
+    .emergency-support-link .utility-subtext {
+        display: none;
+    }
+
     nav.nav-links {
         display: none;
     }
@@ -210,6 +187,51 @@
 
     .form-split {
         grid-template-columns: 1fr;
+    }
+
+    /* Uniform Console: Stack into clean 1-column layout on tablet */
+    .uniform-console {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .uniform-console-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        padding: 18px 16px;
+    }
+
+    .console-specs-header {
+        grid-column: span 2;
+    }
+
+    .console-palette-box {
+        grid-column: span 2;
+    }
+
+    .stage-garment-horizontal {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+
+    .stage-garment-media {
+        border-right: none;
+        border-bottom: 1px solid rgba(200, 165, 90, 0.2);
+        min-height: 220px;
+        max-height: 280px;
+        padding: 16px;
+    }
+
+    .stage-garment-media img {
+        max-height: 250px;
+        margin: 0 auto;
+    }
+
+    .stage-garment-info {
+        padding: 18px 16px;
     }
 }
 
@@ -411,7 +433,22 @@
        LAYOUT & HORIZONTAL OVERFLOW PREVENTION
        ---------------------------------------------------- */
     .top-utility {
+        height: 34px;
+        font-size: 11px;
+    }
+
+    .top-utility-inner {
+        padding: 0 16px;
+        gap: 10px;
+    }
+
+    .compliance-tag .desktop-only-txt {
         display: none;
+    }
+
+    .top-utility-search {
+        padding: 2.5px 8px;
+        font-size: 10.5px;
     }
 
     .wrap,
@@ -505,6 +542,24 @@
 }
 
 @media (max-width: 480px) {
+    .top-utility {
+        height: 32px;
+    }
+
+    .top-utility-inner {
+        padding: 0 12px;
+        justify-content: space-between;
+    }
+
+    .compliance-tag {
+        display: none;
+    }
+
+    .emergency-support-link {
+        font-size: 10.5px;
+        gap: 6px;
+    }
+
     .values-grid {
         grid-template-columns: 1fr;
     }
