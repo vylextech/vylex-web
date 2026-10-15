@@ -1,0 +1,362 @@
+/* ==========================================================================
+   KUIPFI Strategic Risk Consultants — Unified Corporate Design System
+   Module 2: Layout & Global Navigation
+   (Top Utility Bar, Primary Navigation Header, Mobile Drawer, Corporate Footer)
+   ========================================================================== */
+
+/* ==========================================================================
+   Top Utility Bar
+   ========================================================================== */
+.top-utility {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 12px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: #1e293b;
+    height: 38px;
+    display: flex;
+    align-items: center;
+}
+
+.top-utility-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-utility-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.emergency-support-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #002347;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 11.5px;
+}
+
+.emergency-support-link:hover {
+    color: var(--accent-gold-hover);
+}
+
+.pulse-indicator {
+    width: 8px;
+    height: 8px;
+    background: #dc2626;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+}
+
+.top-utility-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.compliance-tag {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.top-utility-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #475569;
+    font-size: 12.5px;
+    cursor: pointer;
+}
+
+.top-utility-search:hover {
+    color: #002347;
+}
+
+/* ==========================================================================
+   Primary Navigation Header (Deep Navy Bar)
+   ========================================================================== */
+header.global-nav {
+    background: var(--navy-header);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.nav-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-img {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-text-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    line-height: 1;
+}
+
+.brand-subtitle {
+    color: var(--accent-gold);
+    font-size: 8.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 3px;
+    font-weight: 600;
+}
+
+nav.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: nowrap;
+}
+
+nav.nav-links a {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    padding: 6px 0;
+    white-space: nowrap;
+}
+
+nav.nav-links a:hover,
+nav.nav-links a.active {
+    color: var(--accent-gold);
+}
+
+nav.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-gold);
+}
+
+.btn-request-security {
+    background: var(--accent-gold);
+    color: #ffffff !important;
+    font-family: var(--font-heading);
+    font-size: 11.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 22px;
+    border-radius: 2px;
+    border: 1px solid var(--accent-gold);
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    margin-left: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-request-security:hover {
+    background: var(--accent-gold-hover);
+    border-color: var(--accent-gold-hover);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mobile-menu-btn i {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-btn[aria-expanded="true"] i {
+    transform: rotate(90deg);
+}
+
+/* Mobile Backdrop Overlay */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(4, 16, 30, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.mobile-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* ==========================================================================
+   Global Corporate Footer & Web Component Host Styling
+   ========================================================================== */
+kuipfi-footer,
+footer {
+    display: block;
+    width: 100%;
+}
+
+.global-footer {
+    background: var(--navy-darkest);
+    color: #94a3b8;
+    padding: 65px 0 0;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 45px;
+}
+
+.footer-columns h4 {
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 18px;
+}
+
+.footer-columns ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.footer-columns a {
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.footer-columns a:hover {
+    color: var(--accent-gold);
+}
+
+.footer-tagline {
+    font-size: 12px;
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 14px;
+    line-height: 1.5;
+}
+
+.footer-accreditation-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.accreditation-text {
+    font-size: 12px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.accreditation-text span {
+    color: #cbd5e1;
+}
+
+.accreditation-text .sep {
+    color: #475569;
+    margin: 0 6px;
+}
+
+.footer-legal-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 0;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-developer-credit a {
+    color: var(--accent-gold);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-developer-credit a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.footer-social-links a:hover {
+    color: var(--accent-gold);
+}
+

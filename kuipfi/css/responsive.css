@@ -1,0 +1,516 @@
+/* ==========================================================================
+   KUIPFI Strategic Risk Consultants — Unified Corporate Design System
+   Module 4: Responsive Breakpoints & Mobile Adaptations
+   Breakpoints: 1080px, 960px, 860px, 768px, 640px, 480px
+   ========================================================================== */
+
+/* ==========================================================================
+   Responsive Breakpoints (1080px, 960px, 768px, 640px, 480px)
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+    .services-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .sectors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-channels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .methodology-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .procurement-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .spotlight-card {
+        grid-template-columns: 1fr;
+    }
+
+    .spotlight-left {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: 34px 28px;
+    }
+
+    .spotlight-right {
+        padding: 34px 28px;
+    }
+
+    .intel-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .uniform-console {
+        grid-template-columns: 330px 1fr;
+        gap: 16px;
+    }
+
+    .accordion-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 860px) {
+    .uniform-console {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .uniform-console-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .console-specs-header {
+        grid-column: span 2;
+    }
+
+    .console-palette-box {
+        grid-column: span 2;
+    }
+
+    .stage-garment-horizontal {
+        grid-template-columns: 1fr;
+    }
+
+    .stage-garment-media {
+        border-right: none;
+        border-bottom: 1px solid rgba(200, 165, 90, 0.2);
+    }
+
+    .stage-garment-media img {
+        max-height: 280px;
+    }
+}
+
+@media (max-width: 960px) {
+    nav.nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: inline-flex;
+    }
+
+    nav.nav-links.is-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--navy-header);
+        padding: 16px 20px 24px;
+        gap: 8px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+        border-bottom: 3px solid var(--accent-gold);
+        z-index: 1001;
+        align-items: stretch;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        animation: navMenuSlide 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes navMenuSlide {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    nav.nav-links.is-open a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        padding: 14px 18px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        color: #e2e8f0;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-left: 3px solid transparent;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    nav.nav-links.is-open a::after {
+        content: "\f054";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 11px;
+        opacity: 0.5;
+        position: static;
+        height: auto;
+        background: none;
+    }
+
+    nav.nav-links.is-open a:hover,
+    nav.nav-links.is-open a:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(200, 165, 90, 0.3);
+        border-left-color: var(--accent-gold);
+        color: #ffffff;
+        padding-left: 22px;
+    }
+
+    nav.nav-links.is-open a.active {
+        background: rgba(200, 165, 90, 0.12);
+        border-color: rgba(200, 165, 90, 0.4);
+        border-left: 3px solid var(--accent-gold);
+        color: #ffffff;
+    }
+
+    nav.nav-links.is-open .btn-request-security {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--accent-gold) !important;
+        color: #ffffff !important;
+        border: 1px solid var(--accent-gold) !important;
+        font-size: 12.5px;
+        font-weight: 800;
+        padding: 14px 20px;
+        border-radius: 4px;
+        box-shadow: 0 4px 14px rgba(200, 165, 90, 0.3);
+        letter-spacing: 1.2px;
+    }
+
+    .form-split {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .vm-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .footer-accreditation-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        padding: 18px 0;
+    }
+
+    .accreditation-text {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .footer-legal-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        padding: 16px 0;
+        font-size: 11.5px;
+    }
+
+    .footer-legal-bottom span {
+        display: block;
+        text-align: center;
+        max-width: 100%;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 640px) {
+    .uniform-console-specs {
+        grid-template-columns: 1fr;
+    }
+
+    .console-specs-header,
+    .console-palette-box {
+        grid-column: auto;
+    }
+
+    .viewer-nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .viewer-arrow-controls {
+        justify-content: space-between;
+    }
+
+    .viewer-tab-btn {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .stage-media-card,
+    .viewer-display-stage {
+        min-height: 320px;
+    }
+
+    /* ----------------------------------------------------
+       HERO MOBILE BALANCED SPREAD & PROMINENT CTAs
+       Natural top-to-bottom flow with room to breathe
+       ---------------------------------------------------- */
+    .hero-container {
+        min-height: auto;
+        padding: 44px 0 48px;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    .hero-wrap {
+        padding: 0 18px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-kicker {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        padding-bottom: 3px;
+        display: inline-block;
+        align-self: flex-start;
+    }
+
+    .hero-title {
+        font-size: clamp(26px, 7.8vw, 34px);
+        line-height: 1.16;
+        margin-top: 2px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+    }
+
+    .hero-tagline {
+        font-size: 13.5px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        margin-top: 12px;
+        line-height: 1.45;
+        color: var(--accent-gold);
+        text-transform: uppercase;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-top: 14px;
+        max-width: 100%;
+        color: #e2e8f0;
+    }
+
+    .hero-buttons {
+        margin-top: 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .btn-hero-solid,
+    .btn-hero-outline {
+        width: 100%;
+        padding: 14px 22px;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+    }
+
+    .btn-hero-solid {
+        background: var(--accent-gold);
+        color: #ffffff;
+        border: 1px solid var(--accent-gold);
+        box-shadow: 0 4px 14px rgba(200, 165, 90, 0.35);
+    }
+
+    .btn-hero-outline {
+        background: rgba(4, 16, 30, 0.6);
+        border: 1.5px solid rgba(255, 255, 255, 0.7);
+        color: #ffffff;
+    }
+
+    .hero-indicators {
+        margin-top: 22px;
+        gap: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .hero-dot {
+        width: 22px;
+        height: 4px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    .hero-dot.active {
+        width: 42px;
+        background: var(--accent-gold);
+    }
+
+    /* ----------------------------------------------------
+       LAYOUT & HORIZONTAL OVERFLOW PREVENTION
+       ---------------------------------------------------- */
+    .top-utility {
+        display: none;
+    }
+
+    .wrap,
+    .nav-inner {
+        padding: 0 16px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .page-banner {
+        padding: 38px 0 42px;
+    }
+
+    .page-title {
+        font-size: 26px;
+    }
+
+    .page-tagline {
+        font-size: 12.5px;
+        letter-spacing: 0.8px;
+    }
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pillar-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: 14px 8px;
+    }
+
+    .about-section,
+    .services-section,
+    .spotlight-section,
+    .intel-section,
+    .methodology-section,
+    .compliance-block,
+    .compliance-section,
+    .procurement-section,
+    .uniform-section,
+    .sectors-section,
+    .enterprise-cta-section,
+    .faq-section {
+        padding: 40px 0;
+    }
+
+    .services-grid-4,
+    .services-grid-2,
+    .sectors-grid,
+    .contact-channels-grid,
+    .methodology-grid,
+    .intel-grid,
+    .accordion-grid,
+    .form-split,
+    .footer-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .spotlight-card {
+        grid-template-columns: 1fr;
+    }
+
+    .spotlight-left,
+    .spotlight-right {
+        padding: 22px 16px;
+    }
+
+    .spotlight-partner-box {
+        margin-top: 8px;
+    }
+
+    .angled-ribbon-tag {
+        margin-top: 20px;
+        font-size: 10px;
+        padding: 6px 16px 6px 12px;
+    }
+
+    .about-header h2,
+    .section-intro h2,
+    .uniform-intro h2,
+    .compliance-block-intro h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
