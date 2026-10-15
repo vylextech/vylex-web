@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollSpy();
     initHeroSlider();
     initUniformLightbox();
+    initUniformConsole();
     initContactScopePreselect();
     initFormHandlers();
 });
@@ -221,13 +222,23 @@ function initHeroSlider() {
 }
 
 /* ==========================================================================
-   5. Uniform Lightbox Modal (Home Page)
+   5. Uniform Lightbox Modal (Dynamic Image & Title)
    ========================================================================== */
 function initUniformLightbox() {
     const lightbox = document.getElementById('uniformLightbox');
     if (!lightbox) return;
 
-    window.openUniformLightbox = function () {
+    const lightboxImg = document.getElementById('uniformLightboxImg') || lightbox.querySelector('.lightbox-img');
+    const lightboxTitle = document.getElementById('uniformLightboxTitle') || lightbox.querySelector('.lightbox-footer-bar span:first-child');
+
+    window.openUniformLightbox = function (imgSrc, imgAlt) {
+        if (imgSrc && lightboxImg) {
+            lightboxImg.src = imgSrc;
+            lightboxImg.alt = imgAlt || 'KUIPFI Uniform Specification';
+        }
+        if (imgAlt && lightboxTitle) {
+            lightboxTitle.textContent = imgAlt;
+        }
         lightbox.classList.add('is-open');
         document.body.style.overflow = 'hidden';
     };
@@ -242,6 +253,123 @@ function initUniformLightbox() {
             window.closeUniformLightbox();
         }
     });
+}
+
+/* ==========================================================================
+   5b. Uniform Showcase Console (Interactive Horizontal Tabs & Viewer)
+   Zero excessive vertical scroll; compact horizontal inspection workflow
+   ========================================================================== */
+function initUniformConsole() {
+    const stage = document.getElementById('uniformStage');
+    const tabs = document.querySelectorAll('#uniformTabs .viewer-tab-btn');
+    const dots = document.querySelectorAll('#uniformDots .v-dot');
+    const prevBtn = document.getElementById('uniformPrevBtn');
+    const nextBtn = document.getElementById('uniformNextBtn');
+    const counter = document.getElementById('uniformSlideCounter');
+    const slideLabel = document.getElementById('uniformSlideLabel');
+
+    if (!stage) return;
+    const slides = stage.querySelectorAll('.uniform-slide');
+    const total = slides.length;
+    if (total === 0) return;
+
+    const slideNames = [
+        'Master Board',
+        '360° Field Views',
+        'Combat Shirt',
+        'Combat Trousers',
+        'Combat Parka'
+    ];
+
+    let currentIndex = 0;
+
+    function goToSlide(index) {
+        currentIndex = Math.max(0, Math.min(index, total - 1));
+
+        // Update slides
+        slides.forEach((slide, i) => {
+            const isActive = i === currentIndex;
+            slide.classList.toggle('active', isActive);
+            slide.setAttribute('aria-hidden', String(!isActive));
+        });
+
+        // Update tabs
+        tabs.forEach((tab, i) => {
+            const isActive = i === currentIndex;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', String(isActive));
+            if (isActive) {
+                tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+            }
+        });
+
+        // Update indicator dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+
+        // Update counter text & label
+        if (counter) {
+            counter.textContent = `0${currentIndex + 1} / 0${total}`;
+        }
+        if (slideLabel && slideNames[currentIndex]) {
+            slideLabel.textContent = slideNames[currentIndex];
+        }
+
+        // Update arrow button states
+        if (prevBtn) {
+            prevBtn.disabled = currentIndex === 0;
+        }
+        if (nextBtn) {
+            nextBtn.disabled = currentIndex === total - 1;
+        }
+    }
+
+    // Tabs click handlers
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const slideIdx = parseInt(tab.getAttribute('data-slide'), 10);
+            if (!isNaN(slideIdx)) {
+                goToSlide(slideIdx);
+            }
+        });
+    });
+
+    // Dots click handlers
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const slideIdx = parseInt(dot.getAttribute('data-slide'), 10);
+            if (!isNaN(slideIdx)) {
+                goToSlide(slideIdx);
+            }
+        });
+    });
+
+    // Arrow navigation handlers
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) goToSlide(currentIndex - 1);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < total - 1) goToSlide(currentIndex + 1);
+        });
+    }
+
+    // Keyboard navigation (left / right keys)
+    stage.setAttribute('tabindex', '0');
+    stage.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' && currentIndex < total - 1) {
+            goToSlide(currentIndex + 1);
+        } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+            goToSlide(currentIndex - 1);
+        }
+    });
+
+    // Set initial active slide
+    goToSlide(0);
 }
 
 /* ==========================================================================

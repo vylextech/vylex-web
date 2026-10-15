@@ -1901,7 +1901,7 @@ select.form-input {
      Preserving the original proposed uniform design, layout, and visual identity
      ========================================================================== */
         .uniform-section {
-            padding: 95px 0 100px;
+            padding: 54px 0 58px;
             background: #04101e;
             color: #ffffff;
             position: relative;
@@ -1924,7 +1924,7 @@ select.form-input {
         .uniform-intro {
             text-align: center;
             max-width: 860px;
-            margin: 0 auto 52px;
+            margin: 0 auto 28px;
             position: relative;
             z-index: 2;
         }
@@ -1937,331 +1937,526 @@ select.form-input {
             font-weight: 800;
             letter-spacing: 2.2px;
             text-transform: uppercase;
-            margin-bottom: 12px;
-            padding-bottom: 4px;
+            margin-bottom: 8px;
+            padding-bottom: 3px;
             border-bottom: 2px solid var(--accent-gold);
         }
 
         .uniform-intro h2 {
-            font-size: 34px;
+            font-size: 30px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #ffffff;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
         }
 
         .uniform-intro p {
-            font-size: 15px;
+            font-size: 14.5px;
             color: #cbd5e1;
-            line-height: 1.7;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* 3-Column Uniform Identity Showcase */
-        .uniform-showcase-grid {
+        /* =====================================================================
+           Uniform Console: Horizontal Split (Specs Sidebar + Interactive Viewer)
+           Zero excessive vertical scrolling, complete horizontal experience
+           ===================================================================== */
+        .uniform-console {
             display: grid;
-            grid-template-columns: 1fr 1.35fr 1fr;
-            gap: 26px;
+            grid-template-columns: 360px 1fr;
+            gap: 24px;
             align-items: stretch;
-            margin-bottom: 48px;
             position: relative;
             z-index: 2;
         }
 
-        .uniform-card-panel {
-            background: rgba(10, 29, 54, 0.72);
+        /* --- Left Column: Standards & Protocol Specs Sidebar --- */
+        .uniform-console-specs {
+            background: rgba(10, 29, 54, 0.78);
             border: 1px solid rgba(200, 165, 90, 0.28);
-            border-radius: 4px;
-            padding: 30px 24px;
+            border-radius: 6px;
+            padding: 24px 20px;
             backdrop-filter: blur(8px);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
         }
 
-        .uniform-panel-header h3 {
-            font-size: 16px;
+        .console-specs-header {
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(200, 165, 90, 0.22);
+        }
+
+        .specs-badge-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .specs-badge-title i {
+            font-size: 24px;
+            color: var(--accent-gold);
+            background: rgba(200, 165, 90, 0.12);
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(200, 165, 90, 0.3);
+        }
+
+        .specs-badge-title h3 {
+            font-size: 15px;
             font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin: 0;
+        }
+
+        .specs-badge-title span {
+            font-size: 11px;
             color: var(--accent-gold);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            letter-spacing: 0.5px;
+            display: block;
         }
 
-        .uniform-panel-header p {
-            font-size: 12.5px;
-            color: #94a3b8;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        /* Feature Checkmarks List from Poster */
-        .uniform-features-list {
-            list-style: none;
+        .console-spec-group {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-bottom: 22px;
+            gap: 8px;
         }
 
-        .uniform-features-list li {
-            font-size: 13px;
-            font-weight: 600;
-            color: #f1f5f9;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .uniform-features-list li i {
-            color: var(--accent-gold);
-            font-size: 13px;
-            min-width: 16px;
-        }
-
-        .uniform-specs-box {
-            background: rgba(4, 16, 30, 0.65);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 3px;
-            padding: 16px;
-            margin-top: auto;
-        }
-
-        .uniform-specs-box h5 {
-            font-size: 11px;
+        .spec-group-title {
+            font-size: 11.5px;
             font-weight: 800;
             color: var(--accent-gold);
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin: 0;
         }
 
-        .uniform-specs-box ul {
+        .console-standards-list {
             list-style: none;
-            font-size: 11.5px;
-            color: #cbd5e1;
             display: flex;
             flex-direction: column;
             gap: 6px;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Center Centerpiece Poster & Lightbox Opener */
-        .uniform-centerpiece-wrap {
-            position: relative;
-            background: #020b14;
-            border: 2px solid var(--accent-gold);
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .uniform-centerpiece-wrap:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 45px rgba(200, 165, 90, 0.22);
-        }
-
-        .uniform-poster-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-            min-height: 480px;
-            transition: transform 0.4s ease;
-        }
-
-        .uniform-centerpiece-wrap:hover .uniform-poster-img {
-            transform: scale(1.02);
-        }
-
-        .uniform-centerpiece-badge {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(0deg, rgba(4, 16, 30, 0.96) 0%, rgba(4, 16, 30, 0.75) 70%, transparent 100%);
-            padding: 32px 20px 18px;
+        .console-standards-list li {
+            font-size: 11.5px;
+            color: #f1f5f9;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            color: #ffffff;
-            z-index: 2;
+            gap: 8px;
+            font-weight: 600;
+            padding: 3px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        .badge-text-left h4 {
-            font-size: 14.5px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ffffff;
-        }
-
-        .badge-text-left span {
-            font-size: 11px;
+        .console-standards-list li i {
             color: var(--accent-gold);
+            font-size: 10px;
+            min-width: 14px;
+        }
+
+        .console-protocol-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .protocol-mini-cell {
+            background: rgba(4, 16, 30, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 3px;
+            padding: 7px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .protocol-mini-cell .mini-label {
+            font-size: 9.5px;
+            color: var(--accent-gold);
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
-        .btn-view-board {
-            background: var(--accent-gold);
-            color: #ffffff;
-            font-family: var(--font-heading);
+        .protocol-mini-cell .mini-val {
             font-size: 11px;
+            color: #e2e8f0;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .console-palette-box {
+            background: rgba(4, 16, 30, 0.75);
+            border: 1px solid rgba(200, 165, 90, 0.22);
+            border-radius: 4px;
+            padding: 10px 12px;
+            margin-top: auto;
+        }
+
+        .palette-title {
+            font-size: 10.5px;
             font-weight: 800;
+            color: var(--accent-gold);
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            padding: 9px 15px;
-            border-radius: 2px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .palette-swatches-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 10px;
+        }
+
+        .swatch-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10.5px;
+            color: #cbd5e1;
+        }
+
+        .swatch-color {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        .swatch-meta strong {
+            color: #f8fafc;
+        }
+
+        /* --- Right Column: Interactive Horizontal Viewer --- */
+        .uniform-console-viewer {
+            background: rgba(8, 29, 54, 0.5);
+            border: 1px solid rgba(200, 165, 90, 0.28);
+            border-radius: 6px;
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            min-height: 520px;
+        }
+
+        .viewer-nav-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        .viewer-tabs {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .viewer-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .viewer-tab-btn {
+            background: rgba(4, 16, 30, 0.85);
+            border: 1px solid rgba(200, 165, 90, 0.28);
+            color: #cbd5e1;
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-family: var(--font-heading);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 7px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.2s ease;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
         }
 
-        .btn-view-board:hover {
-            background: var(--accent-gold-hover);
-        }
-
-        /* Right Column: Tactical Perspectives */
-        .uniform-profiles-img-wrap {
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: 14px;
-            background: #020b14;
-        }
-
-        .uniform-profiles-img-wrap img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .profiles-caption-list {
-            display: flex;
-            justify-content: space-between;
-            font-size: 10.5px;
-            font-weight: 700;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 8px 10px;
-            background: rgba(0, 35, 71, 0.6);
-        }
-
-        /* Garments Technical Breakdown (3 Cards from Poster) */
-        .garments-row {
-            position: relative;
-            z-index: 2;
-            margin-top: 15px;
-        }
-
-        .garments-title-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 24px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        }
-
-        .garments-title-row h3 {
-            font-size: 19px;
-            font-weight: 800;
+        .viewer-tab-btn:hover {
+            background: rgba(200, 165, 90, 0.15);
             color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .garments-title-row span {
-            font-size: 12px;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-
-        .garments-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .garment-card {
-            background: #081d36;
-            border: 1px solid rgba(200, 165, 90, 0.28);
-            border-radius: 4px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-            transition: transform 0.25s ease, border-color 0.25s ease;
-        }
-
-        .garment-card:hover {
-            transform: translateY(-4px);
             border-color: var(--accent-gold);
         }
 
-        .garment-img-box {
-            width: 100%;
-            height: 190px;
-            background: #020b14;
-            overflow: hidden;
+        .viewer-tab-btn.active {
+            background: var(--accent-gold);
+            color: #020b14;
+            border-color: var(--accent-gold);
+            font-weight: 800;
+            box-shadow: 0 3px 10px rgba(200, 165, 90, 0.3);
+        }
+
+        /* Display Stage */
+        .viewer-display-stage {
             position: relative;
+            flex: 1;
+            min-height: 440px;
+            border-radius: 5px;
+            overflow: hidden;
+            background: #020b14;
+            border: 1px solid rgba(200, 165, 90, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .garment-img-box img {
+        .uniform-slide {
+            display: none;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            transition: transform 0.3s ease;
         }
 
-        .garment-card:hover .garment-img-box img {
-            transform: scale(1.04);
+        .uniform-slide.active {
+            display: block;
+            animation: uniformFadeIn 0.3s ease;
         }
 
-        .garment-body {
-            padding: 22px 20px 24px;
+        @keyframes uniformFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.99);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Stage Media Card (Slides 0 & 1) */
+        .stage-media-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 440px;
+            max-height: 480px;
+            background: #020b14;
+            cursor: pointer;
+            overflow: hidden;
             display: flex;
-            flex-direction: column;
-            flex: 1;
+            align-items: center;
+            justify-content: center;
         }
 
-        .garment-title {
-            font-family: var(--font-heading);
-            font-size: 15px;
+        .stage-media-card img {
+            width: 100%;
+            height: 100%;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            background: #020b14;
+            transition: transform 0.35s ease;
+        }
+
+        .stage-media-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .stage-media-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(2, 11, 20, 0.96) 0%, rgba(2, 11, 20, 0.8) 75%, transparent 100%);
+            padding: 24px 20px 14px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 16px;
+            z-index: 2;
+        }
+
+        .overlay-text .stage-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
             font-weight: 800;
             color: var(--accent-gold);
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            margin-bottom: 10px;
+            margin-bottom: 2px;
         }
 
-        .garment-desc {
+        .overlay-text h4 {
+            font-size: 15px;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin: 0 0 2px 0;
+        }
+
+        .overlay-text p {
+            font-size: 11.5px;
+            color: #94a3b8;
+            margin: 0;
+            max-width: 520px;
+            line-height: 1.4;
+        }
+
+        .btn-stage-expand {
+            background: var(--accent-gold);
+            color: #020b14;
+            font-family: var(--font-heading);
+            font-size: 10.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            padding: 8px 14px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-stage-expand:hover {
+            background: var(--accent-gold-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Stage Garment Horizontal Card (Slides 2, 3, 4) */
+        .stage-garment-horizontal {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            height: 100%;
+            min-height: 440px;
+            background: #081d36;
+        }
+
+        .stage-garment-media {
+            position: relative;
+            background: #020b14;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            cursor: pointer;
+            border-right: 1px solid rgba(200, 165, 90, 0.2);
+        }
+
+        .stage-garment-media img {
+            width: 100%;
+            height: 100%;
+            max-height: 440px;
+            object-fit: contain;
+            display: block;
+            padding: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .stage-garment-media:hover img {
+            transform: scale(1.03);
+        }
+
+        .garment-media-chip {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(2, 11, 20, 0.9);
+            border: 1px solid rgba(200, 165, 90, 0.4);
+            color: var(--accent-gold);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 9px;
+            border-radius: 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(4px);
+        }
+
+        .stage-garment-info {
+            padding: 22px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .info-kicker {
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .info-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin: 0 0 8px 0;
+        }
+
+        .info-desc {
             font-size: 12.5px;
             color: #cbd5e1;
             line-height: 1.6;
-            margin-bottom: 16px;
-            flex: 1;
+            margin-bottom: 12px;
+        }
+
+        .info-specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px 12px;
+            background: rgba(4, 16, 30, 0.5);
+            padding: 10px 12px;
+            border-radius: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 12px;
+        }
+
+        .spec-cell {
+            font-size: 11px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .spec-cell i {
+            color: var(--accent-gold);
+            font-size: 10px;
+            min-width: 12px;
         }
 
         .fabric-badges {
@@ -2281,12 +2476,122 @@ select.form-input {
             border-radius: 2px;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
         }
 
         .fabric-badge i {
             color: var(--accent-gold);
             font-size: 9px;
+        }
+
+        /* Viewer Bottom Controls Toolbar (Counter, Dots, and Navigation Buttons) */
+        .viewer-bottom-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
+        }
+
+        .viewer-bottom-counter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 170px;
+        }
+
+        .viewer-slide-counter {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        .viewer-slide-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+            padding-left: 10px;
+            white-space: nowrap;
+        }
+
+        .viewer-bottom-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+        }
+
+        .v-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: rgba(200, 165, 90, 0.28);
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            padding: 0;
+        }
+
+        .v-dot:hover {
+            background: rgba(200, 165, 90, 0.65);
+            transform: scale(1.15);
+        }
+
+        .v-dot.active {
+            background: var(--accent-gold);
+            width: 24px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(200, 165, 90, 0.4);
+        }
+
+        .viewer-nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 170px;
+            justify-content: flex-end;
+        }
+
+        .viewer-nav-btn {
+            background: rgba(4, 16, 30, 0.9);
+            border: 1px solid rgba(200, 165, 90, 0.35);
+            color: #ffffff;
+            padding: 7px 14px;
+            border-radius: 3px;
+            font-family: var(--font-heading);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        .viewer-nav-btn:hover:not(:disabled) {
+            background: var(--accent-gold);
+            color: #020b14;
+            border-color: var(--accent-gold);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(200, 165, 90, 0.3);
+        }
+
+        .viewer-nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            border-color: rgba(255, 255, 255, 0.08);
+            color: #64748b;
         }
 
         /* Lightbox Modal for Full Uniform Board */
@@ -2747,16 +3052,47 @@ kuipfi-footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .uniform-showcase-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .garments-grid-3 {
-        grid-template-columns: 1fr;
+    .uniform-console {
+        grid-template-columns: 330px 1fr;
+        gap: 16px;
     }
 
     .accordion-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 860px) {
+    .uniform-console {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .uniform-console-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .console-specs-header {
+        grid-column: span 2;
+    }
+
+    .console-palette-box {
+        grid-column: span 2;
+    }
+
+    .stage-garment-horizontal {
+        grid-template-columns: 1fr;
+    }
+
+    .stage-garment-media {
+        border-right: none;
+        border-bottom: 1px solid rgba(200, 165, 90, 0.2);
+    }
+
+    .stage-garment-media img {
+        max-height: 280px;
     }
 }
 
@@ -2914,6 +3250,35 @@ kuipfi-footer {
 }
 
 @media (max-width: 640px) {
+    .uniform-console-specs {
+        grid-template-columns: 1fr;
+    }
+
+    .console-specs-header,
+    .console-palette-box {
+        grid-column: auto;
+    }
+
+    .viewer-nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .viewer-arrow-controls {
+        justify-content: space-between;
+    }
+
+    .viewer-tab-btn {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .stage-media-card,
+    .viewer-display-stage {
+        min-height: 320px;
+    }
+
     /* ----------------------------------------------------
        HERO MOBILE BALANCED SPREAD & PROMINENT CTAs
        Natural top-to-bottom flow with room to breathe
@@ -3092,8 +3457,6 @@ kuipfi-footer {
     .intel-grid,
     .accordion-grid,
     .form-split,
-    .uniform-showcase-grid,
-    .garments-grid-3,
     .footer-columns {
         grid-template-columns: 1fr;
     }
