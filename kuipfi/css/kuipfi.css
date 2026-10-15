@@ -1965,11 +1965,14 @@ select.form-input {
            ===================================================================== */
         .uniform-console {
             display: grid;
-            grid-template-columns: 360px 1fr;
+            grid-template-columns: 360px minmax(0, 1fr);
             gap: 24px;
             align-items: stretch;
             position: relative;
             z-index: 2;
+            width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
         }
 
         /* --- Left Column: Standards & Protocol Specs Sidebar --- */
@@ -1983,6 +1986,8 @@ select.form-input {
             flex-direction: column;
             gap: 16px;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            min-width: 0;
+            box-sizing: border-box;
         }
 
         .console-specs-header {
@@ -2157,6 +2162,10 @@ select.form-input {
             justify-content: space-between;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
             min-height: 520px;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
         .viewer-nav-bar {
@@ -2350,10 +2359,13 @@ select.form-input {
         /* Stage Garment Horizontal Card (Slides 2, 3, 4) */
         .stage-garment-horizontal {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
             height: 100%;
             min-height: 440px;
             background: #081d36;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .stage-garment-media {
@@ -2365,6 +2377,8 @@ select.form-input {
             overflow: hidden;
             cursor: pointer;
             border-right: 1px solid rgba(200, 165, 90, 0.2);
+            min-width: 0;
+            box-sizing: border-box;
         }
 
         .stage-garment-media img {
@@ -2397,6 +2411,7 @@ select.form-input {
             align-items: center;
             gap: 5px;
             backdrop-filter: blur(4px);
+            z-index: 2;
         }
 
         .stage-garment-info {
@@ -2404,6 +2419,9 @@ select.form-input {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .info-kicker {
@@ -2435,13 +2453,16 @@ select.form-input {
 
         .info-specs-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             gap: 7px 12px;
             background: rgba(4, 16, 30, 0.5);
             padding: 10px 12px;
             border-radius: 3px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             margin-bottom: 12px;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .spec-cell {
@@ -2451,6 +2472,8 @@ select.form-input {
             align-items: center;
             gap: 6px;
             font-weight: 500;
+            min-width: 0;
+            word-break: break-word;
         }
 
         .spec-cell i {
