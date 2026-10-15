@@ -64,15 +64,13 @@
     }
 
     .uniform-console {
-        grid-template-columns: 330px 1fr;
+        grid-template-columns: 290px 1fr;
         gap: 16px;
     }
 
     .accordion-grid {
         grid-template-columns: 1fr;
     }
-}
-
 }
 
 @media (max-width: 960px) {
@@ -192,22 +190,35 @@
     /* Uniform Console: Stack into clean 1-column layout on tablet */
     .uniform-console {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 16px;
     }
 
     .uniform-console-specs {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 14px;
-        padding: 18px 16px;
+        gap: 12px;
+        padding: 16px;
     }
 
     .console-specs-header {
         grid-column: span 2;
+        padding-bottom: 8px;
+    }
+
+    .console-protocol-grid {
+        grid-column: span 2;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
     }
 
     .console-palette-box {
-        grid-column: span 2;
+        grid-column: span 1;
+    }
+
+    .console-compliance-badge {
+        grid-column: span 1;
+        margin-top: 0;
+        justify-content: center;
     }
 
     .stage-garment-horizontal {
@@ -283,8 +294,43 @@
 }
 
 @media (max-width: 640px) {
+    /* ====================================================
+       UNIFORM COLLECTION: Mobile 100% Fluid & Responsive
+       Zero horizontal overflow, thumb-friendly touch targets
+       ==================================================== */
+    .uniform-section {
+        padding: 34px 0 40px;
+    }
+
+    .uniform-intro {
+        margin-bottom: 18px;
+    }
+
+    .uniform-intro h2 {
+        font-size: 20px;
+        line-height: 1.25;
+        margin-bottom: 8px;
+    }
+
+    .uniform-intro p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .uniform-console {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
     .uniform-console-specs {
         grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 14px 12px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .console-specs-header,
@@ -292,24 +338,244 @@
         grid-column: auto;
     }
 
-    .viewer-nav-bar {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
+    .console-protocol-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
     }
 
-    .viewer-arrow-controls {
-        justify-content: space-between;
+    .protocol-mini-cell {
+        padding: 6px 8px;
+    }
+
+    .palette-swatches-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .uniform-console-viewer {
+        padding: 10px 8px;
+        min-height: 0;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .viewer-nav-bar {
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .viewer-tabs {
+        gap: 6px;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .viewer-tab-btn {
         padding: 6px 10px;
-        font-size: 10px;
+        font-size: 9.5px;
+        gap: 5px;
+        flex-shrink: 0;
     }
 
-    .stage-media-card,
+    .viewer-tab-btn i {
+        font-size: 9.5px;
+    }
+
     .viewer-display-stage {
-        min-height: 320px;
+        min-height: 0;
+        height: auto;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    /* Stage Garment Cards (Slides 2, 3, 4) */
+    .stage-garment-horizontal {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .stage-garment-media {
+        min-height: 180px;
+        max-height: 220px;
+        padding: 10px;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(200, 165, 90, 0.2);
+        box-sizing: border-box;
+    }
+
+    .stage-garment-media img {
+        max-height: 200px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+        padding: 4px;
+    }
+
+    .garment-media-chip {
+        top: 8px;
+        left: 8px;
+        font-size: 9px;
+        padding: 3px 7px;
+    }
+
+    .stage-garment-info {
+        padding: 14px 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .info-kicker {
+        font-size: 9px;
+    }
+
+    .info-title {
+        font-size: 15px;
+        margin-bottom: 5px;
+        word-break: break-word;
+    }
+
+    .info-desc {
+        font-size: 11.5px;
+        line-height: 1.45;
+        margin-bottom: 8px;
+        word-break: break-word;
+    }
+
+    /* 1-column specs grid on phone - completely prevents overflow! */
+    .info-specs-grid {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 7px 8px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 8px;
+    }
+
+    .spec-cell {
+        font-size: 10.5px;
+        word-break: break-word;
+    }
+
+    .fabric-badges {
+        gap: 4px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .fabric-badge {
+        font-size: 9px;
+        padding: 2.5px 6px;
+        word-break: break-word;
+    }
+
+    /* Presentation Boards on Phone (Slides 0 & 1) */
+    .stage-media-card {
+        min-height: 200px;
+        max-height: 280px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .stage-media-card img {
+        max-height: 280px;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .stage-media-overlay {
+        padding: 10px 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .overlay-text h4 {
+        font-size: 13px;
+    }
+
+    .overlay-text p {
+        font-size: 10.5px;
+        line-height: 1.35;
+    }
+
+    .btn-stage-expand {
+        width: 100%;
+        justify-content: center;
+        padding: 6px 10px;
+        font-size: 9.5px;
+    }
+
+    /* Bottom Controls Toolbar on mobile: 2 clean tiers, zero overflow */
+    .viewer-bottom-toolbar {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding-top: 8px;
+        margin-top: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .viewer-bottom-counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .viewer-slide-counter {
+        font-size: 11px;
+    }
+
+    .viewer-slide-label {
+        font-size: 10px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .viewer-bottom-dots {
+        justify-content: center;
+        width: 100%;
+        margin: 2px 0;
+        gap: 5px;
+    }
+
+    .v-dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    .v-dot.active {
+        width: 18px;
+    }
+
+    .viewer-nav-actions {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .viewer-nav-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 10.5px;
     }
 
     /* ----------------------------------------------------
