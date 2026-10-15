@@ -283,7 +283,7 @@ function initUniformConsole() {
 
     let currentIndex = 0;
 
-    function goToSlide(index) {
+    function goToSlide(index, userInitiated = false) {
         currentIndex = Math.max(0, Math.min(index, total - 1));
 
         // Update slides
@@ -298,8 +298,18 @@ function initUniformConsole() {
             const isActive = i === currentIndex;
             tab.classList.toggle('active', isActive);
             tab.setAttribute('aria-selected', String(isActive));
-            if (isActive) {
-                tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+            // Only scroll the tabs toolbar horizontally if the user clicked and tabs overflow
+            if (isActive && userInitiated) {
+                const tabsContainer = document.getElementById('uniformTabs');
+                if (tabsContainer && tabsContainer.scrollWidth > tabsContainer.clientWidth) {
+                    const tabLeft = tab.offsetLeft;
+                    const tabWidth = tab.offsetWidth;
+                    const containerWidth = tabsContainer.clientWidth;
+                    tabsContainer.scrollTo({
+                        left: tabLeft - (containerWidth / 2) + (tabWidth / 2),
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
 
@@ -330,7 +340,7 @@ function initUniformConsole() {
         tab.addEventListener('click', () => {
             const slideIdx = parseInt(tab.getAttribute('data-slide'), 10);
             if (!isNaN(slideIdx)) {
-                goToSlide(slideIdx);
+                goToSlide(slideIdx, true);
             }
         });
     });
@@ -340,7 +350,7 @@ function initUniformConsole() {
         dot.addEventListener('click', () => {
             const slideIdx = parseInt(dot.getAttribute('data-slide'), 10);
             if (!isNaN(slideIdx)) {
-                goToSlide(slideIdx);
+                goToSlide(slideIdx, true);
             }
         });
     });
@@ -348,13 +358,13 @@ function initUniformConsole() {
     // Arrow navigation handlers
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) goToSlide(currentIndex - 1);
+            if (currentIndex > 0) goToSlide(currentIndex - 1, true);
         });
     }
 
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
-            if (currentIndex < total - 1) goToSlide(currentIndex + 1);
+            if (currentIndex < total - 1) goToSlide(currentIndex + 1, true);
         });
     }
 
@@ -362,14 +372,14 @@ function initUniformConsole() {
     stage.setAttribute('tabindex', '0');
     stage.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight' && currentIndex < total - 1) {
-            goToSlide(currentIndex + 1);
+            goToSlide(currentIndex + 1, true);
         } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
-            goToSlide(currentIndex - 1);
+            goToSlide(currentIndex - 1, true);
         }
     });
 
-    // Set initial active slide
-    goToSlide(0);
+    // Set initial active slide without scrolling the page
+    goToSlide(0, false);
 }
 
 /* ==========================================================================
