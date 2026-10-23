@@ -28,7 +28,25 @@ This repository enforces strict design and content rules to eliminate generic AI
 
 ---
 
+### 🚫 No Icon Overload & Over-Animated Cards
+- Do not paste icons into every button, label, heading, or table cell.
+- Avoid over-animating cards with dramatic hover lifts, glows, or scale transforms. Subtle, calm border transitions are preferred.
+- **Zero emojis** anywhere in the copy or UI.
+
+### 🚫 Header CTA: Dual Clean Buttons Only, No Icons
+- Header actions must be strictly **two clean dual buttons** with **no icons** on the CTA (e.g. `010 634 2928` outline button + `Request Quote` solid button).
+- Keep typography crisp, uppercase or cleanly weighted, with no distracting icon clutter.
+
+---
+
 ## 2. Core UI & UX Principles
+
+### 🏆 Benchmark Example: `example/makhaswa.html`
+- Use [`example/makhaswa.html`](file:///c:/Users/mthem/OneDrive/Desktop/vylex%20web/example/makhaswa.html) as the primary benchmark for a clean, minimal, non-complicated South African corporate website:
+  - Solid, dignified structural colors (deep navy `#082d5a`, slate, crisp white).
+  - Clear, uppercase typography with generous letter-spacing.
+  - Zero unnecessary gradients, zero emojis, zero floating pills, zero pulsing dots.
+  - Dignified, credible, and professional presentation.
 
 ### ✅ Grounded in the Real Industry
 - Match the visual language to the actual trade:
