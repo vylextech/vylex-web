@@ -65,7 +65,7 @@
 
     <style>
         :root {
-            --nav-total-height: 121px;
+            --nav-total-height: 80px;
         }
 
         /* Clean custom utility rules */
@@ -78,8 +78,8 @@
 
         /* Hero viewport container calculation */
         .hero-viewport {
-            min-height: calc(100vh - var(--nav-total-height, 121px));
-            min-height: calc(100dvh - var(--nav-total-height, 121px));
+            min-height: calc(100vh - var(--nav-total-height, 80px));
+            min-height: calc(100dvh - var(--nav-total-height, 80px));
         }
 
         .badge-outline {
@@ -139,45 +139,6 @@
 
 <body class="font-sans text-slate-800 antialiased selection:bg-brand-600 selection:text-white">
 
-    <!-- TOP BAR: Direct Contacts & Operating Compliance -->
-    <header class="border-b border-slate-200 bg-slate-900 text-slate-300 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center space-x-4">
-                <span class="inline-flex items-center gap-1.5 text-slate-300 font-medium">
-                    <i class="fa-solid fa-phone text-blue-400"></i>
-                    <span>Direct Office:</span>
-                    <a href="tel:+27106342928" class="text-white hover:text-blue-400 font-semibold transition">010 634
-                        2928</a>
-                </span>
-                <span class="hidden sm:inline-block text-slate-600">|</span>
-                <span
-                    class="inline-flex items-center gap-1.5 bg-blue-950 text-blue-300 px-2.5 py-0.5 rounded text-[11px] font-medium border border-blue-800/40">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    24/7 Emergency Dispatch
-                </span>
-            </div>
-
-            <div class="flex items-center space-x-3 text-[11px]">
-                <div class="hidden md:flex items-center gap-2">
-                    <span class="text-slate-400">Accredited:</span>
-                    <span
-                        class="bg-slate-800 text-slate-200 font-semibold px-2 py-0.5 rounded border border-slate-700">NHBRC</span>
-                    <span
-                        class="bg-slate-800 text-slate-200 font-semibold px-2 py-0.5 rounded border border-slate-700">CIDB
-                        Registered</span>
-                    <span
-                        class="bg-slate-800 text-emerald-300 font-semibold px-2 py-0.5 rounded border border-slate-700">100%
-                        SETA</span>
-                </div>
-                <a href="https://wa.me/27694379948" target="_blank" rel="noopener noreferrer"
-                    class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-semibold">
-                    <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <span>WhatsApp Quick Desk</span>
-                </a>
-            </div>
-        </div>
-    </header>
-
     <!-- MAIN NAVIGATION -->
     <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -220,12 +181,16 @@
                 </div>
 
                 <!-- Desktop Actions -->
-                <div class="hidden lg:flex items-center gap-3">
+                <div class="hidden lg:flex items-center gap-3.5">
+                    <a href="https://wa.me/27694379948" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-1.5 text-slate-700 hover:text-emerald-600 font-medium text-xs px-2.5 py-2 rounded-lg hover:bg-emerald-50/50 transition">
+                        <i class="fa-brands fa-whatsapp text-base text-emerald-600"></i>
+                        <span>WhatsApp</span>
+                    </a>
                     <a href="tel:+27106342928"
-                        class="text-slate-700 hover:text-blue-700 font-medium text-xs flex flex-col items-end px-2 py-1">
-                        <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Toll Free /
-                            Office</span>
-                        <span class="font-bold text-slate-900">010 634 2928</span>
+                        class="text-slate-700 hover:text-blue-700 font-medium text-xs flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-slate-50 transition">
+                        <i class="fa-solid fa-phone text-slate-400 text-xs"></i>
+                        <span class="font-bold text-slate-900 text-sm">010 634 2928</span>
                     </a>
                     <button onclick="openQuoteModal()"
                         class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition shadow-sm hover:shadow">
@@ -251,14 +216,20 @@
         <!-- Mobile Drawer -->
         <div id="mobileDrawer"
             class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg">
-            <div class="grid grid-cols-2 gap-2 pb-3 border-b border-slate-100 text-xs">
-                <div class="bg-slate-50 p-2.5 rounded border border-slate-200">
-                    <span class="block text-slate-400 text-[10px] uppercase font-bold">NHBRC</span>
-                    <span class="font-bold text-slate-800">Registered</span>
+            <div class="grid grid-cols-2 gap-2.5 pb-3 border-b border-slate-100 text-xs">
+                <div class="bg-slate-50 p-2 rounded-lg border border-slate-200 flex items-center gap-2">
+                    <img src="images/nhbrc.png" alt="NHBRC Registered" class="h-8 w-auto object-contain" />
+                    <div>
+                        <span class="block text-slate-400 text-[10px] uppercase font-bold">NHBRC</span>
+                        <span class="font-bold text-slate-800 text-xs">Registered</span>
+                    </div>
                 </div>
-                <div class="bg-slate-50 p-2.5 rounded border border-slate-200">
-                    <span class="block text-slate-400 text-[10px] uppercase font-bold">CIDB Member</span>
-                    <span class="font-bold text-slate-800">Certified</span>
+                <div class="bg-slate-50 p-2 rounded-lg border border-slate-200 flex items-center gap-2">
+                    <img src="images/cibd.png" alt="CIDB Member" class="h-8 w-auto object-contain" />
+                    <div>
+                        <span class="block text-slate-400 text-[10px] uppercase font-bold">CIDB</span>
+                        <span class="font-bold text-slate-800 text-xs">Certified</span>
+                    </div>
                 </div>
             </div>
             <a href="#home"
@@ -280,10 +251,14 @@
             <a href="#contact"
                 class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50">Contact
                 Us</a>
-            <div class="pt-2">
+            <div class="pt-2 grid grid-cols-2 gap-2">
                 <a href="tel:+27106342928"
-                    class="flex items-center justify-center gap-2 w-full bg-slate-900 text-white font-semibold py-2.5 rounded-lg text-sm">
-                    <i class="fa-solid fa-phone"></i> Call 010 634 2928
+                    class="flex items-center justify-center gap-1.5 bg-slate-900 text-white font-semibold py-2.5 rounded-lg text-xs">
+                    <i class="fa-solid fa-phone"></i> Call Office
+                </a>
+                <a href="https://wa.me/27694379948" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center justify-center gap-1.5 bg-emerald-600 text-white font-semibold py-2.5 rounded-lg text-xs">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
                 </a>
             </div>
         </div>
@@ -304,34 +279,33 @@
         <div class="relative z-10 w-full py-8 sm:py-10 lg:py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="max-w-2xl text-left">
-                    <!-- Trust Pill Badge -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300 text-xs font-semibold mb-4 backdrop-blur-md">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>NHBRC &amp; CIDB Registered • 100% SETA Compliant</span>
-                    </div>
-
                     <!-- Main Title -->
-                    <h1 class="font-display font-extrabold text-white tracking-tight leading-[1.08] mb-3.5 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem]">
+                    <h1 class="font-display font-extrabold text-white tracking-tight leading-[1.08] mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem]">
                         Building Excellence<br />
                         <span class="text-blue-400">Across South Africa</span>
                     </h1>
 
                     <!-- Subheading -->
-                    <p class="text-slate-300 font-normal leading-relaxed mb-6 sm:mb-7 text-sm sm:text-base md:text-lg max-w-xl">
+                    <p class="text-slate-300 font-normal leading-relaxed mb-7 text-sm sm:text-base md:text-lg max-w-xl">
                         From Chris Hani Baragwanath Hospital to 1,000+ housing projects — <strong class="text-white">4 Chis Construction &amp; Projects cc</strong> delivers across all sectors. Build, Finance, Sell &amp; Cater.
                     </p>
 
-                    <!-- CTA Buttons (responsive, aligned, tactile feedback) -->
+                    <!-- CTA Buttons (responsive, aligned, humanized) -->
                     <div class="flex flex-wrap items-center gap-3 sm:gap-4">
                         <a href="#contact"
-                            class="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-lg shadow-lg shadow-blue-600/30 hover:shadow-blue-500/40 transition-all duration-200 transform hover:-translate-y-0.5 group">
+                            class="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-lg shadow-sm hover:shadow transition-all duration-200">
                             <span>Start Your Project</span>
-                            <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
                         </a>
                         <a href="#services"
-                            class="inline-flex items-center justify-center gap-2.5 bg-slate-900/60 hover:bg-slate-800/80 active:bg-slate-900 text-slate-100 hover:text-white font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-lg border border-white/20 hover:border-white/40 backdrop-blur-md transition-all duration-200 transform hover:-translate-y-0.5">
+                            class="inline-flex items-center justify-center gap-2.5 bg-slate-900/70 hover:bg-slate-800 active:bg-slate-900 text-slate-100 hover:text-white font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-lg border border-slate-700 hover:border-slate-500 backdrop-blur-md transition-all duration-200">
                             <i class="fa-solid fa-layer-group text-xs text-blue-400"></i>
                             <span>View Our Services</span>
+                        </a>
+                        <a href="https://wa.me/27694379948" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-semibold text-xs sm:text-sm px-5 py-3.5 rounded-lg shadow-sm transition-all duration-200">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>WhatsApp</span>
                         </a>
                     </div>
                 </div>
@@ -344,55 +318,50 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-                <div class="flex items-start gap-3.5 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
-                    <div class="w-10 h-10 rounded bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-house-shield text-lg"></i>
+                <div class="flex items-center gap-3.5 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+                    <div class="h-12 w-14 rounded bg-white border border-slate-200 flex items-center justify-center shrink-0 p-1 shadow-xs">
+                        <img src="images/nhbrc.png" alt="NHBRC Registration Council" class="max-h-full max-w-full object-contain" />
                     </div>
                     <div>
                         <h4 class="font-bold text-sm text-slate-900">NHBRC Registered</h4>
-                        <p class="text-xs text-slate-500 mt-0.5">National Home Builders Registration Council accredited
-                            builder.</p>
+                        <p class="text-xs text-slate-500 mt-0.5">National Home Builders Registration Council accredited builder.</p>
                     </div>
                 </div>
 
-                <div class="flex items-start gap-3.5 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
-                    <div class="w-10 h-10 rounded bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-building-circle-check text-lg"></i>
+                <div class="flex items-center gap-3.5 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+                    <div class="h-12 w-20 rounded bg-white border border-slate-200 flex items-center justify-center shrink-0 p-1 shadow-xs">
+                        <img src="images/cibd.png" alt="CIDB Construction Industry Development Board" class="max-h-full max-w-full object-contain" />
                     </div>
                     <div>
                         <h4 class="font-bold text-sm text-slate-900">CIDB Member</h4>
-                        <p class="text-xs text-slate-500 mt-0.5">Certified member of the Construction Industry
-                            Development Board.</p>
+                        <p class="text-xs text-slate-500 mt-0.5">Certified member of the Construction Industry Development Board.</p>
                     </div>
                 </div>
 
-                <div class="flex items-start gap-3.5 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
-                    <div
-                        class="w-10 h-10 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-user-graduate text-lg"></i>
+                <div class="flex items-center gap-3.5 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+                    <div class="h-12 w-12 rounded bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-user-graduate text-xl"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-sm text-slate-900">SETA Compliant</h4>
-                        <p class="text-xs text-slate-500 mt-0.5">100% compliant with government Sector Education &amp;
-                            Training.</p>
+                        <p class="text-xs text-slate-500 mt-0.5">100% compliant with government Sector Education &amp; Training.</p>
                     </div>
                 </div>
 
-                <div class="flex items-start gap-3.5 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
-                    <div
-                        class="w-10 h-10 rounded bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-file-contract text-lg"></i>
+                <div class="flex items-center gap-3.5 p-3.5 rounded-lg bg-slate-50 border border-slate-200">
+                    <div class="h-12 w-12 rounded bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-file-contract text-xl"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-sm text-slate-900">Licensed &amp; Insured</h4>
-                        <p class="text-xs text-slate-500 mt-0.5">Fully licensed and comprehensively insured for all site
-                            operations.</p>
+                        <p class="text-xs text-slate-500 mt-0.5">Fully licensed and comprehensively insured for all site operations.</p>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
+
 
     <!-- ABOUT SECTION -->
     <section id="about" class="py-20 bg-white">
@@ -2015,7 +1984,11 @@
                 <!-- Accreditations & Compliance -->
                 <div>
                     <h4 class="font-bold text-white uppercase text-[11px] tracking-wider mb-3">Accreditations</h4>
-                    <ul class="space-y-2">
+                    <div class="flex items-center gap-2 mb-3 bg-white/5 p-2 rounded-lg border border-slate-800">
+                        <img src="images/nhbrc.png" alt="NHBRC" class="h-8 w-auto object-contain bg-white rounded p-0.5" />
+                        <img src="images/cibd.png" alt="CIDB" class="h-8 w-auto object-contain bg-white rounded p-0.5" />
+                    </div>
+                    <ul class="space-y-2 text-xs">
                         <li class="flex items-center gap-1.5 text-slate-300">
                             <i class="fa-solid fa-check text-blue-400 text-[10px]"></i> NHBRC Registered
                         </li>
@@ -2346,13 +2319,12 @@
 
         // Dynamic Viewport Calculation for Hero
         function updateNavTotalHeight() {
-            const header = document.querySelector('header');
             const nav = document.querySelector('nav');
-            let total = 0;
-            if (header) total += header.getBoundingClientRect().height;
-            if (nav) total += nav.getBoundingClientRect().height;
-            if (total > 0) {
-                document.documentElement.style.setProperty('--nav-total-height', Math.round(total) + 'px');
+            if (nav) {
+                const total = nav.getBoundingClientRect().height;
+                if (total > 0) {
+                    document.documentElement.style.setProperty('--nav-total-height', Math.round(total) + 'px');
+                }
             }
         }
         window.addEventListener('resize', updateNavTotalHeight);
